@@ -1,0 +1,35 @@
+---
+sidebar: false
+layout: AboutPage
+title: Showcase & How-tos
+meta:
+  - name: og:title
+    content: Naomi Showcase & How-tos
+  - name: og:description
+    content: an open source platform for developing always-on, voice-controlled applications
+---
+
+<style>
+.big-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+}
+img.illustration {
+  width: 50%;
+  transform: translateX(50%);
+}
+@media (max-width: 719px) {
+  img.illustration {
+    width: 100%;
+    transform: translateX(0);
+  }
+}
+</style>
+
+<!-- <h2 class="big-title">Live from the Forum</h2> -->
+
+This is a selection of top topics in the [Tutorials & Examples](https://community.projectnaomi.com/c/tutorials-examples) category of the community forum, join us there and share your story!
+
+<CommunityTutorials/>
