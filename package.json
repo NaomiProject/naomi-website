@@ -21,7 +21,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare-docs": "ruby prepare-docs.rb",
     "add-blog-meta": "ruby add-blog-meta.rb",
-    "build": "ruby prepare-docs.rb && vuepress build && ruby postbuild.rb",
+    "build": "ruby prepare-docs.rb && vuepress build", // && ruby postbuild.rb", - postbuild needs to be looked into further.
     "build-only": "vuepress build ."
   },
   "author": "Naomi",
