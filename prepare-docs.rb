@@ -25,7 +25,7 @@ else
     FileUtils.rm_rf(".vuepress/naomi-docs")
 
     puts ">>> Cloning naomi-docs"
-    `git clone --depth 1 --branch #{$version ? $version : $docs_repo_branch} https://github.com/naomiproject/naomi-docs .vuepress/naomi-docs`
+    `git clone https://github.com/naomiproject/naomi-docs .vuepress/naomi-docs`
 end
 
 
