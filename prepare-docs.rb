@@ -25,7 +25,7 @@ else
     FileUtils.rm_rf(".vuepress/naomi-docs")
 
     puts ">>> Cloning naomi-docs"
-    `git clone https://github.com/naomiproject/naomi-docs /docs`
+    `git clone https://github.com/naomiproject/naomi-docs docs`
 end
 
 
