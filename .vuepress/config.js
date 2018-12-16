@@ -201,9 +201,9 @@ module.exports = {
             title: 'Plugins',
             collapsable: false,
             children: [
-              ['plugins/marrytts-setup', 'Marry TTS Server'],
-              ['plugins/pocketsphinx-install', 'PocketSphinx & Phonetisaurus'],
-              ['plugins/deepspeech-setup', 'Mozilla DeepSpeech']
+              'plugins/marrytts-setup',
+              'plugins/pocketsphinx-install',
+              'plugins/deepspeech-setup'
             ]
           },
           {
