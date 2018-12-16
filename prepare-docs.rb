@@ -18,11 +18,11 @@ if ENV["N_DOCS_VERSION"] then
     $version += ".0" if $version.split(".").length == 2
 end
 
-if (ARGV[0] && ARGV[0] == "--no-clone" && Dir.exists?(".vuepress/naomi-docs")) then
+if (ARGV[0] && ARGV[0] == "--no-clone" && Dir.exists?("docs")) then
     puts ">>> Re-using existing clone"
 else
-    puts ">>> Deleting .vuepress/naomi-docs if existing..."
-    FileUtils.rm_rf(".vuepress/naomi-docs")
+    puts ">>> Deleting docs if existing..."
+    FileUtils.rm_rf("docs")
 
     puts ">>> Cloning naomi-docs"
     `git clone https://github.com/naomiproject/naomi-docs docs`
