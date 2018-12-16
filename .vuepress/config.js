@@ -201,7 +201,7 @@ module.exports = {
             title: 'Plugins',
             collapsable: false,
             children: [
-              'plugins/marrytts-setup',
+              'plugins/marytts-setup',
               'plugins/pocketsphinx-install',
               'plugins/deepspeech-setup'
             ]
