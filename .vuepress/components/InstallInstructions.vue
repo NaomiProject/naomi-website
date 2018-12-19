@@ -39,14 +39,14 @@
         :class="{ 'selected': selectedVersion === version[0] }" @click="selectVersion(version[0])">
         <strong>{{version[1]}}</strong><br />
         <small v-if="version[0] === 'stable'">{{$page.frontmatter.currentVersion}}</small>
-        <small v-if="version[0] === 'testing'">{{$page.frontmatter.currentMilestoneVersion}}</small>
-        <small v-if="version[0] === 'snapshot'">{{$page.frontmatter.currentSnapshotVersion}}</small>
+        <small v-if="version[0] === 'dev'">{{$page.frontmatter.currentMilestoneVersion}}</small>
+        <!--<small v-if="version[0] === 'snapshot'">{{$page.frontmatter.currentSnapshotVersion}}</small>-->
       </div>
     </div>
 
     <div v-if="selectedVersion" class="tip custom-block">
       <p v-if="selectedVersion === 'stable'"><strong>Stable</strong> versions are thoroughly tested semi-annual official releases of Naomi. Use the stable version for your production environment if you don't need the latest enhancements and prefer a robust system.</p>
-      <p v-if="selectedVersion === 'testing'"><strong>Milestone</strong> versions are intermediary releases of the next Naomi version, released about once a month, and they include the new recently added features and bugfixes. They are a good compromise between the current stable version and the bleeding-edge and potentially unstable snapshot version.</p>
+      <p v-if="selectedVersion === 'dev'"><strong>Milestone</strong> versions are intermediary releases of the next Naomi version, released about once a month, and they include the new recently added features and bugfixes. They are a good compromise between the current stable version and the bleeding-edge and potentially unstable snapshot version.</p>
       <p v-if="selectedVersion === 'snapshot'"><strong>Snapshot</strong> versions are at most 1 or 2 days old and include the latest code. Use a snapshot for testing out very recent changes, but be aware some snapshots might be unstable. Use in production at your own risk!</p>
     </div>
 
@@ -77,7 +77,7 @@
         <li>Add the HTTPS transport for APT</li>
           <div class="language-shell"><pre class="language-shell"><code>sudo apt-get install apt-transport-https</code></pre></div>
         <li>Add the repository</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">echo 'deb https://dl.bintray.com/naomiproject/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/naomi.list</code><code v-else-if="selectedVersion === 'testing'">echo 'deb https://dl.bintray.com/naomiproject/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/naomi.list</code><code v-else="selectedVersion === 'snapshot'">echo 'deb https://naomi.jfrog.io/naomiproject/naomi-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/naomi.list</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">echo 'deb https://dl.bintray.com/naomiproject/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/naomi.list</code><code v-else-if="selectedVersion === 'dev'">echo 'deb https://dl.bintray.com/naomiproject/apt-repo2 dev main' | sudo tee /etc/apt/sources.list.d/naomi.list</code><code v-else="selectedVersion === 'snapshot'">echo 'deb https://naomi.jfrog.io/naomiproject/naomi-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/naomi.list</code></pre></div>
         <li>Go into the repository</li>
           <div class="language-shell"><pre class="language-shell"><code>cd naomi</code></pre></div>
         <li>Setup the install</li>
@@ -96,9 +96,9 @@
       <ol>
         <li>Create a new <code>/etc/yum.repos.d/naomi.repo</code> file with the following content:</li>
         <div class="language-ini">
-<pre class="language-ini"><code>[Naomi-{{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'testing' ? 'Testing' : 'Snapshots'}}]
-name=Naomi 2.x.x {{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'testing' ? 'Testing' : 'Snapshots'}}
-baseurl={{selectedVersion === 'stable' ? 'https://dl.bintray.com/naomiproject/rpm-repo2/stable' : selectedVersion === 'testing' ? 'https://dl.bintray.com/naomiproject/rpm-repo2/testing' : 'https://naomi.jfrog.io/naomiproject/naomi-linuxpkg-rpm/unstable'}}
+<pre class="language-ini"><code>[Naomi-{{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'dev' ? 'Dev' : 'Snapshots'}}]
+name=Naomi 2.x.x {{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'dev' ? 'Dev' : 'Snapshots'}}
+baseurl={{selectedVersion === 'stable' ? 'https://dl.bintray.com/naomiproject/rpm-repo2/stable' : selectedVersion === 'dev' ? 'https://dl.bintray.com/naomiproject/rpm-repo2/dev' : 'https://naomi.jfrog.io/naomiproject/naomi-linuxpkg-rpm/unstable'}}
 gpgcheck=1
 gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=naomiproject
 enabled=1
@@ -149,7 +149,7 @@ usermod -a -G naomi myownuser
       </ol>-->
     </div>
 
-    <div v-if="selectedSystem !== 'docker' && (selectedVersion === 'stable' || selectedVersion === 'testing')">
+    <div v-if="selectedSystem !== 'docker' && (selectedVersion === 'stable' || selectedVersion === 'dev')">
       <!--<hr>
       <h3>Manual Installation</h3>
       <ol>
@@ -366,7 +366,7 @@ export default {
   methods: {
     selectSystem (system) {
       this.selectedSystem = system
-      if (system !== 'tux' && this.selectedVersion === 'testing') {
+      if (system !== 'tux' && this.selectedVersion === 'dev') {
         this.selectedVersion = null
       }
     },
@@ -381,39 +381,42 @@ export default {
     versions () {
       return [
         ['stable', 'Stable'],
-        ['testing', 'Milestone'],
-        ['snapshot', 'Snapshot']
+        ['dev', 'Milestone'],
+//        ['snapshot', 'Snapshot']
       ]
     },
     runtimeDownloadLink () {
       if (this.selectedVersion === 'stable') {
         return `https://bintray.com/naomiproject/mvn/download_file?file_path=com%2Fprojectnaomi%2Fdistro%2Fnaomi%2F${this.$page.frontmatter.currentVersion}%2Fnaomi-${this.$page.frontmatter.currentVersion}.zip`
-      } else if (this.selectedVersion === 'testing') {
+      } else if (this.selectedVersion === 'dev') {
         return `https://naomi.jfrog.io/naomiproject/libs-milestone-local/com/projectnaomi/distro/naomi/${this.$page.frontmatter.currentMilestoneVersion}/naomi-${this.$page.frontmatter.currentMilestoneVersion}.zip`
       }
     },
     addonsDownloadLink () {
       if (this.selectedVersion === 'stable') {
         return `https://bintray.com/naomiproject/mvn/download_file?file_path=com%2Fnaomi%2Fdistro%2Fnaomi-addons%2F${this.$page.frontmatter.currentVersion}%2Fnaomi-addons-${this.$page.frontmatter.currentVersion}.kar`
-      } else if (this.selectedVersion === 'testing') {
+      } else if (this.selectedVersion === 'dev') {
         return `https://naomi.jfrog.io/naomiproject/libs-milestone-local/com/naomi/distro/naomi-addons/${this.$page.frontmatter.currentMilestoneVersion}/naomi-addons-${this.$page.frontmatter.currentMilestoneVersion}.kar`
       }
     },
     legacyAddonsDownloadLink () {
       if (this.selectedVersion === 'stable') {
         return `https://bintray.com/naomiproject/mvn/download_file?file_path=com%2Fnaomi%2Fdistro%2Fnaomi-addons-legacy%2F${this.$page.frontmatter.currentVersion}%2Fnaomi-addons-legacy-${this.$page.frontmatter.currentVersion}.kar`
-      } else if (this.selectedVersion === 'testing') {
+      } else if (this.selectedVersion === 'dev') {
         return `https://naomi.jfrog.io/naomiproject/libs-milestone-local/com/naomi/distro/naomi-addons-legacy/${this.$page.frontmatter.currentMilestoneVersion}/naomi-addons-legacy-${this.$page.frontmatter.currentMilestoneVersion}.kar`
       }
     },
     currentDownloadVersion () {
       if (this.selectedVersion === 'stable') {
         return this.$page.frontmatter.currentVersion
-      } else if (this.selectedVersion === 'testing') {
-        return this.$page.frontmatter.currentMilestoneVersion
       } else {
-        return this.$page.frontmatter.currentSnapshotVersion
+        return this.$page.frontmatter.currentMilestoneVersion
       }
+//      } else if (this.selectedVersion === 'dev') {
+//        return this.$page.frontmatter.currentMilestoneVersion
+//      } else {
+//        return this.$page.frontmatter.currentSnapshotVersion
+//      }
     },
     currentVersionLabel () {
       if (this.selectedVersion) {
