@@ -1,6 +1,6 @@
 <template>
   <div class="jumbotron">
-    <!--<div class="hero-image"></div>-->
+    <div class="hero-image"></div>
     <ClientOnly><img draggable="false" class="jumbotron-pattern" src="/pattern.png" alt=""></ClientOnly>
     <div class="hero-content">
       <div class="white-logo"><ClientOnly><img src="/naomi-logo_white.png" class="white-logo" /></ClientOnly></div>
@@ -14,44 +14,34 @@
 
 <style lang="stylus">
 .jumbotron
-  background url(/editor_codes_bg.jpg)
-  //background-repeat none 
-  //width 100%
-  //height 800px
-  //position absolute
-  //justify-content center
-  //align-items center
-  width: 100%;
-  height: 800px;
-  display: block;
-  //min-height: 500px;
-  position: relative;
-  z-index: 5;
-  background-size: cover;
-  //margin-bottom: 130px;
+  background #1397d5
+  position absolute
+  top 0
+  left 0
+  right 0
+  // max-height 700px
+  height 90vh
+  min-height 600px
+  display flex
+  justify-content center
+  align-items center
   .jumbotron-pattern
     opacity 0.1
-    color black
-    width 100%
-    height 800px
-    //min-height 500px
+    width calc(100vw - 20px)
+    height 105vh
+    min-height 600px
     position absolute
     object-fit cover
     user-select none
   .hero-content
+    margin 90px 30px
     z-index 1
     max-width 960px
-    margin auto
-    display table
-    padding-top 174px
-    //position absolute
-    //justify-content center
-    //align-items center
     .white-logo
-      width 520px
-      height 131px
+      width 240px
+      height 80px
       img
-        filter drop-shadow(0 0 20px #666)
+        filter drop-shadow(0 0 10px #666)
     h1.hero
       animation 1.5s ease-out 0s 1 slideIn1
       color white
@@ -82,7 +72,8 @@
       box-sizing border-box
       border 1px solid #fff
       &:hover
-        background-color rgba(255, 255, 255, 0.2)
+        background-color #fff
+        color #1397d5
     .demo-button
       animation 2s ease-out 0s 1 slideIn3
       margin-top 4rem
@@ -107,4 +98,15 @@
         font-size 1.4rem
       .demo-button
         font-size 1.4rem
+      
+  .hero-image
+    animation 2.5s ease-out 0s 1 fadeIn4
+    background url(/hero.jpg) bottom 0 left 50%/contain no-repeat
+    background-repeat none 
+    width 95%
+    height 700px
+    position absolute
+    top calc(100% - 700px)
+    opacity 0.5
+
 </style>

@@ -4,7 +4,7 @@
     {{$page.frontmatter.alert}}
     </div>
     <div class="alert-button-container">
-      <router-link :to="$page.frontmatter.alert_link || '/download'" class="alert-button slide">Download it Now! ➜</router-link>
+      <router-link :to="$page.frontmatter.alert_link || '/download/'" class="alert-button slide">Download it Now! ➜</router-link>
     </div>
   </section>
 </template>

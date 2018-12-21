@@ -99,9 +99,9 @@ header.headroom--top
     color black
   .nav-links > .nav-item:last-child
     svg
-        //color white
+        color white
   .dropdown-title .arrow
-      //border-top 6px solid #fff
+      border-top 6px solid #fff
 
 .homepage header.headroom:not(.headroom--not-top)
   animation 1s ease-out 0s 1 headerAppear
@@ -109,8 +109,8 @@ header.headroom--top
 
 .after-jumbotron
   .placeholder
-    //height 800px
-    //min-height calc(600px - 3.6rem)
+    height calc(90vh - 3.6rem)
+    min-height calc(600px - 3.6rem)
 
 </style>
 
