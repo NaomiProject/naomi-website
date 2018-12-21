@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>PocketSphinx Install | Naomi</title>
+    <meta name="description" content="Naomi - an open source platform for developing always-on, voice-controlled applications">
+    <link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/naomi-logo.png">
+    <meta property="og:title" content="Pocketsphinx and Phonetisaurus Guide"><meta property="og:description" content="an open source platform for developing always-on, voice-controlled applications">
+    <link rel="preload" href="/assets/css/0.styles.1a148d85.css" as="style"><link rel="preload" href="/assets/js/app.0fe37812.js" as="script"><link rel="preload" href="/assets/js/66.7d3ccb73.js" as="script"><link rel="preload" href="/assets/js/24.dbcb1209.js" as="script"><link rel="preload" href="/assets/js/25.16f44f9e.js" as="script">
+    <link rel="stylesheet" href="/assets/css/0.styles.1a148d85.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/naomi-logo.png" alt="Naomi" class="logo"> <span class="site-name can-hide">Naomi</span></a> <div class="links" style="max-width:nullpx;"><form id="search-form" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><a href="/download/" class="nav-link">Download</a></div><div class="nav-item"><a href="/docs/" class="nav-link router-link-active">Documentation</a></div><div class="nav-item"><a href="/community/" class="nav-link">Community</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">About</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Get Involved</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/who-we-are.html" class="nav-link">Who We Are</a></li><li class="dropdown-subitem"><a href="/about/contributing.html" class="nav-link">Contribute</a></li></ul></li><li class="dropdown-item"><h4>Resources</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/showcase.html" class="nav-link">Showcase/How-tos</a></li><li class="dropdown-subitem"><a href="/privacy.html" class="nav-link">Privacy Policy</a></li><li class="dropdown-subitem"><a href="https://myNaomi.projectnaomi.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  myNaomi
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://github.com/naomiproject" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/download/" class="nav-link">Download</a></div><div class="nav-item"><a href="/docs/" class="nav-link router-link-active">Documentation</a></div><div class="nav-item"><a href="/community/" class="nav-link">Community</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">About</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Get Involved</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/who-we-are.html" class="nav-link">Who We Are</a></li><li class="dropdown-subitem"><a href="/about/contributing.html" class="nav-link">Contribute</a></li></ul></li><li class="dropdown-item"><h4>Resources</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/showcase.html" class="nav-link">Showcase/How-tos</a></li><li class="dropdown-subitem"><a href="/privacy.html" class="nav-link">Privacy Policy</a></li><li class="dropdown-subitem"><a href="https://myNaomi.projectnaomi.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  myNaomi
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://github.com/naomiproject" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>Welcome to Naomi</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/docs/" class="sidebar-link">Introduction</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Installation Guide</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/docs/installation/" class="sidebar-link">Installation Overview</a></li><li><a href="/docs/installation/linux.html" class="sidebar-link">Linux</a></li><li><a href="/docs/installation/windows.html" class="sidebar-link">Windows</a></li><li><a href="/docs/installation/macos.html" class="sidebar-link">macOS</a></li><li><a href="/docs/installation/naobian.html" class="sidebar-link">Naobian</a></li><li><a href="/docs/installation/rasppi.html" class="sidebar-link">Raspberry Pi</a></li><li><a href="/docs/installation/pine.html" class="sidebar-link">Pine A64</a></li><li><a href="/docs/installation/docker.html" class="sidebar-link">Docker</a></li><li><a href="/docs/installation/synology.html" class="sidebar-link">Synology DiskStation</a></li><li><a href="/docs/installation/qnap.html" class="sidebar-link">QNAP NAS</a></li><li><a href="/docs/installation/security.html" class="sidebar-link">Security</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Configuration Guide</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/docs/configuration/" class="sidebar-link">Configuration Overview</a></li><li><a href="/docs/configuration/audio.html" class="sidebar-link">Audio</a></li><li><a href="/docs/configuration/tts.html" class="sidebar-link">TTS</a></li><li><a href="/docs/configuration/stt.html" class="sidebar-link">STT</a></li><li><a href="/docs/configuration/profile.html" class="sidebar-link">Profile</a></li><li><a href="/docs/configuration/plugins.html" class="sidebar-link">Plugins</a></li><li><a href="/docs/configuration/editors.html" class="sidebar-link">Editors</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading open"><span>Plugins</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/docs/plugins/marytts-server.html" class="sidebar-link">MaryTTS Server</a></li><li><a href="/docs/plugins/pocketsphinx-install.html" class="active sidebar-link">PocketSphinx Install</a></li><li><a href="/docs/plugins/deepspeech-setup.html" class="sidebar-link">DeepSpeech Setup</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Developer Guide</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/docs/developer/" class="sidebar-link">Development Overview</a></li><li><a href="/docs/developer/contributing/contributing.html" class="sidebar-link">Contribution</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="pocketsphinx-setup"><a href="#pocketsphinx-setup" aria-hidden="true" class="header-anchor">#</a> PocketSphinx setup</h1> <p>These instructions are for installing pocketsphinx on Debian 9 (Stretch). I have also tested on Raspbian Stretch. These instructions should translate to other distros pretty easily. In many cases the package names will be the same, and in other cases you should be able to locate the package by searching for its name or the name of a file within it.</p> <h2 id="test-the-microphone-hello-can-you-hear-me"><a href="#test-the-microphone-hello-can-you-hear-me" aria-hidden="true" class="header-anchor">#</a> test the microphone (&quot;hello, can you hear me?&quot;)</h2> <p>You want to make sure that the level indicator at the bottom of the screen goes up to about 60% when you are speaking. Use alsamixer to adjust your recording and playback levels.</p> <p>Also, play it back and make sure the audio does not contain any hissing or popping.</p> <p>We will use Phonetisaurus to prepare PocketSphinx to transcribe this audio later in these instructions.</p> <div class="language-console extra-class"><pre class="language-text"><code>[~]$ sudo apt install alsa-utils
+
+[~]$ alsamixer
+
+[~]$ arecord -vv -r16000 -fS16_LE -c1 -d3 test.wav
+
+[~]$ aplay test.wav
+</code></pre></div><p>If you are on a Raspberry Pi, most likely when you use the arecord command, you will get an error such as &quot;arecord: main:788: audio open error: No such file or directory&quot;. This is because the first sound device (card 0) is output only. You will need to specify the recording device. To get a list of recording devices, use &quot;arecord -l&quot;. This will return something like this:</p> <div class="language-console extra-class"><pre class="language-text"><code>[~]$ arecord -l
+**** List of CAPTURE Hardware Devices ****
+card 1: Phone [PH USB Speaker Phone], device 0: USB Audio [USB Audio]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+</code></pre></div><p>This means that audio card 1, subdevice 0 is capable of recording audio. Usually you will either reference the device as hw:1,0 or plughw:1,0. hw:1,0 accesses the device more directly, while plughw:1,0 includes a translation layer allowing it to be used to record in formats that the device does not support natively. You can use &quot;arecord -L&quot; to see which interfaces are available:</p> <div class="language-console extra-class"><pre class="language-dsl"><code><span class="token punctuation">[</span><span class="token operator">~</span><span class="token punctuation">]</span>$ arecord <span class="token operator">-</span>L
+null
+    Discard all samples<span class="token tag"> (playback)</span> or generate zero samples<span class="token tag"> (capture)</span>
+default<span class="token operator">:</span>CARD<span class="token operator">=</span>Phone
+    PH USB Speaker Phone<span class="token punctuation">,</span> USB Audio
+    <span class="token keyword">Default</span> <span class="token class-name">Audio</span> Device
+sysdefault<span class="token operator">:</span>CARD<span class="token operator">=</span>Phone
+    PH USB Speaker Phone<span class="token punctuation">,</span> USB Audio
+    <span class="token keyword">Default</span> <span class="token class-name">Audio</span> Device
+dmix<span class="token operator">:</span>CARD<span class="token operator">=</span>Phone<span class="token punctuation">,</span>DEV<span class="token operator">=</span><span class="token number">0</span>
+    PH USB Speaker Phone<span class="token punctuation">,</span> USB Audio
+    Direct sample mixing device
+dsnoop<span class="token operator">:</span>CARD<span class="token operator">=</span>Phone<span class="token punctuation">,</span>DEV<span class="token operator">=</span><span class="token number">0</span>
+    PH USB Speaker Phone<span class="token punctuation">,</span> USB Audio
+    Direct sample snooping device
+hw<span class="token operator">:</span>CARD<span class="token operator">=</span>Phone<span class="token punctuation">,</span>DEV<span class="token operator">=</span><span class="token number">0</span>
+    PH USB Speaker Phone<span class="token punctuation">,</span> USB Audio
+    Direct hardware device without any conversions
+plughw<span class="token operator">:</span>CARD<span class="token operator">=</span>Phone<span class="token punctuation">,</span>DEV<span class="token operator">=</span><span class="token number">0</span>
+    PH USB Speaker Phone<span class="token punctuation">,</span> USB Audio
+    Hardware device with all software conversions
+</code></pre></div><p>Use &quot;-D&quot; to specify the device, and &quot;--list-hw-params&quot; to get more information about what formats the device supports:</p> <div class="language-console extra-class"><pre class="language-text"><code>[~]$ arecord -Dhw:1,0 --dump-hw-params
+Recording WAVE 'stdin' : Unsigned 8 bit, Rate 8000 Hz, Mono
+HW Params of device &quot;hw:1,0&quot;:
+--------------------
+ACCESS:  MMAP_INTERLEAVED RW_INTERLEAVED
+FORMAT:  S16_LE
+SUBFORMAT:  STD
+SAMPLE_BITS: 16
+FRAME_BITS: 32
+CHANNELS: 2
+RATE: 16000
+PERIOD_TIME: [1000 8192000]
+PERIOD_SIZE: [16 131072]
+PERIOD_BYTES: [64 524288]
+PERIODS: [2 1024]
+BUFFER_TIME: [2000 16384000]
+BUFFER_SIZE: [32 262144]
+BUFFER_BYTES: [128 1048576]
+TICK_TIME: ALL
+--------------------
+arecord: set_params:1299: Sample format non available
+Available formats:
+- S16_LE
+</code></pre></div><p>The important bits here are &quot;CHANNELS: 2&quot;, &quot;RATE: 16000&quot; and &quot;Available formats: - S16_LE&quot;. The rate and format match the format that Naomi expects audio to be captured in, but we need mono audio, not stereo, so we will most likely need to use the plughw version.</p> <div class="language-console extra-class"><pre class="language-text"><code>[~]$ arecord -Dhw:1,0 -vv -r16000 -fS16_LE -c1 -d3 test.wav
+Recording WAVE 'test.wav' : Signed 16 bit Little Endian, Rate 16000 Hz, Mono
+arecord: set_params:1305: Channels count non available
+
+[~]$ arecord -Dplughw:1,0 -vv -r16000 -fS16_LE -c1 -d3 test.wav
+Recording WAVE 'test.wav' : Signed 16 bit Little Endian, Rate 16000 Hz, Mono
+</code></pre></div><h1 id="install-phonetisaurus"><a href="#install-phonetisaurus" aria-hidden="true" class="header-anchor">#</a> Install Phonetisaurus</h1> <h2 id="build-and-install-openfst"><a href="#build-and-install-openfst" aria-hidden="true" class="header-anchor">#</a> Build and install openfst</h2> <div class="language-console extra-class"><pre class="language-text"><code>[~]$ sudo apt install gcc g++ make python-pip autoconf libtool
+[~]$ wget http://www.openfst.org/twiki/pub/FST/FstDownload/openfst-1.6.9.tar.gz
+[~]$ tar -zxvf openfst-1.6.9.tar.gz
+[~]$ cd openfst-1.6.9
+[~/openfst-1.6.9]$ autoreconf -i
+[~/openfst-1.6.9]$ ./configure --enable-static --enable-shared --enable-far --enable-lookahead-fsts --enable-const-fsts --enable-pdt --enable-ngram-fsts --enable-linear-fsts --prefix=/usr
+[~/openfst-1.6.9]$ make
+[~/openfst-1.6.9]$ sudo make install
+[~/openfst-1.6.9]$ cd
+</code></pre></div><h2 id="build-and-install-mitlm-0-4-2"><a href="#build-and-install-mitlm-0-4-2" aria-hidden="true" class="header-anchor">#</a> Build and install mitlm-0.4.2</h2> <p>Building mitlm is only necessary because we are training our own fst model a little further on.</p> <div class="language-console extra-class"><pre class="language-text"><code>[~]$ sudo apt install git gfortran autoconf-archive
+[~]$ git clone https://github.com/mitlm/mitlm.git
+[~]$ cd mitlm
+[~/mitlm]$ ./autogen.sh
+[~/mitlm]$ make
+[~/mitlm]$ sudo make install
+[~/mitlm]$ sudo ldconfig
+[~/mitlm]$ cd
+</code></pre></div><h2 id="build-and-install-phonetisaurus"><a href="#build-and-install-phonetisaurus" aria-hidden="true" class="header-anchor">#</a> Build and install Phonetisaurus</h2> <div class="language-console extra-class"><pre class="language-text"><code>[~]$ git clone https://github.com/AdolfVonKleist/Phonetisaurus.git
+[~]$ cd Phonetisaurus
+[~/Phonetisaurus]$ ./configure --enable-python
+[~/Phonetisaurus]$ make
+[~/Phonetisaurus]$ sudo make install
+[~/Phonetisaurus]$ cd python
+[~/Phonetisaurus/python]$ cp -iv ../.libs/Phonetisaurus.so ./
+[~/Phonetisaurus/python]$ sudo python setup.py install
+[~/Phonetisaurus/python]$ cd
+</code></pre></div><h1 id="build-and-install-cmuclmtk"><a href="#build-and-install-cmuclmtk" aria-hidden="true" class="header-anchor">#</a> Build and install CMUCLMTK</h1> <div class="language-console extra-class"><pre class="language-text"><code>[~]$ sudo apt install subversion
+[~]$ svn co https://svn.code.sf.net/p/cmusphinx/code/trunk/cmuclmtk/
+[~]$ cd cmuclmtk
+[~/cmuclmtk]$ ./autogen.sh
+[~/cmuclmtk]$ make
+[~/cmuclmtk]$ sudo make install
+[~/cmuclmtk]$ sudo ldconfig
+[~/cmuclmtk]$ cd
+[~]$ sudo pip install cmuclmtk
+</code></pre></div><h1 id="install-pocketsphinx"><a href="#install-pocketsphinx" aria-hidden="true" class="header-anchor">#</a> Install Pocketsphinx</h1> <h2 id="build-and-install-sphinxbase-0-8"><a href="#build-and-install-sphinxbase-0-8" aria-hidden="true" class="header-anchor">#</a> Build and install sphinxbase-0.8</h2> <div class="language-console extra-class"><pre class="language-text"><code>[~]$ sudo apt install swig libasound2-dev bison
+[~]$ git clone --recursive https://github.com/cmusphinx/pocketsphinx-python.git
+[~]$ cd pocketsphinx-python/sphinxbase
+[~/pocketsphinx-python/sphinxbase]$ ./autogen.sh
+[~/pocketsphinx-python/sphinxbase]$ make
+[~/pocketsphinx-python/sphinxbase]$ sudo make install
+[~/pocketsphinx-python/sphinxbase]$ cd ..
+</code></pre></div><h2 id="build-and-install-pocketsphinx-0-8"><a href="#build-and-install-pocketsphinx-0-8" aria-hidden="true" class="header-anchor">#</a> Build and install pocketsphinx-0.8</h2> <div class="language-console extra-class"><pre class="language-text"><code>[~/pocketsphinx-python]$ cd pocketsphinx
+[~/pocketsphinx-python/pocketsphinx]$ ./autogen.sh
+[~/pocketsphinx-python/pocketsphinx]$ ./configure
+[~/pocketsphinx-python/pocketsphinx]$ make
+[~/pocketsphinx-python/pocketsphinx]$ sudo make install
+[~/pocketsphinx-python/pocketsphinx]$ cd ..
+</code></pre></div><h2 id="install-python-pocketsphinx-library"><a href="#install-python-pocketsphinx-library" aria-hidden="true" class="header-anchor">#</a> Install python PocketSphinx library</h2> <div class="language-console extra-class"><pre class="language-text"><code>[~/pocketsphinx-python]$ sudo python setup.py install
+</code></pre></div><h2 id="format-cmudict-dict-and-train-model-fst"><a href="#format-cmudict-dict-and-train-model-fst" aria-hidden="true" class="header-anchor">#</a> Format cmudict.dict and train model.fst</h2> <p>I'm not exactly sure why this is, but apparently it is necessary to reformat the default cmudict.dict file.</p> <ul><li>When there are multiple pronunciations for a word, this removes the trailing &quot;(n)&quot;.</li> <li>Then it compresses multiple white spaces into a single space.</li> <li>Then it removes white space from the beginning and end of the line.</li> <li>Finally, it replaces the first space on the line with a tab character.</li></ul> <div class="language-console extra-class"><pre class="language-text"><code>[~/pocketsphinx-python]$ cd pocketsphinx/model/en-us
+[~/pocketsphinx-python/pocketsphinx/model/en-us]$ cat cmudict-en-us.dict | perl -pe 's/^([^\s]*)\(([0-9]+)\)/\1/;s/\s+/ /g;s/^\s+//;s/\s+$//; @_=split(/\s+/); $w=shift(@_);$_=$w.&quot;\t&quot;.join(&quot; &quot;,@_).&quot;\n&quot;;' &gt; cmudict-en-us.formatted.dict
+[~/pocketsphinx-python/pocketsphinx/model/en-us]$ phonetisaurus-train --lexicon cmudict-en-us.formatted.dict --seq2_del
+[~/pocketsphinx-python/pocketsphinx/model/en-us]$ cd
+</code></pre></div><h2 id="test"><a href="#test" aria-hidden="true" class="header-anchor">#</a> Test</h2> <div class="language-console extra-class"><pre class="language-text"><code>[~]$ mkdir test
+[~]$ cd test
+[~/test]$ echo &quot;&lt;s&gt; hello can you hear me &lt;/s&gt;&quot; &gt; test_reference.txt
+</code></pre></div><h2 id="create-test-vocab"><a href="#create-test-vocab" aria-hidden="true" class="header-anchor">#</a> Create test.vocab</h2> <div class="language-console extra-class"><pre class="language-text"><code>[~/test]$ text2wfreq &lt; test_reference.txt | wfreq2vocab &gt; test.vocab
+</code></pre></div><h2 id="create-test-idngram"><a href="#create-test-idngram" aria-hidden="true" class="header-anchor">#</a> Create test.idngram</h2> <div class="language-console extra-class"><pre class="language-text"><code>[~/test]$ text2idngram -vocab test.vocab -idngram test.idngram &lt; test_reference.txt
+</code></pre></div><h2 id="create-test-lm"><a href="#create-test-lm" aria-hidden="true" class="header-anchor">#</a> Create test.lm</h2> <div class="language-console extra-class"><pre class="language-text"><code>[~/test]$ idngram2lm -vocab_type 0 -idngram test.idngram -vocab test.vocab -arpa test.lm
+</code></pre></div><h2 id="create-test-formatted-dict"><a href="#create-test-formatted-dict" aria-hidden="true" class="header-anchor">#</a> Create test.formatted.dict</h2> <div class="language-console extra-class"><pre class="language-text"><code>[~/test]$ phonetisaurus-g2pfst --model=`ls ~/pocketsphinx-python/pocketsphinx/model/en-us/train/model.fst` --nbest=1 --beam=1000 --thresh=99.0 --accumulate=true --pmass=0.85 --nlog_probs=false --wordlist=./test.vocab &gt; test.dict
+[~/test]$ cat test.dict | sed -rne '/^([[:lower:]])+\s/p' | perl -pe 's/([0-9])+//g;s/\s+/ /g;@_=split(/\s+/);$w=shift(@_);$_=$w.&quot;\t&quot;.join(&quot; &quot;,@_).&quot;\n&quot;;' &gt; test.formatted.dict
+</code></pre></div><h2 id="test-with-audio-file"><a href="#test-with-audio-file" aria-hidden="true" class="header-anchor">#</a> Test with audio file</h2> <div class="language-console extra-class"><pre class="language-text"><code>[~/test]$ pocketsphinx_continuous -hmm ~/pocketsphinx-python/pocketsphinx/model/en-us/en-us -lm ./test.lm -dict ./test.formatted.dict -samprate 16000/8000/48000 -infile ~/test.wav 2&gt;/dev/null
+</code></pre></div><h2 id="test-with-microphone"><a href="#test-with-microphone" aria-hidden="true" class="header-anchor">#</a> Test with microphone</h2> <div class="language-console extra-class"><pre class="language-text"><code>[~/test]$ pocketsphinx_continuous -hmm ~/pocketsphinx-python/pocketsphinx/model/en-us/en-us -lm ./test.lm -dict ./test.formatted.dict -samprate 16000/8000/48000 -inmic yes 2&gt;/dev/null
+</code></pre></div><p>Here's what this section of the profile.yml looks like</p> <div class="language-console extra-class"><pre class="language-text"><code>active_stt:
+  engine: sphinx
+pocketsphinx:
+  fst_model: /home/pi/pocketsphinx-python/pocketsphinx/model/en-us/train/model.fst
+  hmm_dir: /home/pi/pocketsphinx-python/pocketsphinx/model/en-us/en-us
+  phonetisaurus_executable: phonetisaurus-g2pfst
+</code></pre></div><div class="page-versions"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Version: latest</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><a class="current">latest</a></li><li class="dropdown-item"><a href="https://www.projectnaomi.com/v3.0/docs/plugins/pocketsphinx-install.html">3.0</a></li><li class="dropdown-item"><a href="https://www.projectnaomi.com/v2.2/docs/plugins/pocketsphinx-install.html">2.2</a></li></ul></div></div> <div class="editLink"><em>Caught a mistake or want to contribute to the documentation? <a target="_blank" href="https://github.com/naomiproject/naomi-docs/edit/master/plugins/pocketsphinx-install.md">Edit this page on GitHub<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></em></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/docs/plugins/marytts-server.html" class="prev">
+          MaryTTS Server
+        </a></span> <span class="next"><a href="/docs/plugins/deepspeech-setup.html">
+          DeepSpeech Setup
+        </a>
+        →
+      </span></p></div> <footer><div class="social-icons"><a href="https://www.instagram.com/explore/tags/naomistation/" target="_blank"><svg class="social-icon instagram"><path d="M32 7.075c-1.175 0.525-2.444 0.875-3.769 1.031 1.356-0.813 2.394-2.1 2.887-3.631-1.269 0.75-2.675 1.3-4.169 1.594-1.2-1.275-2.906-2.069-4.794-2.069-3.625 0-6.563 2.938-6.563 6.563 0 0.512 0.056 1.012 0.169 1.494-5.456-0.275-10.294-2.888-13.531-6.862-0.563 0.969-0.887 2.1-0.887 3.3 0 2.275 1.156 4.287 2.919 5.463-1.075-0.031-2.087-0.331-2.975-0.819 0 0.025 0 0.056 0 0.081 0 3.181 2.263 5.838 5.269 6.437-0.55 0.15-1.131 0.231-1.731 0.231-0.425 0-0.831-0.044-1.237-0.119 0.838 2.606 3.263 4.506 6.131 4.563-2.25 1.762-5.075 2.813-8.156 2.813-0.531 0-1.050-0.031-1.569-0.094 2.913 1.869 6.362 2.95 10.069 2.95 12.075 0 18.681-10.006 18.681-18.681 0-0.287-0.006-0.569-0.019-0.85 1.281-0.919 2.394-2.075 3.275-3.394z"></path></svg></a> <a href="https://github.com/naomiproject" target="_blank"><svg class="social-icon github"><path d="M10.369 24.837c0 0.125-0.144 0.225-0.325 0.225-0.206 0.019-0.35-0.081-0.35-0.225 0-0.125 0.144-0.225 0.325-0.225 0.188-0.019 0.35 0.081 0.35 0.225zM8.425 24.556c-0.044 0.125 0.081 0.269 0.269 0.306 0.162 0.063 0.35 0 0.387-0.125s-0.081-0.269-0.269-0.325c-0.162-0.044-0.344 0.019-0.387 0.144zM11.188 24.45c-0.181 0.044-0.306 0.163-0.287 0.306 0.019 0.125 0.181 0.206 0.369 0.163 0.181-0.044 0.306-0.163 0.287-0.288-0.019-0.119-0.188-0.2-0.369-0.181zM15.3 0.5c-8.669 0-15.3 6.581-15.3 15.25 0 6.931 4.362 12.863 10.594 14.95 0.8 0.144 1.081-0.35 1.081-0.756 0-0.387-0.019-2.525-0.019-3.837 0 0-4.375 0.938-5.294-1.863 0 0-0.713-1.819-1.737-2.288 0 0-1.431-0.981 0.1-0.962 0 0 1.556 0.125 2.412 1.613 1.369 2.413 3.662 1.719 4.556 1.306 0.144-1 0.55-1.694 1-2.106-3.494-0.387-7.019-0.894-7.019-6.906 0-1.719 0.475-2.581 1.475-3.681-0.162-0.406-0.694-2.081 0.162-4.244 1.306-0.406 4.313 1.688 4.313 1.688 1.25-0.35 2.594-0.531 3.925-0.531s2.675 0.181 3.925 0.531c0 0 3.006-2.1 4.313-1.688 0.856 2.169 0.325 3.838 0.163 4.244 1 1.106 1.613 1.969 1.613 3.681 0 6.031-3.681 6.512-7.175 6.906 0.575 0.494 1.063 1.431 1.063 2.9 0 2.106-0.019 4.712-0.019 5.225 0 0.406 0.288 0.9 1.081 0.756 6.25-2.075 10.488-8.006 10.488-14.938 0-8.669-7.031-15.25-15.7-15.25zM6.075 22.056c-0.081 0.063-0.063 0.206 0.044 0.325 0.1 0.1 0.244 0.144 0.325 0.063 0.081-0.063 0.063-0.206-0.044-0.325-0.1-0.1-0.244-0.144-0.325-0.063zM5.4 21.55c-0.044 0.081 0.019 0.181 0.144 0.244 0.1 0.063 0.225 0.044 0.269-0.044 0.044-0.081-0.019-0.181-0.144-0.244-0.125-0.038-0.225-0.019-0.269 0.044zM7.425 23.775c-0.1 0.081-0.063 0.269 0.081 0.387 0.144 0.144 0.325 0.163 0.406 0.063 0.081-0.081 0.044-0.269-0.081-0.387-0.138-0.144-0.325-0.163-0.406-0.063zM6.713 22.856c-0.1 0.063-0.1 0.225 0 0.369s0.269 0.206 0.35 0.144c0.1-0.081 0.1-0.244 0-0.387-0.088-0.144-0.25-0.206-0.35-0.125z"></path></svg></a> <a href="https://www.youtube.com/projectnaomi" target="_blank"><svg class="social-icon youtube"><path d="M31.681 9.6c0 0-0.313-2.206-1.275-3.175-1.219-1.275-2.581-1.281-3.206-1.356-4.475-0.325-11.194-0.325-11.194-0.325h-0.012c0 0-6.719 0-11.194 0.325-0.625 0.075-1.987 0.081-3.206 1.356-0.963 0.969-1.269 3.175-1.269 3.175s-0.319 2.588-0.319 5.181v2.425c0 2.587 0.319 5.181 0.319 5.181s0.313 2.206 1.269 3.175c1.219 1.275 2.819 1.231 3.531 1.369 2.563 0.244 10.881 0.319 10.881 0.319s6.725-0.012 11.2-0.331c0.625-0.075 1.988-0.081 3.206-1.356 0.962-0.969 1.275-3.175 1.275-3.175s0.319-2.587 0.319-5.181v-2.425c-0.006-2.588-0.325-5.181-0.325-5.181zM12.694 20.15v-8.994l8.644 4.513-8.644 4.481z"></path></svg></a></div> <div class="legal"><span class="copyright">Copyright © 2018 by the Naomi Community and Project Naomi</span> <br> <span class="legal-links"><a href="/privacy.html">Privacy policy</a> |
+    <a href="/imprint.html">Imprint</a></span></div> <img src="/icon.png" class="footer-logo"></footer></div> <!----></div></div>
+    <script src="/assets/js/app.0fe37812.js" defer></script><script src="/assets/js/66.7d3ccb73.js" defer></script><script src="/assets/js/24.dbcb1209.js" defer></script><script src="/assets/js/25.16f44f9e.js" defer></script>
+  </body>
+</html>

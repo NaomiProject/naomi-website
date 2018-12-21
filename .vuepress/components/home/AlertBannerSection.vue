@@ -4,14 +4,14 @@
     {{$page.frontmatter.alert}}
     </div>
     <div class="alert-button-container">
-      <router-link :to="$page.frontmatter.alert_link || '/blog/'" class="alert-button slide">Read the Blog ➜</router-link>
+      <router-link :to="$page.frontmatter.alert_link || '/download'" class="alert-button slide">Download it Now! ➜</router-link>
     </div>
   </section>
 </template>
 
 <style lang="stylus">
 .alert-banner
-  background-color #ff4411
+  background-color red
   font-size 2rem
   padding 0.5rem
   color white

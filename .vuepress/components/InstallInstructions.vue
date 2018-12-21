@@ -63,7 +63,7 @@
         <li>Insert the SD card in your device, ensure the network is connected (<router-link to="/docs/installation/naobian.html#wi-fi-based-setup-notes">or setup the Wi-Fi</router-link> first) and boot!</li>
         <li>Wait between 5 and 15 minutes for Naoian to perform its initial setup</li>
         <li v-if="selectedVersion !== 'stable'">Use the <code>naobian-config</code> tool (<router-link to="/docs/installation/naobian.html#naobian-configuration-tool">documentation</router-link>) to switch from the stable version to the {{selectedVersion}} version</li>
-        <li>Navigate with a web browser to <code>http://naobianpi:8080</code></li>        
+        <!--<li>Navigate with a web browser to <code>http://naobianpi:8080</code></li>-->
         <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
       </ol>
     </div>
@@ -72,12 +72,10 @@
       <hr>
       <h3>Manual Installation <span v-if="selectedSystem === 'tux'">(Recommended)</span></h3>
       <ol>
-        <li>Add the repository key</li>
-          <div class="language-shell"><pre class="language-shell"><code>wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=naomiproject' | sudo apt-key add -</code></pre></div>
-        <li>Add the HTTPS transport for APT</li>
-          <div class="language-shell"><pre class="language-shell"><code>sudo apt-get install apt-transport-https</code></pre></div>
-        <li>Add the repository</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">echo 'deb https://dl.bintray.com/naomiproject/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/naomi.list</code><code v-else-if="selectedVersion === 'dev'">echo 'deb https://dl.bintray.com/naomiproject/apt-repo2 dev main' | sudo tee /etc/apt/sources.list.d/naomi.list</code><code v-else="selectedVersion === 'snapshot'">echo 'deb https://naomi.jfrog.io/naomiproject/naomi-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/naomi.list</code></pre></div>
+        <li>Fetch the repository</li>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/stable/naomi-{{this.$page.frontmatter.currentVersion}}.zip" -o naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/dev/naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip" -o naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code></code></pre></div>
+        <li>Explode directory</li>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">unzip naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">unzip naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code></code></pre></div>
         <li>Go into the repository</li>
           <div class="language-shell"><pre class="language-shell"><code>cd naomi</code></pre></div>
         <li>Setup the install</li>
@@ -86,7 +84,7 @@
           <div class="language-shell"><pre class="language-shell"><code>./naomi-setup.sh</code></pre></div>
         <li>Run the app</li>
           <div class="language-shell"><pre class="language-shell"><code>python Naomi.py</code></pre></div>
-        <li>Navigate with a web browser to <code>http://&lt;ip-address&gt;:8080</code></li>
+        <!--<li>Navigate with a web browser to <code>http://&lt;ip-address&gt;:8080</code></li>-->
         <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
       </ol>
     </div>
@@ -98,7 +96,7 @@
         <div class="language-ini">
 <pre class="language-ini"><code>[Naomi-{{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'dev' ? 'Dev' : 'Snapshots'}}]
 name=Naomi 2.x.x {{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'dev' ? 'Dev' : 'Snapshots'}}
-baseurl={{selectedVersion === 'stable' ? 'https://dl.bintray.com/naomiproject/rpm-repo2/stable' : selectedVersion === 'dev' ? 'https://dl.bintray.com/naomiproject/rpm-repo2/dev' : 'https://naomi.jfrog.io/naomiproject/naomi-linuxpkg-rpm/unstable'}}
+baseurl={{selectedVersion === 'stable' ? 'https://dl.bintray.com/naomiproject/rpi-repo/stable' : selectedVersion === 'dev' ? 'https://dl.bintray.com/naomiproject/rpi-repo/dev' : 'https://naomi.jfrog.io/naomiproject/naomi-linuxpkg-rpm/unstable'}}
 gpgcheck=1
 gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=naomiproject
 enabled=1
@@ -112,7 +110,7 @@ enabled=1
           <div class="language-shell"><pre class="language-shell"><code>./naomi-setup.sh</code></pre></div>
         <li>Run the app</li>
           <div class="language-shell"><pre class="language-shell"><code>python Naomi.py</code></pre></div>
-        <li>Navigate with a web browser to <code>http://&lt;ip-address&gt;:8080</code></li>
+        <!--<li>Navigate with a web browser to <code>http://&lt;ip-address&gt;:8080</code></li>-->
         <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
       </ol>
     </div>    

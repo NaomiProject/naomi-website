@@ -69,7 +69,7 @@
 export default {
   data () {
     return {
-      versionNumbers: ['latest', '3.0', '2.2'],
+      versionNumbers: ['latest', '2.2'],
       currentVersion: 'latest',
       open: false
     }
@@ -96,7 +96,7 @@ export default {
         if (version === 'latest') {
           url = 'https://docs.projectnaomi.com' + url
         } else {
-          url = `https://${(version === '2.1') ? 'docs.' : 'www.'}projectnaomi.com${version === 'snapshot' ? '' : '/v' + version}${url}`
+          url = `https://${(version === '2.1') ? 'docs.' : 'www.'}projectnaomi.com${version === 'milestone' ? '' : '/v' + version}${url}`
         }
 
         return {
