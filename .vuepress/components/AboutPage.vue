@@ -36,7 +36,6 @@
   .header-pattern
     opacity 0.15
     width 100vw
-    // height 100vh
     position absolute
     top 0
     object-fit cover

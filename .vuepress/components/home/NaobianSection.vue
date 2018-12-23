@@ -36,7 +36,6 @@
   .Masthead
     width 100%
     z-index 10 !important
-    // height 300px !important
     .Masthead__image
       // height 300px !important
   .naobian-text

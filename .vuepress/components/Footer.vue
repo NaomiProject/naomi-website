@@ -71,8 +71,6 @@ export default {
   mounted () {
     if (this.$sr) {
       const sr = this.$sr
-    //import('scrollreveal').then(ScrollReveal => {
-      //const sr = new ScrollReveal.default()
       sr.reveal('.social-icons')
       sr.reveal('.legal', { scale: 1.0 })
       sr.reveal('.footer-logo', { scale: 0.5, duration: 1000 })

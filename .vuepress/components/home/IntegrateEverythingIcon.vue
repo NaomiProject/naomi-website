@@ -1,9 +1,5 @@
 <template>
   <div class="home-icon-container">
-    <!-- doesn't work with webpack, bummer
-     <img v-for="image in ['light', 'temperature', 'shutters',
-    'lock', 'key', 'homecinema', 'wifi', 'tv', 'washingmachine', 'car']"
-    class="home-icon" :src="`./images/icons/${image}.png`" /> -->
     <img class="home-icon" :class="{ current: current === 0 }" src="./images/icons/light.png" />
     <img class="home-icon" :class="{ current: current === 1 }" src="./images/icons/temperature.png" />
     <img class="home-icon" :class="{ current: current === 2 }" src="./images/icons/shutters.png" />

@@ -136,7 +136,6 @@ export default {
     OpenSourceSection,
     CommunitySection,
     Footer,
-    // TwitterTimeline
   },
   mounted () {
     if (this.$sr) {

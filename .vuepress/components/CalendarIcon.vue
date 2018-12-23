@@ -20,8 +20,6 @@ time.icon
   border-radius: 0.6em;
   box-shadow: 0 1px 0 #bdbdbd, 0 2px 0 #fff, 0 3px 0 #bdbdbd, 0 4px 0 #fff, 0 5px 0 #bdbdbd, 0 0 0 1px #bdbdbd;
   overflow: hidden;
-/*  -webkit-backface-visibility: hidden;
-  -webkit-transform: rotate(0deg) skewY(0deg);    */
   -webkit-transform-origin: 50% 10%;
   transform-origin: 50% 10%;
 }
@@ -31,7 +29,6 @@ time.icon *
   display: block;
   width: 100%;
   font-size: 1em;
-  /* font-weight: bold; */
   font-family: 'Open Sans', sans-serif;
   font-style: normal;
   text-align: center;

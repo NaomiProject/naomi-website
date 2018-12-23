@@ -19,7 +19,6 @@
   top 0
   left 0
   right 0
-  // max-height 700px
   height 90vh
   min-height 600px
   display flex
@@ -49,7 +48,6 @@
       font-weight 300
       font-size 60px
       text-shadow 0px 0px 10px #666
-      // padding-top 10vh
     h2.lead
       animation 1.5s ease-out 0s 1 slideIn2
       color white

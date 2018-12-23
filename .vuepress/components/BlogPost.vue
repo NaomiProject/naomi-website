@@ -1,8 +1,6 @@
 <template>
   <div>
     <div class="post-header" :style="{background: 'url(' + $page.frontmatter.previewimage + ') no-repeat center'}">
-      <!-- <div class="post-cover" /> -->
-      <!-- <img draggable="false" class="post-cover" :src="$page.frontmatter.previewimage" alt="" /> -->
       <div class="post-cover">
         <h1 class="post-title">
           {{$page.frontmatter.title}}
@@ -57,14 +55,10 @@
       color white
       padding 64px 24px
       text-shadow 0px 0px 10px #999
-      // width calc(100vw - 20px)
       text-align center
     @media (max-width: 419px)
       .post-title
         font-size 30px
-    // @media (max-width: 419px)
-    //   .post-title
-    //     padding 104px 0
 
 .blog-body-content
   margin-top calc(400px + 3.6rem) !important

@@ -10,7 +10,6 @@
       Please type 3 characters or more...
     </em>
     <div v-else>
-      <!-- <p><em>Use the search box to look for one of Naomi's {{addons.length}} add-ons and {{things.length}} supported Things!</em></p> -->
       <div v-for="(addontype, typeid) of $page.frontmatter.initial_gallery">
         <h3 class="addon-type" :id="typeid">
           <a :href="'#' + typeid" aria-hidden="true" class="header-anchor">#</a>
@@ -37,7 +36,6 @@
     </div>
     <transition name="results">
       <div v-if="results">
-        <!-- <h2>Add-ons</h2> -->
         <transition-group name="addons" v-if="results.addons.length > 0" class="addons" tag="ul">
           <li v-for="addon of results.addons" class="addon" :key="addon.path">
             <router-link :to="addon.path">
@@ -123,8 +121,6 @@ h3.addon-type
 .results-enter, .results-leave-to
   opacity 0
   transform: translateY(30px);
-// .addons-enter-active, .addons-leave-active
-//   transition all 0.5s
 .addons-leave-active
   position absolute
   opacity 0

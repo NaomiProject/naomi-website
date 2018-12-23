@@ -20,12 +20,8 @@ module.exports = {
       ['link', { rel: 'icon', href: `/favicon.ico` }],
       ['link', { rel: 'shortcut icon', href: `/favicon.ico` }],
       ['link', { rel: 'apple-touch-icon', href: `/apple-icon.png` }],
-      // ['link', { rel: 'stylesheet', href: `https://fonts.googleapis.com/css?family=Open+Sans:300,400` }],
       ['meta', { property: 'og:type', content: 'website' }],
       ['meta', { property: 'og:image', content: '/naomi-logo.png' }],
-      // ['meta', { property: 'og:title', content: 'Naomi' }],
-      // ['meta', { property: 'og:description', content: 'Naomi - an open source platform for developing always-on, voice-controlled applications' }],
-      // ['script', { src: `https://identity.netlify.com/v1/netlify-identity-widget.js` }]
     ],
     markdown: {
       config: (md) => {
@@ -48,10 +44,6 @@ module.exports = {
           if (lang === 'shell' || lang === 'sh' || lang === 'shell_session') lang = 'bash'
           if (lang === 'conf') lang = 'dsl'
           if (lang === 'JSON') lang = 'json'
-          // if (lang === 'xtend' || lang === 'text' || !lang) {
-          //   console.log('Cannot determine language of code: ' + lang)
-          //   console.log(str)
-          // }
   
           if (!Prism.languages.dsl || !Prism.languages.rules) {
             Prism.languages.dsl = HighlightDsl
@@ -92,10 +84,6 @@ module.exports = {
           text: 'Documentation',
           link: '/docs/',
         },
-//        {
-//          text: 'Add-ons',
-//          link: '/addons/'
-//        },
         {
           text: 'Community',
           link: '/community/',

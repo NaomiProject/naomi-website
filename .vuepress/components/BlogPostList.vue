@@ -11,7 +11,6 @@
     </div>
     <div class="posts-list page-content">
       <div class="content">
-        <!-- <Content></Content> -->
         <ul class="posts">
           <li v-for="post in posts" class="post">
             <div class="post-frame">

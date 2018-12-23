@@ -8,5 +8,4 @@
   transform translate3d(-50%, 56px, 0)
   path
     fill #000 !important
-    // fill #444444 !important
 </style>

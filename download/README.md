@@ -2,9 +2,9 @@
 sidebar: false
 layout: AboutPage
 title: Download Naomi
-currentVersion: 2.2.0
-currentMilestoneVersion: 3.0.0.M1
-currentSnapshotVersion: 3.0.0-SNAPSHOT
+currentVersion: 2.2
+currentMilestoneVersion: 3.0.M1
+currentSnapshotVersion: 3.0-SNAPSHOT
 meta:
   - name: og:title
     content: Download Naomi
@@ -70,7 +70,6 @@ If you're new to Naomi, it is strongly recommended to read the [Installation Gui
 
 <div class="acknowledgements-logos">
   <a target="_blank" href="https://www.bintray.com"><img style="padding: 1em" height="50" src="./images/acknowledgements/bintray.png" /></a>
-  <!--<a target="_blank" href="https://www.digitalocean.com"><img style="padding: 1em" height="50" src="./images/acknowledgements/digitalocean.png" /></a>
-  <a target="_blank" href="https://www.ej-technologies.com/products/jprofiler/overview.html"><img style="padding: 1em" height="50" src="./images/acknowledgements/jprofiler.png" /></a>-->
+  <!--<a target="_blank" href="https://www.digitalocean.com"><img style="padding: 1em" height="50" src="./images/acknowledgements/digitalocean.png" /></a>-->
   <a target="_blank" href="https://www.netlify.com"><img style="padding: 1em" height="50" src="./images/acknowledgements/netlify.svg" /></a>
 </div>
