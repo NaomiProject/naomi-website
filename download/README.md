@@ -47,7 +47,7 @@ meta:
 
 Only a quick reference and download links are provided below, all platforms and steps after the installation are not covered.
 
-If you're new to Naomi, it is strongly recommended to read the [Installation Guide](/docs/installation/) for a complete overview of your options and detailed instructions.
+If you're new to Naomi, it is strongly recommended to read the [Configuration Guide](/docs/configuration/) for a complete overview of your options and detailed instructions.
 
 :::
 
