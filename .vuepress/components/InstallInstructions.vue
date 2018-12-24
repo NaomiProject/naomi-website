@@ -9,8 +9,8 @@
         <div class="os-label">{{system[1]}}</div>
       </div>
     </div>
-    <div class="instructions" v-if="selectedSystem === 'tux'">Choose your package manager</div>
-    <div class="distro-tabs" v-if="selectedSystem === 'tux'">
+    <!--<div class="instructions" v-if="selectedSystem === 'tux'">Choose your package manager</div>-->
+    <!--<div class="distro-tabs" v-if="selectedSystem === 'tux'">
       <div class="distro-tab"
         :class="{ 'selected': selectedDistro === 'deb' }" @click="selectDistro('deb')">
         <div>
@@ -31,7 +31,7 @@
         </div>
         <div class="distro-label">RPM (.rpm packages)</div>
       </div>
-    </div>
+    </div>-->
     <div class="instructions" v-if="selectedSystem">Choose your version</div>
     <div class="version-tabs" v-if="selectedSystem">
       <div class="version-tab"
@@ -349,12 +349,12 @@ export default {
   data () {
     return {
       systems: [
-        ['tux', 'Linux'],
+//        ['tux', 'Linux'],
 //        ['win10', 'Windows'],
 //        ['apple', 'macOS'],
         ['raspberry-pi', 'Raspberry Pi'],
         ['pine64', 'PINE A64'],
-        ['docker', 'Docker'],
+//        ['docker', 'Docker'],
       ],
       selectedSystem: 'tux',
       selectedDistro: 'deb',
