@@ -73,9 +73,9 @@
       <h3>Manual Installation <span v-if="selectedSystem === 'tux'">(Recommended)</span></h3>
       <ol>
         <li>Fetch the repository</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/stable/naomi-{{this.$page.frontmatter.currentVersion}}.zip" -o naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/dev/naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip" -o naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code></code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/stable/Naomi-{{this.$page.frontmatter.currentVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/dev/Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code></code></pre></div>
         <li>Explode directory</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">unzip naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">unzip naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code></code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">unzip Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">unzip Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code></code></pre></div>
         <li>Go into the repository</li>
           <div class="language-shell"><pre class="language-shell"><code>cd naomi</code></pre></div>
         <li>Setup the install</li>
