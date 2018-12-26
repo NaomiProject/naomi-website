@@ -36,5 +36,5 @@ else
     FileUtils.rm_rf("dev")
 
     puts ">>> Cloning naomi-docs_dev"
-    `git clone --branch dev https://github.com/naomiproject/naomi-docs .vuepress/public/dev`
+    `git clone --branch dev https://github.com/naomiproject/naomi-docs .vuepress/public/dev/docs`
 end
