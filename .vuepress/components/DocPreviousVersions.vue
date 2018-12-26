@@ -2,12 +2,12 @@
   <div class="page-versions">
     <div class="dropdown-wrapper" :class="{ open }">
       <a class="dropdown-title" @click="toggle">
-        <span class="title">Version: {{currentVersion}}</span>
+        <span class="title">Version: {{currentBranch}}</span>
         <span class="arrow" :class="open ? 'down' : 'right'"></span></span>
       </a>
       <ul class="nav-dropdown" v-show="open">
         <li v-for="version in versions" class="dropdown-item">
-          <a class="current" v-if="version.number === currentVersion">{{version.number}}</a>
+          <a class="current" v-if="version.number === currentBranch">{{version.number}}</a>
           <a v-else :href="version.url">{{version.number}}</a>
         </li>
       </ul>
@@ -69,8 +69,8 @@
 export default {
   data () {
     return {
-      versionNumbers: ['latest', '2.2'],
-      currentVersion: 'latest',
+      versionBranches: ['stable', 'dev'],
+      currentBranch: 'stable',
       open: false
     }
   },
@@ -81,22 +81,18 @@ export default {
   },
   created () {
     if (this.$site.base && this.$site.base.indexOf('v') > 0) {
-      this.currentVersion = this.$site.base.replace('v', '').replace(/\//g, '')
-      this.versionNumbers = ['latest', this.currentVersion] // to avoid having to regenerate previous sites
+      this.currentBranch = this.$site.base.replace('v', '').replace(/\//g, '')
+      this.versionBranches = ['latest', this.currentBranch] // to avoid having to regenerate previous sites
     }
   },
   computed: {
     versions () {
-      return this.versionNumbers.map(version => {
+      return this.versionBranches.map(version => {
         let url = this.$page.path
-        if (version === '2.1') {
-          url = url.replace('addons/integrations/', 'addons/ios/')
-          if (url.indexOf('/addons') === 0) url += 'readme.html'
-        }
-        if (version === 'latest') {
+        if (version === 'stable') {
           url = 'https://docs.projectnaomi.com' + url
         } else {
-          url = `https://${(version === '2.1') ? 'docs.' : 'www.'}projectnaomi.com${version === 'milestone' ? '' : '/v' + version}${url}`
+          url = `https://${(version === '2.1') ? 'docs.' : 'www.'}projectnaomi.com${version === 'milestone' ? '' : '/' + version}${url}`
         }
 
         return {
