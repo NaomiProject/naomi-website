@@ -202,8 +202,64 @@ module.exports = {
               'developer/contributing/contributing'
             ]
           }
+        ],
+        '/dev/docs/': [
+          {
+            title: 'Welcome to Naomi',
+            collapsable: false,
+            children: [
+              ''
+            ]
+          },
+          {
+            title: 'Installation Guide',
+            collapsable: false,
+            children: [
+              'installation/',
+              ['installation/linux', 'Linux'],
+              ['installation/windows', 'Windows'],
+              ['installation/macos', 'macOS'],
+              'installation/naobian',
+              'installation/rasppi',
+              'installation/pine',
+              'installation/docker',
+              'installation/synology',
+              'installation/qnap',
+              ['installation/security', 'Security']
+            ]
+          },
+          {
+            title: 'Configuration Guide',
+            collapsable: false,
+            children: [
+              ['configuration/', 'Configuration Overview'],
+              'configuration/audio',
+              'configuration/tts',
+              'configuration/stt',
+              'configuration/profile',
+              'configuration/plugins',
+              'configuration/editors'
+            ]
+          },
+          {
+            title: 'Plugins',
+            collapsable: false,
+            children: [
+              'plugins/marytts-server',
+              'plugins/pocketsphinx-install',
+              'plugins/deepspeech-setup'
+            ]
+          },
+          {
+            title: 'Developer Guide',
+            collapsable: false,
+            children: [
+              ['developer/', 'Development Overview'],
+              'developer/contributing/contributing'
+            ]
+          }
         ]
-      }
+      },
     }
   }
   
