@@ -7,8 +7,8 @@
       </a>
       <ul class="nav-dropdown" v-show="open">
         <li v-for="version in versions" class="dropdown-item">
-          <a class="current" v-if="version.number === currentBranch">{{version.number}}</a>
-          <a v-else :href="version.url">{{version.number}}</a>
+          <a class="current" v-if="version.branch === currentBranch">{{version.branch}}</a>
+          <a v-else :href="version.url">{{version.branch}}</a>
         </li>
       </ul>
     </div>
@@ -96,7 +96,7 @@ export default {
         }
 
         return {
-          number: version,
+          branch: version,
           url: url
         }
       })
