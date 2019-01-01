@@ -55,7 +55,7 @@
       <h3>Install Naobian (Recommended)</h3>
       <ol>
         <li>Download and install <a target="_blank" href="https://etcher.io/">Etcher</a></li>
-        <li>Download the Naobian image (<code>.img.xz</code> file) for your system from <a target="_blank" href="https://github.com/naomiproject/naobian/releases/latest">https://github.com/naomiproject/naobian/releases/latest</a>:</li>
+        <li>Download the Naobian image (<code>.img</code> file) for your system from <a target="_blank" href="https://github.com/naomiproject/naobian/releases/latest">https://github.com/naomiproject/naobian/releases/latest</a>:</li>
         <div class="download-button-container">
           <a class="download-button big" target="_blank" href="https://github.com/naomiproject/naobian/releases/latest">Latest Naobian System Image</a>
         </div>
@@ -77,7 +77,7 @@
         <li>Explode directory</li>
           <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">unzip Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">unzip Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code></code></pre></div>
         <li>Go into the repository</li>
-          <div class="language-shell"><pre class="language-shell"><code>cd naomi</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code>cd Naomi-{{this.$page.frontmatter.currentVersion}}</code></pre></div>
         <li>Setup the install</li>
           <div class="language-shell"><pre class="language-shell"><code>chmod +x naomi-setup.sh</code></pre></div>
         <li>Run the install</li>
