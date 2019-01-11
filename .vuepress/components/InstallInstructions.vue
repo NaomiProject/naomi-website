@@ -9,29 +9,6 @@
         <div class="os-label">{{system[1]}}</div>
       </div>
     </div>
-    <!--<div class="instructions" v-if="selectedSystem === 'tux'">Choose your package manager</div>-->
-    <!--<div class="distro-tabs" v-if="selectedSystem === 'tux'">
-      <div class="distro-tab"
-        :class="{ 'selected': selectedDistro === 'deb' }" @click="selectDistro('deb')">
-        <div>
-          <img src="/os/ubuntu.svg" title="Ubuntu" />
-          <img src="/os/debian.svg" style="filter: grayscale(100%)" title="Debian" />
-          <img src="/os/linuxmint.svg" title="Linux Mint" />
-          <img src="/os/elementary.svg" style="margin-left: 2px" title="Elementary" />...
-        </div>
-        <div class="distro-label">APT (.deb packages)</div>
-      </div>
-      <div class="distro-tab"
-        :class="{ 'selected': selectedDistro === 'rpm' }" @click="selectDistro('rpm')">
-        <div>
-          <img src="/os/redhat.svg" title="RedHat" />
-          <img src="/os/opensuse.svg" style="margin-left: 2px; margin-bottom: 2px; filter: grayscale(100%) brightness(0)" title="openSUSE" />
-          <img src="/os/mageia.svg" style="filter: grayscale(100%)" title="Mageia" />
-          <img src="/os/fedora.svg" style="filter: grayscale(100%)" title="Fedora" />...
-        </div>
-        <div class="distro-label">RPM (.rpm packages)</div>
-      </div>
-    </div>-->
     <div class="instructions" v-if="selectedSystem">Choose your version</div>
     <div class="version-tabs" v-if="selectedSystem">
       <div class="version-tab"
@@ -40,7 +17,6 @@
         <strong>{{version[1]}}</strong><br />
         <small v-if="version[0] === 'stable'">{{$page.frontmatter.currentVersion}}</small>
         <small v-if="version[0] === 'dev'">{{$page.frontmatter.currentMilestoneVersion}}</small>
-        <!--<small v-if="version[0] === 'snapshot'">{{$page.frontmatter.currentSnapshotVersion}}</small>-->
       </div>
     </div>
 
@@ -63,7 +39,6 @@
         <li>Insert the SD card in your device, ensure the network is connected (<router-link to="/docs/installation/naobian.html#wi-fi-based-setup-notes">or setup the Wi-Fi</router-link> first) and boot!</li>
         <li>Wait between 5 and 15 minutes for Naoian to perform its initial setup</li>
         <li v-if="selectedVersion !== 'stable'">Use the <code>naobian-config</code> tool (<router-link to="/docs/installation/naobian.html#naobian-configuration-tool">documentation</router-link>) to switch from the stable version to the {{selectedVersion}} version</li>
-        <!--<li>Navigate with a web browser to <code>http://naobianpi:8080</code></li>-->
         <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
       </ol>
     </div>
@@ -84,7 +59,6 @@
           <div class="language-shell"><pre class="language-shell"><code>./naomi-setup.sh</code></pre></div>
         <li>Run the app</li>
           <div class="language-shell"><pre class="language-shell"><code>python Naomi.py</code></pre></div>
-        <!--<li>Navigate with a web browser to <code>http://&lt;ip-address&gt;:8080</code></li>-->
         <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
       </ol>
     </div>
@@ -110,7 +84,6 @@ enabled=1
           <div class="language-shell"><pre class="language-shell"><code>./naomi-setup.sh</code></pre></div>
         <li>Run the app</li>
           <div class="language-shell"><pre class="language-shell"><code>python Naomi.py</code></pre></div>
-        <!--<li>Navigate with a web browser to <code>http://&lt;ip-address&gt;:8080</code></li>-->
         <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
       </ol>
     </div>    
@@ -119,101 +92,17 @@ enabled=1
       <hr>
       <h3>Docker Container Quick Installation</h3>
       <p>Coming Soon!</p>
-      <!--<p>These are very simplified instructions, check the <router-link to="/docs/installation/docker.html">documentation article</router-link> or <a target="_blank" href="https://hub.docker.com/r/naomiproject/naomi/">https://hub.docker.com/r/naomiproject/naomi/</a> for more information.</p>
-      <ol>
-        <li>Create the <code>naomi</code> user:</li>
-        <div class="language-shell">
-<pre class="language-shell"><code>groupadd -g 9001 naomi
-groupadd -g 9001 naomi
-usermod -a -G naomi myownuser
-</code></pre>
-        </div>
-        <li>Pull and run the container (command line version):</li>
-        <div class="language-shell">
-<pre class="language-shell"><code>docker run \
-        --name naomi \
-        --net=host \
-        --tty \
-        -v /etc/localtime:/etc/localtime:ro \
-        -v /etc/timezone:/etc/timezone:ro \
-        -v naomi_addons:/naomi/addons \
-        -v naomi_conf:/naomi/conf \
-        -v naomi_userdata:/naomi/userdata \
-        -d \
-        --restart=always \
-        naomi/naomi:{{selectedVersion === 'stable' ? $page.frontmatter.currentVersion : selectedVersion === 'testing' ? $page.frontmatter.currentMilestoneVersion : $page.frontmatter.currentSnapshotVersion.toLowerCase()}}
-</code></pre>
-        </div>
-      </ol>-->
     </div>
 
     <div v-if="selectedSystem !== 'docker' && (selectedVersion === 'stable' || selectedVersion === 'dev')">
-      <!--<hr>
-      <h3>Manual Installation</h3>
-      <ol>
-        <li>Install a recent Java 8 platform (we recommend <a target="_blank" href="https://www.azul.com/products/zulu/">Zulu</a>), see <router-link to="/docs/installation/#prerequisites">prerequisites</router-link></li>
-        <li>Download and extract the Naomi runtime distribution from <a target="_blank" href="https://bintray.com/naomiproject/mvn/naomi-distro">https://bintray.com/naomiproject/mvn/naomi-distro</a>:</li>
-        <div class="download-button-container">
-          <a class="download-button big" :href="runtimeDownloadLink">Download Naomi {{currentDownloadVersion}} {{currentVersionLabel}} Runtime</a>
-        </div>
-        <li><strong>(Optional)</strong> Download the add-on archives for offline use and put them in the <code>addons</code> folder of the extracted distribution:</li>
-        &#128712; <small>	You don't need the add-ons archives if your machine has Internet access, Naomi will download add-ons you need online as necessary.</small>
-        <div class="download-button-container">
-          <a class="download-button" style="margin-bottom: 0" :href="addonsDownloadLink">Download Naomi {{currentDownloadVersion}} {{currentVersionLabel}} Add-ons</a>
-        </div>
-        <div class="download-button-container">
-          <a class="download-button" :href="legacyAddonsDownloadLink">Download Naomi {{currentDownloadVersion}} {{currentVersionLabel}} Legacy Add-ons</a>
-        </div>
-        <li v-if="selectedSystem === 'apple'">
-          Open <em>System Preferences &gt; Keyboard &gt; Shortcuts</em> and check the <em>New Terminal at Folder</em> option under <em>Services</em>:<br />
-          <img class="img-center" src="./images/macos-settings.png" />
-        </li>
-        <li v-if="selectedSystem === 'apple'">
-          Using the Finder, find the folder with the extracted runtime (look into the Downloads folder), then open its context menu and select <em>New Terminal at Folder</em>:<br /><br />
-          <img class="img-center" src="./images/macos-contextmenu.png" /><br />
-        </li>
-        <li>
-          <span v-if="selectedSystem !== 'windows'">Run <code>{{ selectedSystem === 'win10' ? 'start.bat' : './start.sh'}}</code></span>
-          <span v-if="selectedSystem === 'apple'"> in the Terminal</span>
-          and wait for Naomi to perform its initial startup (this can take a few minutes depending on your machine)</li>
-        <li>Navigate with a web browser to <code>http://{{selectedSystem === 'apple' || selectedSystem === 'win10' ? 'localhost' : '&lt;ip-address&gt;'}}:8080</code></li>
-        <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
-      </ol>-->
     </div>
 
     <div v-if="selectedSystem !== 'docker' && selectedVersion === 'snapshot'">
-      <!--<hr />
-      <h3>Manual Installation</h3>
-      <ol>
-        <li>Install a recent Java 8 platform (we recommend <a target="_blank" href="https://www.azul.com/products/zulu/">Zulu</a>)</li>
-        <li>Download and extract the distribution from <a href="https://ci.projectnaomi.com/">https://ci.projectnaomi.com/</a>:</li>
-        <div class="download-button-container">
-          <a target="_blank" class="download-button big" :href="`https://ci.projectnaomi.com/job/Naomi-Distribution/`">Latest Naomi {{$page.frontmatter.currentSnapshotVersion}} Build</a>
-        </div>
-      </ol>-->
     </div>
 
     <div v-if="selectedSystem === 'win10' && selectedVersion === 'stable'">
       <hr>
       <p>Coming Soon!</p>
-      <!--<h3>Install with Chocolatey</h3>
-      <div class="danger custom-block">
-        <p class="custom-block-title">Unofficial installation method</p>
-        <p>Please note, the Chocolatey package is a community-provided installation option presented here as a convenience, and is not officially supported by the Naomi project.</p>
-      </div>
-      <ol>
-        <li>Right-click on the Start menu and select <em>Command Prompt (admin)</em> or <em>Windows PowerShell (admin)</em></li>
-        <li>Install the <a target="_blank" href="https://chocolatey.org/install">Chocolatey</a> package manager by running one of these commands:
-          <ul>
-            <li>If you opened a command prompt (cmd.exe)
-            <div class="language-shell"><pre class="language-shell"><code>@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"</code></pre></div></li>
-            <li>If you opened PowerShell
-            <div class="language-shell"><pre class="language-shell"><code>Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))</code></pre></div></li>
-          </ul>
-        </li>
-        <li>Install the <a target="_blank" href="https://chocolatey.org/packages/naomi">Naomi Chocolatey package</a>:</li>
-        <div class="language-shell"><pre class="language-shell"><code>choco install naomi</code></pre></div>
-      </ol>-->
     </div>
 
   </div>
@@ -380,7 +269,6 @@ export default {
       return [
         ['stable', 'Stable'],
         ['dev', 'Milestone'],
-//        ['snapshot', 'Snapshot']
       ]
     },
     runtimeDownloadLink () {
@@ -410,11 +298,6 @@ export default {
       } else {
         return this.$page.frontmatter.currentMilestoneVersion
       }
-//      } else if (this.selectedVersion === 'dev') {
-//        return this.$page.frontmatter.currentMilestoneVersion
-//      } else {
-//        return this.$page.frontmatter.currentSnapshotVersion
-//      }
     },
     currentVersionLabel () {
       if (this.selectedVersion) {
