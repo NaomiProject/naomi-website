@@ -28,8 +28,6 @@ img.illustration {
 }
 </style>
 
-<!-- <h2 class="big-title">Live from the Forum</h2> -->
-
 This is a selection of top topics in the [Tutorials & Examples](https://community.projectnaomi.com/c/tutorials-examples) category of the community forum, join us there and share your story!
 
 <CommunityTutorials/>

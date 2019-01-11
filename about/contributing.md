@@ -4,9 +4,9 @@ layout: AboutPage
 title: Contribute
 meta:
   - name: og:title
-    content: Contribute to openHAB
+    content: Contribute to Naomi
   - name: og:description
-    content: a vendor and technology agnostic open source automation software for your home
+    content: an open source platform for developing always-on, voice-controlled applications
 ---
 
 <style>
