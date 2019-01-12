@@ -5,7 +5,7 @@
     <div class="hero-content">
       <div class="white-logo"><ClientOnly><img src="/naomi-logo_white.png" class="white-logo" /></ClientOnly></div>
       <h1 class="hero">Project Naomi</h1>
-      <vue-typed-js :strings="items">
+      <vue-typed-js :strings="items" :loop="true">
         <h2 class="lead"><span class="typing"></span></h2>
       </vue-typed-js>
       <!--<h2 class="lead">an open source platform for developing always-on, voice-controlled applications</h2>-->
