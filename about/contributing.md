@@ -6,7 +6,7 @@ meta:
   - name: og:title
     content: Contribute to Naomi
   - name: og:description
-    content: an open source platform for developing always-on, voice-controlled applications
+    content: Naomi, The privacy focused personal assistant
 ---
 
 <style>

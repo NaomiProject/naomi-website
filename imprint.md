@@ -5,7 +5,7 @@ meta:
   - name: og:title
     content: Naomi - Imprint
   - name: og:description
-    content: Naomi - an open source platform for developing always-on, voice-controlled applications
+    content: Naomi, The privacy focused personal assistant
 ---
 
 # This Site is operated by
