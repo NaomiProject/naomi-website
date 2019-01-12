@@ -18,9 +18,9 @@
           <div class="home-icon-container">
             <img src="./images/icons/empty.png" class="home-icon current" />
           </div>
-          <h3>Always Listening</h3>
+          <h3>Ready to Assist</h3>
           <p>
-            Naomi is always on, always listening for commands, and you can speak from meters away.
+            Naomi is the privacy focused personal assistant.
           </p>
         </div>
         <div ref="feature3" class="feature">

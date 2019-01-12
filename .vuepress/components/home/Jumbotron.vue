@@ -4,8 +4,11 @@
     <ClientOnly><img draggable="false" class="jumbotron-pattern" src="/pattern.png" alt=""></ClientOnly>
     <div class="hero-content">
       <div class="white-logo"><ClientOnly><img src="/naomi-logo_white.png" class="white-logo" /></ClientOnly></div>
-      <h1 class="hero">Project Naomi</h1>
-      <h2 class="lead">an open source platform for developing always-on, voice-controlled applications</h2>
+      </br>
+      </br>
+      <vue-typed-js :strings="items" :backDelay="1000" :loop="true">
+        <h2 class="lead stay"><span class="typing"></span></h2>
+      </vue-typed-js>
       <router-link to="docs/" class="action-button">Get Started ➜</router-link>
       <a class="demo-button" target="_blank" href="http://demo.projectnaomi.com:8080">Demo ➜</a>
     </div>
@@ -13,6 +16,8 @@
 </template>
 
 <style lang="stylus">
+h2.stay
+  position: absolute;
 .jumbotron
   background #1397d5
   position absolute
@@ -36,9 +41,11 @@
     margin 90px 30px
     z-index 1
     max-width 960px
+    left: 50%;
+    margin-left: -8%;
     .white-logo
-      width 240px
-      height 80px
+      width 400px
+      height 100px
       img
         filter drop-shadow(0 0 10px #666)
     h1.hero
@@ -108,3 +115,29 @@
     opacity 0.5
 
 </style>
+
+<script>
+export default {
+  data () {
+    return {
+      items: [
+        'Naomi, An open source platform for developing always-on, voice-controlled applications',
+        'Naomi, The personal assistant that does not like to gossip about you',
+        'Naomi, Less creepy than you know who',
+        'Naomi, The personal assistant that keeps your trust and secrets from other personal assistants',
+        'Naomi, Sometimes it works... When it does, it works for you',
+        'Naomi, Some assembly required',
+        'Naomi, We do not need to know that much',
+        'Naomi, The privacy focused personal assistant',
+        'Naomi, The first personal assistant that raised up to be free from the law',
+        'Naomi, Free and morally strong',
+        'Naomi, Next gen girl that does not yell',
+        'Naomi, Edgy',
+        'Naomi, Boldly going where no personal assistant has gone before',
+        'Naomi, The offline assistant',
+        'Naomi, Not the assistant you need but the assistant you deserve'
+      ]
+    }
+  }
+}
+</script>

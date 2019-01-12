@@ -7,7 +7,7 @@ meta:
   - name: og:title
     content: Naomi
   - name: og:description
-    content: Naomi - an open source platform for developing always-on, voice-controlled applications
+    content: Naomi, The privacy focused personal assistant
 ---
 
 # This is the Project Naomi website
