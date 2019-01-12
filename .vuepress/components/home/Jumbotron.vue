@@ -4,11 +4,11 @@
     <ClientOnly><img draggable="false" class="jumbotron-pattern" src="/pattern.png" alt=""></ClientOnly>
     <div class="hero-content">
       <div class="white-logo"><ClientOnly><img src="/naomi-logo_white.png" class="white-logo" /></ClientOnly></div>
-      <h1 class="hero">Project Naomi</h1>
-      <vue-typed-js :strings="items" :loop="true">
-        <h2 class="lead"><span class="typing"></span></h2>
+      </br>
+      </br>
+      <vue-typed-js :strings="items" :backDelay="1000" :loop="true">
+        <h2 class="lead stay"><span class="typing"></span></h2>
       </vue-typed-js>
-      <!--<h2 class="lead">an open source platform for developing always-on, voice-controlled applications</h2>-->
       <router-link to="docs/" class="action-button">Get Started ➜</router-link>
       <a class="demo-button" target="_blank" href="http://demo.projectnaomi.com:8080">Demo ➜</a>
     </div>
@@ -16,6 +16,8 @@
 </template>
 
 <style lang="stylus">
+h2.stay
+  position: absolute;
 .jumbotron
   background #1397d5
   position absolute
@@ -39,9 +41,11 @@
     margin 90px 30px
     z-index 1
     max-width 960px
+    left: 50%;
+    margin-left: -8%;
     .white-logo
-      width 240px
-      height 80px
+      width 400px
+      height 100px
       img
         filter drop-shadow(0 0 10px #666)
     h1.hero
@@ -128,6 +132,7 @@ export default {
         'Naomi, The first personal assistant that raised up to be free from the law',
         'Naomi, Free and morally strong',
         'Naomi, Next gen girl that does not yell',
+        'Naomi, Edgy',
         'Naomi, Boldly going where no personal assistant has gone before',
         'Naomi, The offline assistant',
         'Naomi, Not the assistant you need but the assistant you deserve'
