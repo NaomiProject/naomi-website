@@ -236,6 +236,7 @@ module.exports = {
               'configuration/audio',
               'configuration/tts',
               'configuration/stt',
+              'configuration/vad',
               'configuration/profile',
               'configuration/plugins',
               'configuration/editors'
