@@ -155,7 +155,7 @@ module.exports = {
               ''
             ]
           },
-          {
+          /*{
             title: 'Installation Guide',
             collapsable: false,
             children: [
@@ -171,7 +171,7 @@ module.exports = {
               'installation/qnap',
               ['installation/security', 'Security']
             ]
-          },
+          },*/
           {
             title: 'Configuration Guide',
             collapsable: false,
@@ -182,7 +182,7 @@ module.exports = {
               'configuration/stt',
               'configuration/profile',
               'configuration/plugins',
-              'configuration/editors'
+              //'configuration/editors'
             ]
           },
           {
@@ -211,7 +211,7 @@ module.exports = {
               ''
             ]
           },
-          {
+          /*{
             title: 'Installation Guide',
             collapsable: false,
             children: [
@@ -227,7 +227,7 @@ module.exports = {
               'installation/qnap',
               ['installation/security', 'Security']
             ]
-          },
+          },*/
           {
             title: 'Configuration Guide',
             collapsable: false,
@@ -239,7 +239,7 @@ module.exports = {
               'configuration/vad',
               'configuration/profile',
               'configuration/plugins',
-              'configuration/editors'
+              //'configuration/editors'
             ]
           },
           {
