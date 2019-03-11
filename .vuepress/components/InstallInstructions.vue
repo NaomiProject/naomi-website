@@ -1,46 +1,5 @@
 <template>
   <div>
-    <div class="instructions">Choose your system</div>
-    <div class="os-tabs">
-      <div class="os-tab"
-        v-for="system in systems"
-        :class="{ 'selected': selectedSystem === system[0] }" @click="selectSystem(system[0])">
-        <img :src="`/os/${system[0]}.${system[0] === 'pine64' ? 'png' : 'svg'}`">
-        <div class="os-label">{{system[1]}}</div>
-      </div>
-    </div>
-    <div class="instructions" v-if="selectedSystem">Choose your version</div>
-    <div class="version-tabs" v-if="selectedSystem">
-      <div class="version-tab"
-        v-for="version in versions"
-        :class="{ 'selected': selectedVersion === version[0] }" @click="selectVersion(version[0])">
-        <strong>{{version[1]}}</strong><br />
-        <small v-if="version[0] === 'stable'">{{$page.frontmatter.currentVersion}}</small>
-        <small v-if="version[0] === 'dev'">{{$page.frontmatter.currentMilestoneVersion}}</small>
-      </div>
-    </div>
-
-    <div v-if="selectedVersion" class="tip custom-block">
-      <p v-if="selectedVersion === 'stable'"><strong>Stable</strong> versions are thoroughly tested semi-annual official releases of Naomi. Use the stable version for your production environment if you don't need the latest enhancements and prefer a robust system.</p>
-      <p v-if="selectedVersion === 'dev'"><strong>Milestone</strong> versions are intermediary releases of the next Naomi version, released about once a month, and they include the new recently added features and bugfixes. They are a good compromise between the current stable version and the bleeding-edge and potentially unstable snapshot version.</p>
-      <p v-if="selectedVersion === 'snapshot'"><strong>Snapshot</strong> versions are at most 1 or 2 days old and include the latest code. Use a snapshot for testing out very recent changes, but be aware some snapshots might be unstable. Use in production at your own risk!</p>
-    </div>
-
-    <div v-if="selectedSystem === 'raspberry-pi' || selectedSystem === 'pine64'">
-      <hr>
-      <h3>Install Naobian (Recommended)</h3>
-      <ol>
-        <li>Download and install <a target="_blank" href="https://etcher.io/">Etcher</a></li>
-        <li>Download the Naobian image (<code>.img</code> file) for your system from <a target="_blank" href="https://github.com/naomiproject/naobian/releases/latest">https://github.com/naomiproject/naobian/releases/latest</a>:</li>
-        <div class="download-button-container">
-          <a class="download-button big" target="_blank" href="https://github.com/naomiproject/naobian/releases/latest">Latest Naobian System Image</a>
-        </div>
-        <li>Write the image to your SD card using Etcher</li>
-        <li>Insert the SD card in your device, ensure the network is connected (<router-link to="/docs/installation/naobian.html#wi-fi-based-setup-notes">or setup the Wi-Fi</router-link> first) and boot!</li>
-        <li>Wait between 5 and 15 minutes for Naoian to perform its initial setup</li>
-        <li v-if="selectedVersion !== 'stable'">Use the <code>naobian-config</code> tool (<router-link to="/docs/installation/naobian.html#naobian-configuration-tool">documentation</router-link>) to switch from the stable version to the {{selectedVersion}} version</li>
-      </ol>
-    </div>
 
     <div v-if="(selectedSystem === 'tux' && selectedDistro === 'deb') || selectedSystem === 'raspberry-pi' || selectedSystem === 'pine64'">
       <hr>
