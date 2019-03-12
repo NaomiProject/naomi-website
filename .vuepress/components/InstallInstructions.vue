@@ -52,7 +52,7 @@
         <li>Explode directory</li>
           <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">unzip Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">unzip Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code></code></pre></div>
         <li>Go into the repository</li>
-          <div class="language-shell"><pre class="language-shell"><code>cd Naomi-{{this.$page.frontmatter.currentVersion}}</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">cd Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">cd Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code></pre></div>
         <li>Setup the install</li>
           <div class="language-shell"><pre class="language-shell"><code>chmod +x naomi-setup.sh</code></pre></div>
         <li>Run the install</li>
