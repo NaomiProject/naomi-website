@@ -53,13 +53,13 @@ If you're new to Naomi, it is strongly recommended to read the [Configuration Gu
 
 <InstallInstructions />
 
-<h2 class="big-title">Applications</h2>
+<!--<h2 class="big-title">Applications</h2>
 
 <div class="apps-buttons">
   <a target="_blank" href="https://play.google.com/store/apps/details?id=com.projectnaomi.naodroid"><img style="padding: 1em" height="40" src="./images/android.svg" /></a>
   <a target="_blank" href="https://itunes.apple.com/us/app/naomi/id#"><img style="padding: 1em" height="40" src="./images/ios.svg" /></a>
   <a target="_blank" href="https://www.microsoft.com/en-us/store/p/naomi/#"><img style="padding: 1em" height="40" src="./images/win10.png" /></a>
-</div>
+</div>-->
 
 <h2 class="big-title">Acknowledgements</h2>
 

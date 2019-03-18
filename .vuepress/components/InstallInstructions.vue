@@ -26,20 +26,22 @@
       <p v-if="selectedVersion === 'snapshot'"><strong>Snapshot</strong> versions are at most 1 or 2 days old and include the latest code. Use a snapshot for testing out very recent changes, but be aware some snapshots might be unstable. Use in production at your own risk!</p>
     </div>
 
-    <div v-if="selectedSystem === 'raspberry-pi' || selectedSystem === 'pine64'">
-      <hr>
-      <h3>Install Naobian (Recommended)</h3>
-      <ol>
-        <li>Download and install <a target="_blank" href="https://etcher.io/">Etcher</a></li>
-        <li>Download the Naobian image (<code>.img</code> file) for your system from <a target="_blank" href="https://github.com/naomiproject/naobian/releases/latest">https://github.com/naomiproject/naobian/releases/latest</a>:</li>
-        <div class="download-button-container">
-          <a class="download-button big" target="_blank" href="https://github.com/naomiproject/naobian/releases/latest">Latest Naobian System Image</a>
-        </div>
-        <li>Write the image to your SD card using Etcher</li>
-        <li>Insert the SD card in your device, ensure the network is connected (<router-link to="/docs/installation/naobian.html#wi-fi-based-setup-notes">or setup the Wi-Fi</router-link> first) and boot!</li>
-        <li>Wait between 5 and 15 minutes for Naoian to perform its initial setup</li>
-        <li v-if="selectedVersion !== 'stable'">Use the <code>naobian-config</code> tool (<router-link to="/docs/installation/naobian.html#naobian-configuration-tool">documentation</router-link>) to switch from the stable version to the {{selectedVersion}} version</li>
-      </ol>
+    <div v-if="naobianImage === 'true'">
+      <div v-if="selectedSystem === 'raspberry-pi' || selectedSystem === 'pine64'">
+        <hr>
+        <h3>Install Naobian (Recommended)</h3>
+        <ol>
+          <li>Download and install <a target="_blank" href="https://etcher.io/">Etcher</a></li>
+          <li>Download the Naobian image (<code>.img</code> file) for your system from <a target="_blank" href="https://github.com/naomiproject/naobian/releases/latest">https://github.com/naomiproject/naobian/releases/latest</a>:</li>
+          <div class="download-button-container">
+            <a class="download-button big" target="_blank" href="https://github.com/naomiproject/naobian/releases/latest">Latest Naobian System Image</a>
+          </div>
+          <li>Write the image to your SD card using Etcher</li>
+          <li>Insert the SD card in your device, ensure the network is connected (<router-link to="/docs/installation/naobian.html#wi-fi-based-setup-notes">or setup the Wi-Fi</router-link> first) and boot!</li>
+          <li>Wait between 5 and 15 minutes for Naobian to perform its initial setup</li>
+          <li v-if="selectedVersion !== 'stable'">Use the <code>naobian-config</code> tool (<router-link to="/docs/installation/naobian.html#naobian-configuration-tool">documentation</router-link>) to switch from the stable version to the {{selectedVersion}} version</li>
+        </ol>
+      </div>
     </div>
 
     <div v-if="(selectedSystem === 'tux' && selectedDistro === 'deb') || selectedSystem === 'raspberry-pi' || selectedSystem === 'pine64'">
@@ -51,8 +53,10 @@
           <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/stable/Naomi-{{this.$page.frontmatter.currentVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/dev/Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code></code></pre></div>
         <li>Explode directory</li>
           <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">unzip Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">unzip Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code></code></pre></div>
-        <li>Go into the repository</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">cd Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">cd Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code></pre></div>
+        <li>Rename directory</li>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">mv Naomi-{{this.$page.frontmatter.currentVersion}} Naomi</code><code v-else-if="selectedVersion === 'dev'">mv Naomi-{{this.$page.frontmatter.currentMilestoneVersion}} Naomi</code></pre></div>
+        <li>Go into the directory</li>
+          <div class="language-shell"><pre class="language-shell"><code>cd Naomi</code></pre></div>
         <li>Setup the install</li>
           <div class="language-shell"><pre class="language-shell"><code>chmod +x naomi-setup.sh</code></pre></div>
         <li>Run the install</li>
@@ -245,7 +249,8 @@ export default {
       ],
       selectedSystem: 'raspberry-pi',
       selectedDistro: 'deb',
-      selectedVersion: 'stable'
+      selectedVersion: 'stable',
+      naobianImage: 'false'
     }
   },
   methods: {
