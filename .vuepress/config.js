@@ -68,13 +68,8 @@ module.exports = {
       activeHeaderLinks: false,
       sidebarDepth: 0,
       docsDir: 'docs',
-      algolia: {
-        apiKey: '02f2cfac39c255ac50ddb3344cfc785b',
-        indexName: 'naomi',
-        algoliaOptions: {
-          facetFilters: null
-        }
-      },
+      search: true,
+      searchMaxSuggestions: 10,
       nav: [
         {
           text: 'Download',
@@ -84,10 +79,10 @@ module.exports = {
           text: 'Documentation',
           link: '/docs/',
         },
-        {
-          text: 'Community',
-          link: '/community/',
-        },
+//        {
+//          text: 'Community',
+//          link: '/community/',
+//        },
         {
           text: 'About',
           items: [
@@ -107,18 +102,18 @@ module.exports = {
             {
               text: 'Resources',
               items: [
-                {
-                  text: 'Showcase/How-tos',
-                  link: '/about/showcase'
-                },
+//                {
+//                  text: 'Showcase/How-tos',
+//                  link: '/about/showcase'
+//                },
                 {
                   text: 'Privacy Policy',
                   link: '/privacy'
                 },
-                {
-                  text: 'myNaomi',
-                  link: 'https://myNaomi.projectnaomi.com/'
-                },
+//                {
+//                  text: 'myNaomi',
+//                  link: 'https://myNaomi.projectnaomi.com/'
+//                },
               ]
             }
           ]
