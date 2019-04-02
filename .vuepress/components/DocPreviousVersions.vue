@@ -92,7 +92,7 @@ export default {
         if (version === 'stable') {
           url = 'https://projectnaomi.com' + url
         } else {
-          url = 'https://projectnaomi.com' + version + url
+          url = 'https://projectnaomi.com' + '/' + version + url
         }
         return {
           number: version,
