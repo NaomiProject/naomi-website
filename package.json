@@ -20,6 +20,7 @@
     "vuepress": "^0.14.8"
   },
   "scripts": {
+    "dev": "vuepress dev",
     "prepare-docs": "ruby prepare-docs.rb",
     "build": "ruby prepare-docs.rb && vuepress build",
     "build-only": "vuepress build ."
