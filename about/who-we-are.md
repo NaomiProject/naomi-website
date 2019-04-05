@@ -55,7 +55,7 @@ license: CC0
   
 ### Further Reading
 
-Please see our [documentation](/docs/concepts/index.html) for further details about the concepts of Naomi, its features and possibilities.
+Please see our [documentation](/docs/) for further details about the concepts of Naomi, its features and possibilities.
 
 
 <h2 id="community-guidelines" style="padding-top: 6rem" class="big-title">Community Guidelines</h2>
