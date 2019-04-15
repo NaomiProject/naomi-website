@@ -1,7 +1,7 @@
 ---
 layout: HomePage
 # Comment or remove the alert below when it's not needed anymore
-alert: "Naomi 2.2 Released!"
+alert: "Naobian Image Released!"
 pageClass: homepage
 meta:
   - name: og:title
