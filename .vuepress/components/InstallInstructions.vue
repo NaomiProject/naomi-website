@@ -31,15 +31,19 @@
         <hr>
         <h3>Install Naobian (Recommended)</h3>
         <ol>
-          <li>Download and install <a target="_blank" href="https://etcher.io/">Etcher</a></li>
-          <li>Download the Naobian image (<code>.img</code> file) for your system from <a target="_blank" href="https://github.com/naomiproject/naobian/releases/latest">https://github.com/naomiproject/naobian/releases/latest</a>:</li>
+          <li>Download and install <a target="_blank" href="https://www.balena.io/etcher/">Etcher</a></li>
+          <li>Download the Naobian image (<code>.img</code> file) for your system from the repo:</li>
           <div class="download-button-container">
-            <a class="download-button big" target="_blank" href="https://github.com/naomiproject/naobian/releases/latest">Latest Naobian System Image</a>
+            <a class="download-button big" target="_blank" href="https://projectnaomi.com/Naobian-1.0.zip">Latest Naobian System Image</a>
           </div>
           <li>Write the image to your SD card using Etcher</li>
-          <li>Insert the SD card in your device, ensure the network is connected (<router-link to="/docs/installation/naobian.html#wi-fi-based-setup-notes">or setup the Wi-Fi</router-link> first) and boot!</li>
-          <li>Wait between 5 and 15 minutes for Naobian to perform its initial setup</li>
-          <li v-if="selectedVersion !== 'stable'">Use the <code>naobian-config</code> tool (<router-link to="/docs/installation/naobian.html#naobian-configuration-tool">documentation</router-link>) to switch from the stable version to the {{selectedVersion}} version</li>
+          <li>Insert the SD card in your device, ensure the network is connected or setup the Wi-Fi first if you want to update & ssh into the device, and reboot!</li>
+          <li>Go into the directory</li>
+          <div class="language-shell"><pre class="language-shell"><code>cd Naomi</code></pre></div>
+          <li>Run the app</li>
+          <div class="language-shell"><pre class="language-shell"><code>python Naomi.py</code></pre></div>
+          <p>To update check for updates at any given time</p>
+          <p>go into the Naomi dir (<code>cd ~/Naomi</code>) and run <code>git pull</code></p>
         </ol>
       </div>
     </div>
@@ -250,7 +254,7 @@ export default {
       selectedSystem: 'raspberry-pi',
       selectedDistro: 'deb',
       selectedVersion: 'stable',
-      naobianImage: 'false'
+      naobianImage: 'true'
     }
   },
   methods: {
