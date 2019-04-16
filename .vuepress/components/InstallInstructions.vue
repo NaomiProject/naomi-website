@@ -38,6 +38,11 @@
           </div>
           <li>Write the image to your SD card using Etcher</li>
           <li>Insert the SD card in your device, ensure the network is connected or setup the Wi-Fi first if you want to update & ssh into the device, and reboot!</li>
+          <p>Unlike standard Raspbian which has a user <code>'pi'</code> with a password <code>'raspberry'</code>, the Naobian image uses the following as default username and password:</p>
+          <div class="language-shell"><pre class="language-shell"><code>Default user:     pi
+Default password: Naobian</code></pre></div>
+          <p>As a network connected device, having a unique password significantly enhances your security and thwarts the majority of hacking attempts.</p>
+          <p>We recommend setting a unique password for any device, especially one that is exposed directly to the internet.</p>
           <li>Go into the directory</li>
           <div class="language-shell"><pre class="language-shell"><code>cd Naomi</code></pre></div>
           <li>Run the app</li>
