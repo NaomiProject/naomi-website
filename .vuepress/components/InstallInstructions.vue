@@ -47,7 +47,7 @@ Default password: Naobian</code></pre></div>
           <li>Go into the directory</li>
           <div class="language-shell"><pre class="language-shell"><code>cd Naomi</code></pre></div>
           <li>Run the app</li>
-          <div class="language-shell"><pre class="language-shell"><code>python Naomi.py</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code>./Naomi.py</code></pre></div>
           <p>To update check for updates at any given time</p>
           <p>go into the Naomi dir (<code>cd ~/Naomi</code>) and run <code>git pull</code></p>
         </ol>
@@ -72,7 +72,7 @@ Default password: Naobian</code></pre></div>
         <li>Run the install</li>
           <div class="language-shell"><pre class="language-shell"><code>./naomi-setup.sh</code></pre></div>
         <li>Run the app</li>
-          <div class="language-shell"><pre class="language-shell"><code>python Naomi.py</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">python Naomi.py</code><code v-else-if="selectedVersion === 'dev'">python3 Naomi.py</code></pre></div>
       </ol>
     </div>
     <div v-if="selectedSystem === 'tux' && selectedDistro === 'rpm'">
