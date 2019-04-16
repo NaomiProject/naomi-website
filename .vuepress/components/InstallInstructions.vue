@@ -36,6 +36,7 @@
           <div class="download-button-container">
             <a class="download-button big" target="_blank" href="https://projectnaomi.com/Naobian-1.0.zip">Latest Naobian System Image</a>
           </div>
+          <p>Note: <a target="_blank" href="https://projectnaomi.com/Naobian-1.0.zip.sha256">sha256 checksum</a> if you want to check the download...</p>
           <li>Write the image to your SD card using Etcher</li>
           <li>Insert the SD card in your device, ensure the network is connected or setup the Wi-Fi first if you want to update & ssh into the device, and reboot!</li>
           <p>Unlike standard Raspbian which has a user <code>'pi'</code> with a password <code>'raspberry'</code>, the Naobian image uses the following as default username and password:</p>
