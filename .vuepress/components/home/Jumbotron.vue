@@ -10,7 +10,6 @@
         <h2 class="lead stay"><span class="typing"></span></h2>
       </vue-typed-js>
       <router-link to="docs/" class="action-button">Get Started ➜</router-link>
-      <a class="demo-button" target="_blank" href="http://demo.projectnaomi.com:8080">Demo ➜</a>
     </div>
   </div>
 </template>
