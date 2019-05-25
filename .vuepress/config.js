@@ -150,7 +150,7 @@ module.exports = {
               ''
             ]
           },
-          /*{
+          {
             title: 'Installation Guide',
             collapsable: false,
             children: [
@@ -158,15 +158,15 @@ module.exports = {
               ['installation/linux', 'Linux'],
               ['installation/windows', 'Windows'],
               ['installation/macos', 'macOS'],
-              'installation/naobian',
               'installation/rasppi',
-              'installation/pine',
+              'installation/naobian',
+              /*'installation/pine',
               'installation/docker',
               'installation/synology',
               'installation/qnap',
-              ['installation/security', 'Security']
+              ['installation/security', 'Security']*/
             ]
-          },*/
+          },
           {
             title: 'Configuration Guide',
             collapsable: false,
@@ -177,7 +177,6 @@ module.exports = {
               'configuration/stt',
               'configuration/profile',
               'configuration/plugins',
-              //'configuration/editors'
             ]
           },
           {
@@ -206,7 +205,7 @@ module.exports = {
               ''
             ]
           },
-          /*{
+          {
             title: 'Installation Guide',
             collapsable: false,
             children: [
@@ -214,15 +213,15 @@ module.exports = {
               ['installation/linux', 'Linux'],
               ['installation/windows', 'Windows'],
               ['installation/macos', 'macOS'],
-              'installation/naobian',
               'installation/rasppi',
-              'installation/pine',
+              'installation/naobian',
+              /*'installation/pine',
               'installation/docker',
               'installation/synology',
               'installation/qnap',
-              ['installation/security', 'Security']
+              ['installation/security', 'Security']*/
             ]
-          },*/
+          },
           {
             title: 'Configuration Guide',
             collapsable: false,
@@ -234,7 +233,6 @@ module.exports = {
               'configuration/vad',
               'configuration/profile',
               'configuration/plugins',
-              //'configuration/editors'
             ]
           },
           {
