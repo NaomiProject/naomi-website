@@ -10,6 +10,6 @@ meta:
     content: Naomi, The privacy focused personal assistant
 ---
 
-# This is the Project Naomi website
+This is the Project Naomi website
 
 Please see [CONTRIBUTING.md](CONTRIBUTING.md) to learn how to contribute to the site.
