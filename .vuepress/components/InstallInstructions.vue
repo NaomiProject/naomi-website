@@ -34,7 +34,7 @@
           <li>Download and install <a target="_blank" href="https://www.balena.io/etcher/">Etcher</a></li>
           <li>Download the Naobian image (<code>.img</code> file) for your system from the repo:</li>
           <div class="download-button-container">
-            <a class="download-button big" target="_blank" href="https://projectnaomi.com/Naobian-1.0.zip">Latest Naobian System Image</a>
+            <a class="download-button big" target="_blank" href="https://naobian.projectnaomi.com/Naobian-1.0.zip">Latest Naobian System Image</a>
           </div>
           <p>Note: sha256 checksum if you want to check the download <code>f308875fba9ffad8868aa256e50df095eaa2cf159adebd490c4a555ae147ee1c  Naobian-1.0.zip</code></p>
           <li>Follow the Naobian <router-link to="/docs/installation/naobian.html">Documentation</router-link></li>
