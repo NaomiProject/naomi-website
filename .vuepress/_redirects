@@ -2,3 +2,6 @@
 
 # Trick to fool VuePress' NavLink to think the community forum is an internal link
 /community  https://support.projectnaomi.com/
+/community/  https://support.projectnaomi.com/
+/support  https://support.projectnaomi.com/
+/support/  https://support.projectnaomi.com/
