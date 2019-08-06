@@ -1,4 +1,4 @@
 # These are the overrides for Netlify
 
 # Trick to fool VuePress' NavLink to think the community forum is an internal link
-/support/  https://support.projectnaomi.com/
+/community  https://support.projectnaomi.com/

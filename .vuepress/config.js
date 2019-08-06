@@ -80,8 +80,8 @@ module.exports = {
           link: '/docs/',
         },
         {
-          text: 'Community/Support',
-          link: '/support/',
+          text: 'Community',
+          link: '/community/',
         },
         {
           text: 'About',
