@@ -79,10 +79,10 @@ module.exports = {
           text: 'Documentation',
           link: '/docs/',
         },
-//        {
-//          text: 'Community',
-//          link: '/community/',
-//        },
+        {
+          text: 'Community/Support',
+          link: '/support/',
+        },
         {
           text: 'About',
           items: [
