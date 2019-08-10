@@ -28,6 +28,6 @@ img.illustration {
 }
 </style>
 
-This is a selection of top topics in the [Tutorials & Examples](https://community.projectnaomi.com/c/tutorials-examples) category of the community forum, join us there and share your story!
+This is a selection of top topics in the [Showcase & Examples](https://support.projectnaomi.com/forums/forum/general-forum/showcase-examples) category of the community forum, join us there and share your story!
 
 <CommunityTutorials/>

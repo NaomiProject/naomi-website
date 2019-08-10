@@ -41,7 +41,7 @@ Be it by being an active developer, a bug reporter, a writer or translator, or m
 
 # Help Others
 
-Naomi can be intimidating to new users, and even experienced ones might encounter a problem you can solve. If you are knowledgeable in Naomi or one of its related technologies, you are very much encouraged to share your insights in the [community forum](https://community.projectnaomi.com).
+Naomi can be intimidating to new users, and even experienced ones might encounter a problem you can solve. If you are knowledgeable in Naomi or one of its related technologies, you are very much encouraged to share your insights in the [community forum](https://support.projectnaomi.com).
 
 ## Contribute Code
 
@@ -51,7 +51,7 @@ The [Developer Guide](/docs/developer) has everything to get you started.
 
 ### Report Issues
 
-Before reporting an issue, please check the [community forum](https://community.projectnaomi.com) for solutions and help.
+Before reporting an issue, please check the [community forum](https://support.projectnaomi.com) for solutions and help.
 More people will see your issue when it is posted in the forum and community members may be able to help you find known solutions/workarounds.
 
 When no solution was found, use the table below to determine where your issue should be reported:
