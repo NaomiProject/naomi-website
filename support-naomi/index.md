@@ -9,7 +9,7 @@ meta:
     content: Naomi, The privacy focused personal assistant
 ---
 
-<h2 class="big-title">Sponsor Naomi Development</h2>
+<h2 class="big-title" id="Sponsor-Naomi">Sponsor Naomi Development</h2>
 
 Project Naomi is an MIT licensed open source project and completely free to use.
 However, the amount of effort needed to maintain and develop new features for the project and the infinstructure behind it is not sustainable without proper financial backing.

@@ -112,11 +112,11 @@ module.exports = {
         },
         {
           text: 'Support Naomi',
-          link: '/support-naomi',
+          link: '/support-naomi/#Sponsor-Naomi',
           items: [
             {
               text: 'One-time Donations',
-              link: '/support-naomi/#One-time-Donations'
+              link: '/support-naomi/#Sponsor-Naomi'
             },
             {
               text: 'Recurring Pledges',
