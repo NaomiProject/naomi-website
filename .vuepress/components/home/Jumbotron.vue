@@ -130,7 +130,6 @@ export default {
         'Naomi, The privacy focused personal assistant',
         'Naomi, The first personal assistant that raised up to be free from the law',
         'Naomi, Free and morally strong',
-        'Naomi, Next gen girl that does not yell',
         'Naomi, Edgy',
         'Naomi, Boldly going where no personal assistant has gone before',
         'Naomi, The offline assistant',
