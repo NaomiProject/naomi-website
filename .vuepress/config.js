@@ -119,8 +119,8 @@ module.exports = {
               link: '/support-naomi/#One-time-Donations'
             },
             {
-                text: 'Recurring Pledges',
-                link: '/support-naomi/#Recurring-Pledges'
+              text: 'Recurring Pledges',
+              link: '/support-naomi/#Recurring-Pledges'
             },
 //            {
 //                text: 'Foundation',
