@@ -102,40 +102,32 @@ module.exports = {
             {
               text: 'Resources',
               items: [
-//                {
-//                  text: 'Showcase/How-tos',
-//                  link: '/about/showcase'
-//                },
                 {
                   text: 'Privacy Policy',
                   link: '/privacy'
                 },
-//                {
-//                  text: 'myNaomi',
-//                  link: 'https://myNaomi.projectnaomi.com/'
-//                },
               ]
             }
           ]
         },
-//        {
-//          text: 'Support Naomi',
-//          link: '/support-naomi',
-//          items: [
-//            {
-//              text: 'One-time Donations',
-//              link: '/support-naomi/#One-time-Donations'
-//            },
-//            {
-//                text: 'Recurring Pledges',
-//                link: '/support-naomi/#Recurring-Pledges'
-//            },
+        {
+          text: 'Support Naomi',
+          link: '/support-naomi/#Sponsor-Naomi',
+          items: [
+            {
+              text: 'One-time Donations',
+              link: '/support-naomi/#Sponsor-Naomi'
+            },
+            {
+              text: 'Recurring Pledges',
+              link: '/support-naomi/#Recurring-Pledges'
+            },
 //            {
 //                text: 'Foundation',
 //                link: 'https://foundation.projectnaomi.com/'
 //            },
-//          ]
-//        },
+          ]
+        },
         {
           text: 'GitHub',
           link: 'https://github.com/naomiproject',
