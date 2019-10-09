@@ -9,6 +9,29 @@
         <div class="os-label">{{system[1]}}</div>
       </div>
     </div>
+    <div class="instructions" v-if="selectedSystem === 'tux'">Choose your package manager</div>
+    <div class="distro-tabs" v-if="selectedSystem === 'tux'">
+      <div class="distro-tab"
+        :class="{ 'selected': selectedDistro === 'deb' }" @click="selectDistro('deb')">
+        <div>
+          <img src="/os/ubuntu.svg" title="Ubuntu" />
+          <img src="/os/debian.svg" style="filter: grayscale(100%)" title="Debian" />
+          <img src="/os/linuxmint.svg" title="Linux Mint" />
+          <img src="/os/elementary.svg" style="margin-left: 2px" title="Elementary" />...
+        </div>
+        <div class="distro-label">APT (.deb packages)</div>
+      </div>
+      <div class="distro-tab"
+        :class="{ 'selected': selectedDistro === 'rpm' }" @click="selectDistro('rpm')">
+        <div>
+          <img src="/os/redhat.svg" title="RedHat" />
+          <img src="/os/opensuse.svg" style="margin-left: 2px; margin-bottom: 2px; filter: grayscale(100%) brightness(0)" title="openSUSE" />
+          <img src="/os/mageia.svg" style="filter: grayscale(100%)" title="Mageia" />
+          <img src="/os/fedora.svg" style="filter: grayscale(100%)" title="Fedora" />...
+        </div>
+        <div class="distro-label">RPM (.rpm packages)</div>
+      </div>
+    </div>
     <div class="instructions" v-if="selectedSystem">Choose your version</div>
     <div class="version-tabs" v-if="selectedSystem">
       <div class="version-tab"
@@ -67,24 +90,21 @@
       <hr>
       <h3>Manual Installation (Recommended)</h3>
       <ol>
-        <li>Create a new <code>/etc/yum.repos.d/naomi.repo</code> file with the following content:</li>
-        <div class="language-ini">
-<pre class="language-ini"><code>[Naomi-{{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'dev' ? 'Dev' : 'Snapshots'}}]
-name=Naomi 2.x.x {{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'dev' ? 'Dev' : 'Snapshots'}}
-baseurl={{selectedVersion === 'stable' ? 'https://dl.bintray.com/naomiproject/rpi-repo/stable' : selectedVersion === 'dev' ? 'https://dl.bintray.com/naomiproject/rpi-repo/dev' : 'https://naomi.jfrog.io/naomiproject/naomi-linuxpkg-rpm/unstable'}}
-gpgcheck=1
-gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=naomiproject
-enabled=1
-</code></pre>
-        </div>
-        <li>Go into the repository</li>
-          <div class="language-shell"><pre class="language-shell"><code>cd naomi</code></pre></div>
+        <li>Follow the Config <router-link to="/docs/configuration/">Documentation</router-link> to setup the <router-link to="/docs/configuration/audio.html">Audio Engine</router-link>, <router-link to="/docs/configuration/tts.html">Text-to-Speech</router-link>, & <router-link to="/docs/configuration/stt.html">Speech-to-Text</router-link>.</li>
+        <li>Fetch the repository</li>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/stable/Naomi-{{this.$page.frontmatter.currentVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/dev/Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code></code></pre></div>
+        <li>Explode directory</li>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">unzip Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">unzip Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code></code></pre></div>
+        <li>Rename directory</li>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">mv Naomi-{{this.$page.frontmatter.currentVersion}} Naomi</code><code v-else-if="selectedVersion === 'dev'">mv Naomi-{{this.$page.frontmatter.currentMilestoneVersion}} Naomi</code></pre></div>
+        <li>Go into the directory</li>
+          <div class="language-shell"><pre class="language-shell"><code>cd Naomi</code></pre></div>
         <li>Setup the install</li>
-          <div class="language-shell"><pre class="language-shell"><code>chmod +x naomi-setup.sh</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code>chmod +x naomi-setup.sh</br>chmod +x compile_translations.sh</code></pre></div>
         <li>Run the install</li>
           <div class="language-shell"><pre class="language-shell"><code>./naomi-setup.sh</code></pre></div>
         <li>Run the app</li>
-          <div class="language-shell"><pre class="language-shell"><code>python Naomi.py</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">python Naomi.py</code><code v-else-if="selectedVersion === 'dev'">python3 Naomi.py</code></pre></div>
       </ol>
     </div>    
 
@@ -102,6 +122,7 @@ enabled=1
 
     <div v-if="selectedSystem === 'win10' && selectedVersion === 'stable'">
       <hr>
+      <h3>Windows Installation</h3>
       <p>Coming Soon!</p>
     </div>
 
@@ -238,11 +259,11 @@ export default {
   data () {
     return {
       systems: [
-//        ['tux', 'Linux'],
+        ['tux', 'Linux'],
 //        ['win10', 'Windows'],
 //        ['apple', 'macOS'],
         ['raspberry-pi', 'Raspberry Pi'],
-//        ['pine64', 'PINE A64'],
+        ['pine64', 'PINE A64'],
 //        ['docker', 'Docker'],
       ],
       selectedSystem: 'raspberry-pi',
