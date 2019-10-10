@@ -52,7 +52,7 @@
     <div v-if="naobianImage === 'true'">
       <div v-if="selectedSystem === 'raspberry-pi' || selectedSystem === 'pine64'">
         <hr>
-        <h3>Install Naobian (Recommended)</h3>
+        <h1>Install Naobian (Recommended)</h1>
         <ol>
           <li>Download and install <a target="_blank" href="https://www.balena.io/etcher/">Etcher</a></li>
           <li>Download the Naobian image (<code>.img</code> file) for your system from the repo:</li>
@@ -67,7 +67,7 @@
 
     <div v-if="(selectedSystem === 'tux' && selectedDistro === 'deb') || selectedSystem === 'raspberry-pi' || selectedSystem === 'pine64'">
       <hr>
-      <h3>Manual Installation <span v-if="selectedSystem === 'tux'">(Recommended)</span></h3>
+      <h1>Manual Installation <span v-if="selectedSystem === 'tux'">(Recommended)</span></h1>
       <ol>
         <li>Follow the Config <router-link to="/docs/configuration/">Documentation</router-link> to setup the <router-link to="/docs/configuration/audio.html">Audio Engine</router-link>, <router-link to="/docs/configuration/tts.html">Text-to-Speech</router-link>, & <router-link to="/docs/configuration/stt.html">Speech-to-Text</router-link>.</li>
         <li>Fetch the repository</li>
@@ -88,7 +88,7 @@
     </div>
     <div v-if="selectedSystem === 'tux' && selectedDistro === 'rpm'">
       <hr>
-      <h3>Manual Installation (Recommended)</h3>
+      <h1>Manual Installation (Recommended)</h1>
       <ol>
         <li>Follow the Config <router-link to="/docs/configuration/">Documentation</router-link> to setup the <router-link to="/docs/configuration/audio.html">Audio Engine</router-link>, <router-link to="/docs/configuration/tts.html">Text-to-Speech</router-link>, & <router-link to="/docs/configuration/stt.html">Speech-to-Text</router-link>.</li>
         <li>Fetch the repository</li>
