@@ -40,13 +40,14 @@
         <strong>{{version[1]}}</strong><br />
         <small v-if="version[0] === 'stable'">{{$page.frontmatter.currentVersion}}</small>
         <small v-if="version[0] === 'dev'">{{$page.frontmatter.currentMilestoneVersion}}</small>
+        <small v-if="version[0] === 'nightly'">{{$page.frontmatter.currentNightlyVersion}}</small>
       </div>
     </div>
 
     <div v-if="selectedVersion" class="tip custom-block">
       <p v-if="selectedVersion === 'stable'"><strong>Stable</strong> versions are thoroughly tested semi-annual official releases of Naomi. Use the stable version for your production environment if you don't need the latest enhancements and prefer a robust system.</p>
-      <p v-if="selectedVersion === 'dev'"><strong>Milestone</strong> versions are intermediary releases of the next Naomi version, released about once a month, and they include the new recently added features and bugfixes. They are a good compromise between the current stable version and the bleeding-edge and potentially unstable snapshot version.</p>
-      <p v-if="selectedVersion === 'snapshot'"><strong>Snapshot</strong> versions are at most 1 or 2 days old and include the latest code. Use a snapshot for testing out very recent changes, but be aware some snapshots might be unstable. Use in production at your own risk!</p>
+      <p v-if="selectedVersion === 'dev'"><strong>Milestone</strong> versions are intermediary releases of the next Naomi version, released about once a month, and they include the new recently added features and bugfixes. They are a good compromise between the current stable version and the bleeding-edge and potentially unstable nightly version.</p>
+      <p v-if="selectedVersion === 'nightly'"><strong>Nightly</strong> versions are at most 1 or 2 days old and include the latest code. Use nightly for testing out very recent changes, but be aware some nightly versions might be unstable. Use in production at your own risk!</p>
     </div>
 
     <div v-if="naobianImage === 'true'">
@@ -71,11 +72,11 @@
       <ol>
         <li>Follow the Config <router-link to="/docs/configuration/">Documentation</router-link> to setup the <router-link to="/docs/configuration/audio.html">Audio Engine</router-link>, <router-link to="/docs/configuration/tts.html">Text-to-Speech</router-link>, & <router-link to="/docs/configuration/stt.html">Speech-to-Text</router-link>.</li>
         <li>Fetch the repository</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/stable/Naomi-{{this.$page.frontmatter.currentVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/dev/Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code></code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/stable/Naomi-{{this.$page.frontmatter.currentVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/dev/Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code><code v-else-if="selectedVersion === 'nightly'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/nightly/{{this.$page.frontmatter.currentNightlyVersion}}.zip" -o {{this.$page.frontmatter.currentNightlyVersion}}.zip</code></code></pre></div>
         <li>Explode directory</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">unzip Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">unzip Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code></code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">unzip Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">unzip Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code><code v-else-if="selectedVersion === 'nightly'">unzip {{this.$page.frontmatter.currentNightlyVersion}}.zip</code></code></pre></div>
         <li>Rename directory</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">mv Naomi-{{this.$page.frontmatter.currentVersion}} Naomi</code><code v-else-if="selectedVersion === 'dev'">mv Naomi-{{this.$page.frontmatter.currentMilestoneVersion}} Naomi</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">mv Naomi-{{this.$page.frontmatter.currentVersion}} Naomi</code><code v-else-if="selectedVersion === 'dev'">mv Naomi-{{this.$page.frontmatter.currentMilestoneVersion}} Naomi</code><code v-else-if="selectedVersion === 'nightly'">mv {{this.$page.frontmatter.currentNightlyVersion}} Naomi</code></pre></div>
         <li>Go into the directory</li>
           <div class="language-shell"><pre class="language-shell"><code>cd Naomi</code></pre></div>
         <li>Setup the install</li>
@@ -83,7 +84,7 @@
         <li>Run the install</li>
           <div class="language-shell"><pre class="language-shell"><code>./naomi-setup.sh</code></pre></div>
         <li>Run the app</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">python Naomi.py</code><code v-else-if="selectedVersion === 'dev'">python3 Naomi.py</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">python Naomi.py</code><code v-else-if="selectedVersion === 'dev' || 'nightly'">python3 Naomi.py</code></pre></div>
       </ol>
     </div>
     <div v-if="selectedSystem === 'tux' && selectedDistro === 'rpm'">
@@ -92,11 +93,11 @@
       <ol>
         <li>Follow the Config <router-link to="/docs/configuration/">Documentation</router-link> to setup the <router-link to="/docs/configuration/audio.html">Audio Engine</router-link>, <router-link to="/docs/configuration/tts.html">Text-to-Speech</router-link>, & <router-link to="/docs/configuration/stt.html">Speech-to-Text</router-link>.</li>
         <li>Fetch the repository</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/stable/Naomi-{{this.$page.frontmatter.currentVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/dev/Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code></code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/stable/Naomi-{{this.$page.frontmatter.currentVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/dev/Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code><code v-else-if="selectedVersion === 'nightly'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/nightly/{{this.$page.frontmatter.currentNightlyVersion}}.zip" -o {{this.$page.frontmatter.currentNightlyVersion}}.zip</code></code></pre></div>
         <li>Explode directory</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">unzip Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">unzip Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code></code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">unzip Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">unzip Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code><code v-else-if="selectedVersion === 'nightly'">unzip {{this.$page.frontmatter.currentNightlyVersion}}.zip</code></code></pre></div>
         <li>Rename directory</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">mv Naomi-{{this.$page.frontmatter.currentVersion}} Naomi</code><code v-else-if="selectedVersion === 'dev'">mv Naomi-{{this.$page.frontmatter.currentMilestoneVersion}} Naomi</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">mv Naomi-{{this.$page.frontmatter.currentVersion}} Naomi</code><code v-else-if="selectedVersion === 'dev'">mv Naomi-{{this.$page.frontmatter.currentMilestoneVersion}} Naomi</code><code v-else-if="selectedVersion === 'nightly'">mv {{this.$page.frontmatter.currentNightlyVersion}} Naomi</code></pre></div>
         <li>Go into the directory</li>
           <div class="language-shell"><pre class="language-shell"><code>cd Naomi</code></pre></div>
         <li>Setup the install</li>
@@ -104,7 +105,7 @@
         <li>Run the install</li>
           <div class="language-shell"><pre class="language-shell"><code>./naomi-setup.sh</code></pre></div>
         <li>Run the app</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">python Naomi.py</code><code v-else-if="selectedVersion === 'dev'">python3 Naomi.py</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">python Naomi.py</code><code v-else-if="selectedVersion === 'dev' || 'nightly'">python3 Naomi.py</code></pre></div>
       </ol>
     </div>    
 
@@ -117,7 +118,7 @@
     <div v-if="selectedSystem !== 'docker' && (selectedVersion === 'stable' || selectedVersion === 'dev')">
     </div>
 
-    <div v-if="selectedSystem !== 'docker' && selectedVersion === 'snapshot'">
+    <div v-if="selectedSystem !== 'docker' && selectedVersion === 'nightly'">
     </div>
 
     <div v-if="selectedSystem === 'win10' && selectedVersion === 'stable'">
@@ -291,6 +292,7 @@ export default {
       return [
         ['stable', 'Stable'],
         ['dev', 'Milestone'],
+        ['nightly', 'Nightly'],
       ]
     },
     runtimeDownloadLink () {
