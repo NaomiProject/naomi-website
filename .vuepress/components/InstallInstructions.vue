@@ -264,7 +264,7 @@ export default {
 //        ['win10', 'Windows'],
 //        ['apple', 'macOS'],
         ['raspberry-pi', 'Raspberry Pi'],
-        ['pine64', 'PINE A64'],
+//        ['pine64', 'PINE A64'],
 //        ['docker', 'Docker'],
       ],
       selectedSystem: 'raspberry-pi',
