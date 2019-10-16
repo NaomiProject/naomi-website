@@ -241,7 +241,12 @@ module.exports = {
             collapsable: false,
             children: [
               ['developer/', 'Development Overview'],
-              'developer/contributing/contributing'
+              'developer/contributing/contributing',
+              'developer/plugins/',
+              'developer/plugins/audioengine_plugin',
+              'developer/plugins/speechhandler_plugin',
+              'developer/plugins/tti_plugin',
+              'developer/plugins/tts_plugin',
             ]
           }
         ]
