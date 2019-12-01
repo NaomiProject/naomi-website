@@ -3,7 +3,7 @@ sidebar: false
 layout: AboutPage
 title: Download Naomi
 currentVersion: 2.2
-currentMilestoneVersion: 3.0.M10
+currentMilestoneVersion: 3.0.M11
 currentNightlyVersion: Naomi-Nightly
 meta:
   - name: og:title
