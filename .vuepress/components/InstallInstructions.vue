@@ -270,7 +270,7 @@ export default {
       selectedSystem: 'raspberry-pi',
       selectedDistro: 'deb',
       selectedVersion: 'stable',
-      naobianImage: 'true'
+      naobianImage: 'false'
     }
   },
   methods: {
