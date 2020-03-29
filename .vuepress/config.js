@@ -220,6 +220,7 @@ module.exports = {
             children: [
               ['configuration/', 'Configuration Overview'],
               'configuration/audio',
+              'configuration/tti',
               'configuration/tts',
               'configuration/stt',
               'configuration/vad',
