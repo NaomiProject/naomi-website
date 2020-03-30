@@ -1,7 +1,7 @@
 const fs = require ('fs-extra')
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-
+const moment = require('moment')
 const HighlightDsl = require('./highlight-dsl')
 const HighlightRules = require('./highlight-rules')
 
@@ -85,6 +85,18 @@ module.exports = {
         { from: '.vuepress/_headers', to: '.'},
       ]))
     },
+    plugins: [
+      [
+        '@vuepress/last-updated',
+        {
+          transformer: (timestamp, lang) => {
+            const moment = require('moment')
+            moment.locale(lang)
+            return moment(timestamp).fromNow()
+          }
+        }
+      ]
+    ],
     serviceWorker: false,
     themeConfig: {
       logo: '/naomi-logo.png',

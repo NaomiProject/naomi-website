@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "Naomi Website",
   "dependencies": {
+    "@vuepress/plugin-last-updated": "^1.4.0",
     "@widgetbot/crate": "^3.1.237",
     "copy-webpack-plugin": "^4.5.1",
     "fs-extra": "^6.0.1",
     "headroom.js": "^0.9.4",
     "markdown-it": "^8.4.1",
+    "moment": "^2.24.0",
     "scrollreveal": "^3.4.0",
     "vue-parallax": "^1.1.1",
     "vue-parallaxy": "^1.1.1",
