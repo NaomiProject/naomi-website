@@ -8,15 +8,16 @@ const HighlightRules = require('./highlight-rules')
 const base = process.env.N_DOCS_VERSION ? `/v${process.env.N_DOCS_VERSION}/` : '/'
 
 module.exports = {
-    title: 'Naomi',
-    description: 'Naomi - an open source platform for developing always-on, voice-controlled applications',
+    title: 'Project Naomi',
+    description: 'The Naomi Project is an open source, technology agnostic platform for developing always-on, voice-controlled applications! Naomi software integrates different home text-to-speech & speech-to-text systems, plugins and technologies into a single solution. It provides uniform user interfaces, and a common approach for developing always-on, voice-controlled applications, regardless of the number of devices and sub-systems involved.',
     dest: 'Naomi-Website',
     host: 'localhost',
     base,
     ga: 'UA-130889564-1',
     shouldPrefetch: () => false,
     head: [
-      ['link', { rel: 'stylesheet', href: `/fonts/fonts.css` }],
+      ['link', { rel: 'stylesheet', href: `/fonts/fonts.css` }],            
+      // Icons
       ['link', { rel: 'apple-touch-icon', sizes:'57x57', href: '/apple-icon-57x57.png' }],
       ['link', { rel: 'apple-touch-icon', sizes:'60x60', href: '/apple-icon-60x60.png' }],
       ['link', { rel: 'apple-touch-icon', sizes:'72x72', href: '/apple-icon-72x72.png' }],
@@ -33,20 +34,31 @@ module.exports = {
       ['link', { rel: 'manifest', href:'/manifest.json' }],
       ['meta', { name: 'msapplication-TileColor', content:'#ffffff' }],
       ['meta', { name: 'msapplication-TileImage', content:'/ms-icon-144x144.png' }],
-      ['meta', { name: 'theme-color', content:'#ffffff' }],
-      ['meta', { property: 'twitter:image', content:'https://www.projectnaomi.com/hero.jpg' }],
-      ['meta', { property: 'twitter:url', content:'/index.html' }],
-      ['meta', { property: 'twitter:card', content:'summary_large_image' }],
-      ['meta', { property: 'twitter:site', content:'@ProjectNaomi' }],
+      // Facebook Open Graph
+      ['meta', { property: 'og:locale', content:'en_US' }],
       ['meta', { property: 'og:site_name', content:'Project Naomi' }],
-      ['meta', { name: 'description', content:'The Naomi Project is an open source, technology agnostic platform for developing always-on, voice-controlled applications! Naomi software integrates different home text-to-speech & speech-to-text systems, plugins and technologies into a single solution. It provides uniform user interfaces, and a common approach for developing always-on, voice-controlled applications, regardless of the number of devices and sub-systems involved.' }],
-      ['meta', { property: 'twitter:title', content:'Project Naomi' }],
-      ['meta', { property: 'twitter:description', content:'The Naomi Project is an open source, technology agnostic platform for developing always-on, voice-controlled applications! Naomi software integrates different home text-to-speech & speech-to-text systems, plugins and technologies into a single solution. It provides uniform user interfaces, and a common approach for developing always-on, voice-controlled applications, regardless of the number of devices and sub-systems involved.' }],
-      ['meta', { property: 'og:image', content:'/naomi-logo.png' }],
-      ['meta', { property: 'og:url', content:'https://www.projectnaomi.com/' }],
-      ['meta', { property: 'og:description', content:'The Naomi Project is an open source, technology agnostic platform for developing always-on, voice-controlled applications! Naomi software integrates different home text-to-speech & speech-to-text systems, plugins and technologies into a single solution. It provides uniform user interfaces, and a common approach for developing always-on, voice-controlled applications, regardless of the number of devices and sub-systems involved.' }],
-      ['meta', { property: 'og:type', content:'website' }],
       ['meta', { property: 'og:title', content:'Project Naomi' }],
+      ['meta', { property: 'og:url', content:'https://www.projectnaomi.com/' }],
+      ['meta', { property: 'og:type', content:'website' }],
+      ['meta', { property: 'og:description', content:'The Naomi Project is an open source, technology agnostic platform for developing always-on, voice-controlled applications! Naomi software integrates different home text-to-speech & speech-to-text systems, plugins and technologies into a single solution. It provides uniform user interfaces, and a common approach for developing always-on, voice-controlled applications, regardless of the number of devices and sub-systems involved.' }],
+      ['meta', { property: 'og:image', content:'https://www.projectnaomi.com/naomi-logo.png' }],
+      ['meta', { property: 'og:image:url', content:'https://www.projectnaomi.com/naomi-logo.png' }],
+      ['meta', { property: 'og:image:secure_url', content:'https://www.projectnaomi.com/naomi-logo.png' }],
+      // Google+ / Schema.org
+      ['meta', { itemprop:'name', content:'Project Naomi' }],
+      ['meta', { itemprop:'headline', content:'Project Naomi' }],
+      ['meta', { itemprop:'description', content:'The Naomi Project is an open source, technology agnostic platform for developing always-on, voice-controlled applications! Naomi software integrates different home text-to-speech & speech-to-text systems, plugins and technologies into a single solution. It provides uniform user interfaces, and a common approach for developing always-on, voice-controlled applications, regardless of the number of devices and sub-systems involved.' }],
+      ['meta', { itemprop:'image', content:'https://www.projectnaomi.com/naomi-logo.png' }],
+      ['meta', { itemprop:'author', content:'Austin Casteel' }],
+      // Twitter Cards
+      ['meta', { property: 'twitter:title', content:'Project Naomi' }],
+      ['meta', { property: 'twitter:url', content:'https://www.projectnaomi.com/' }],
+      ['meta', { property: 'twitter:description', content:'The Naomi Project is an open source, technology agnostic platform for developing always-on, voice-controlled applications! Naomi software integrates different home text-to-speech & speech-to-text systems, plugins and technologies into a single solution. It provides uniform user interfaces, and a common approach for developing always-on, voice-controlled applications, regardless of the number of devices and sub-systems involved.' }],
+      ['meta', { property: 'twitter:image', content:'https://www.projectnaomi.com/hero.jpg' }],
+      ['meta', { property: 'twitter:card', content:'summary_large_image' }],
+      // SEO
+      ['meta', { name:'author', content:'Austin Casteel' }],
+      ['meta', { name:'publisher', content:'Project Naomi' }],
     ],
     markdown: {
       config: (md) => {
