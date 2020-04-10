@@ -9,7 +9,7 @@
         <div class="os-label">{{system[1]}}</div>
       </div>
     </div>
-    <!--<div class="instructions" v-if="selectedSystem === 'tux'">Choose your package manager</div>
+    <div class="instructions" v-if="selectedSystem === 'tux'">Choose your package manager</div>
     <div class="distro-tabs" v-if="selectedSystem === 'tux'">
       <div class="distro-tab"
         :class="{ 'selected': selectedDistro === 'deb' }" @click="selectDistro('deb')">
@@ -21,7 +21,7 @@
         </div>
         <div class="distro-label">APT (.deb packages)</div>
       </div>
-      <div class="distro-tab"
+      <!--<div class="distro-tab"
         :class="{ 'selected': selectedDistro === 'rpm' }" @click="selectDistro('rpm')">
         <div>
           <img src="/os/redhat.svg" title="RedHat" />
@@ -30,8 +30,8 @@
           <img src="/os/fedora.svg" style="filter: grayscale(100%)" title="Fedora" />...
         </div>
         <div class="distro-label">RPM (.rpm packages)</div>
-      </div>
-    </div>-->
+      </div>-->
+    </div>
     <div class="instructions" v-if="selectedSystem">Choose your version</div>
     <div class="version-tabs" v-if="selectedSystem">
       <div class="version-tab"
@@ -51,7 +51,7 @@
     </div>
 
     <div v-if="naobianImage === 'true'">
-      <div v-if="selectedSystem === 'raspberry-pi' || selectedSystem === 'pine64'">
+      <div v-if="selectedSystem === 'raspberry-pi'">
         <hr>
         <h1>Install Naobian (Recommended)</h1>
         <ol>
@@ -66,11 +66,10 @@
       </div>
     </div>
 
-    <div v-if="(selectedSystem === 'tux' && selectedDistro === 'deb') || selectedSystem === 'raspberry-pi' || selectedSystem === 'pine64'">
+    <div v-if="(selectedSystem === 'tux' && selectedDistro === 'deb') || selectedSystem === 'raspberry-pi'">
       <hr>
       <h1>Manual Installation <span v-if="selectedSystem === 'tux'">(Recommended)</span></h1>
       <ol>
-        <li>Follow the Config <router-link to="/docs/configuration/">Documentation</router-link> to setup the <router-link to="/docs/configuration/audio.html">Audio Engine</router-link>, <router-link to="/docs/configuration/tts.html">Text-to-Speech</router-link>, & <router-link to="/docs/configuration/stt.html">Speech-to-Text</router-link>.</li>
         <li>Fetch the repository</li>
           <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/stable/Naomi-{{this.$page.frontmatter.currentVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/dev/Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code><code v-else-if="selectedVersion === 'nightly'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/nightly/{{this.$page.frontmatter.currentNightlyVersion}}.zip" -o {{this.$page.frontmatter.currentNightlyVersion}}.zip</code></code></pre></div>
         <li>Explode directory</li>
@@ -87,11 +86,10 @@
           <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">python Naomi.py</code><code v-else-if="selectedVersion === 'dev' || 'nightly'">python3 Naomi.py</code></pre></div>
       </ol>
     </div>
-    <div v-if="selectedSystem === 'tux' && selectedDistro === 'rpm'">
+    <!--<div v-if="selectedSystem === 'tux' && selectedDistro === 'rpm'">
       <hr>
       <h1>Manual Installation (Recommended)</h1>
       <ol>
-        <li>Follow the Config <router-link to="/docs/configuration/">Documentation</router-link> to setup the <router-link to="/docs/configuration/audio.html">Audio Engine</router-link>, <router-link to="/docs/configuration/tts.html">Text-to-Speech</router-link>, & <router-link to="/docs/configuration/stt.html">Speech-to-Text</router-link>.</li>
         <li>Fetch the repository</li>
           <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/stable/Naomi-{{this.$page.frontmatter.currentVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/dev/Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code><code v-else-if="selectedVersion === 'nightly'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/nightly/{{this.$page.frontmatter.currentNightlyVersion}}.zip" -o {{this.$page.frontmatter.currentNightlyVersion}}.zip</code></code></pre></div>
         <li>Explode directory</li>
@@ -107,26 +105,31 @@
         <li>Run the app</li>
           <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">python Naomi.py</code><code v-else-if="selectedVersion === 'dev' || 'nightly'">python3 Naomi.py</code></pre></div>
       </ol>
-    </div>    
-
-    <div v-if="selectedSystem === 'docker'">
-      <hr>
-      <h3>Docker Container Quick Installation</h3>
-      <p>Coming Soon!</p>
-    </div>
-
-    <div v-if="selectedSystem !== 'docker' && (selectedVersion === 'stable' || selectedVersion === 'dev')">
-    </div>
-
-    <div v-if="selectedSystem !== 'docker' && selectedVersion === 'nightly'">
-    </div>
-
-    <div v-if="selectedSystem === 'win10' && selectedVersion === 'stable'">
+    </div>-->
+    
+    <div v-if="selectedSystem === 'win10' && (selectedVersion === 'stable' || selectedVersion === 'dev' || selectedVersion === 'nightly')">
       <hr>
       <h3>Windows Installation</h3>
       <p>Coming Soon!</p>
     </div>
 
+    <div v-if="selectedSystem === 'apple' && (selectedVersion === 'stable' || selectedVersion === 'dev' || selectedVersion === 'nightly')">
+      <hr>
+      <h3>Apple Installation</h3>
+      <p>Coming Soon!</p>
+    </div>
+
+    <div v-if="selectedSystem === 'virtualbox' && (selectedVersion === 'stable' || selectedVersion === 'dev' || selectedVersion === 'nightly')">
+      <hr>
+      <h3>Oracle VM VirtualBox Installation</h3>
+      <p>Coming Soon!</p>
+    </div>
+
+    <div v-if="selectedSystem === 'docker' && (selectedVersion === 'stable' || selectedVersion === 'dev' || selectedVersion === 'nightly')">
+      <hr>
+      <h3>Docker Installation</h3>
+      <p>Coming Soon!</p>
+    </div>
   </div>
 
 </template>
@@ -261,15 +264,15 @@ export default {
     return {
       systems: [
         ['tux', 'Linux'],
-//        ['win10', 'Windows'],
-//        ['apple', 'macOS'],
+        //['win10', 'Windows'],
+        //['apple', 'macOS'],
         ['raspberry-pi', 'Raspberry Pi'],
-//        ['pine64', 'PINE A64'],
-//        ['docker', 'Docker'],
+        //['virtualbox', 'Virtual Box'],
+        //['docker', 'Docker'],
       ],
       selectedSystem: 'raspberry-pi',
       selectedDistro: 'deb',
-      selectedVersion: 'stable',
+      selectedVersion: 'dev',
       naobianImage: 'false'
     }
   },
@@ -277,7 +280,7 @@ export default {
     selectSystem (system) {
       this.selectedSystem = system
       if (system !== 'tux' && this.selectedVersion === 'dev') {
-        this.selectedVersion = null
+        this.selectedVersion = 'dev'
       }
     },
     selectVersion (version) {
@@ -294,27 +297,6 @@ export default {
         ['dev', 'Milestone'],
         ['nightly', 'Nightly'],
       ]
-    },
-    runtimeDownloadLink () {
-      if (this.selectedVersion === 'stable') {
-        return `https://bintray.com/naomiproject/mvn/download_file?file_path=com%2Fprojectnaomi%2Fdistro%2Fnaomi%2F${this.$page.frontmatter.currentVersion}%2Fnaomi-${this.$page.frontmatter.currentVersion}.zip`
-      } else if (this.selectedVersion === 'dev') {
-        return `https://naomi.jfrog.io/naomiproject/libs-milestone-local/com/projectnaomi/distro/naomi/${this.$page.frontmatter.currentMilestoneVersion}/naomi-${this.$page.frontmatter.currentMilestoneVersion}.zip`
-      }
-    },
-    addonsDownloadLink () {
-      if (this.selectedVersion === 'stable') {
-        return `https://bintray.com/naomiproject/mvn/download_file?file_path=com%2Fnaomi%2Fdistro%2Fnaomi-addons%2F${this.$page.frontmatter.currentVersion}%2Fnaomi-addons-${this.$page.frontmatter.currentVersion}.kar`
-      } else if (this.selectedVersion === 'dev') {
-        return `https://naomi.jfrog.io/naomiproject/libs-milestone-local/com/naomi/distro/naomi-addons/${this.$page.frontmatter.currentMilestoneVersion}/naomi-addons-${this.$page.frontmatter.currentMilestoneVersion}.kar`
-      }
-    },
-    legacyAddonsDownloadLink () {
-      if (this.selectedVersion === 'stable') {
-        return `https://bintray.com/naomiproject/mvn/download_file?file_path=com%2Fnaomi%2Fdistro%2Fnaomi-addons-legacy%2F${this.$page.frontmatter.currentVersion}%2Fnaomi-addons-legacy-${this.$page.frontmatter.currentVersion}.kar`
-      } else if (this.selectedVersion === 'dev') {
-        return `https://naomi.jfrog.io/naomiproject/libs-milestone-local/com/naomi/distro/naomi-addons-legacy/${this.$page.frontmatter.currentMilestoneVersion}/naomi-addons-legacy-${this.$page.frontmatter.currentMilestoneVersion}.kar`
-      }
     },
     currentDownloadVersion () {
       if (this.selectedVersion === 'stable') {

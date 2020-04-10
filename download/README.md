@@ -45,9 +45,7 @@ meta:
 
 ::: warning PLEASE READ THE DOCS
 
-Only a quick reference and download links are provided below, all platforms and steps after the installation are not covered.
-
-If you're new to Naomi, it is strongly recommended to read the [Configuration Guide](/docs/configuration/) for a complete overview of your options and detailed instructions.
+Only download links and steps to setup Naomi are provided below, all platforms and steps after the installation are not covered.
 
 :::
 
@@ -56,7 +54,7 @@ If you're new to Naomi, it is strongly recommended to read the [Configuration Gu
 <!--<h2 class="big-title">Applications</h2>
 
 <div class="apps-buttons">
-  <a target="_blank" href="https://play.google.com/store/apps/details?id=com.projectnaomi.naodroid"><img style="padding: 1em" height="40" src="./images/android.svg" /></a>
+  <a target="_blank" href="https://play.google.com/store/apps/details?id=com.projectnaomi.android"><img style="padding: 1em" height="40" src="./images/android.svg" /></a>
   <a target="_blank" href="https://itunes.apple.com/us/app/naomi/id#"><img style="padding: 1em" height="40" src="./images/ios.svg" /></a>
   <a target="_blank" href="https://www.microsoft.com/en-us/store/p/naomi/#"><img style="padding: 1em" height="40" src="./images/win10.png" /></a>
 </div>-->
@@ -70,6 +68,5 @@ If you're new to Naomi, it is strongly recommended to read the [Configuration Gu
 
 <div class="acknowledgements-logos">
   <a target="_blank" href="https://www.bintray.com"><img style="padding: 1em" height="50" src="./images/acknowledgements/bintray.png" /></a>
-  <!--<a target="_blank" href="https://www.digitalocean.com"><img style="padding: 1em" height="50" src="./images/acknowledgements/digitalocean.png" /></a>-->
   <a target="_blank" href="https://www.netlify.com"><img style="padding: 1em" height="50" src="./images/acknowledgements/netlify.svg" /></a>
 </div>
