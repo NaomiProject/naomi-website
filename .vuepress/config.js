@@ -116,7 +116,7 @@ module.exports = {
       editLinks: false,
       activeHeaderLinks: false,
       sidebarDepth: 0,
-      docsDir: 'docs',
+      docsDir: 'dev/docs',
       search: true,
       searchMaxSuggestions: 10,
       lastUpdated: 'Last Updated',
@@ -127,7 +127,7 @@ module.exports = {
         },
         {
           text: 'Documentation',
-          link: '/docs/',
+          link: '/dev/docs/',
         },
         {
           text: 'Support',
