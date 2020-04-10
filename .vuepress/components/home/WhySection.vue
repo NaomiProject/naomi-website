@@ -34,12 +34,8 @@
             <router-link to="docs/installation/macosx.html">macOS</router-link>,
             <router-link to="docs/installation/windows.html">Windows</router-link>,
             <router-link to="docs/installation/rasppi.html">Raspberry Pi</router-link>,
-            <router-link to="docs/installation/pine.html">PINE64</router-link>,
-            <router-link to="docs/installation/docker.html">Docker</router-link>,
-            <router-link to="docs/installation/synology.html">Synology</router-link>...
-            Access it with apps for the web,
-            <router-link to="docs/apps/ios.html">iOS</router-link>,
-            <router-link to="docs/apps/android.html">Android</router-link> and others.
+            <router-link to="docs/installation/virtualbox.html">Virtual Box</router-link>,
+            <router-link to="docs/installation/docker.html">Docker</router-link>.
           </p>
         </div>
     </div>

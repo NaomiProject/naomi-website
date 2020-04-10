@@ -157,25 +157,25 @@ module.exports = {
                   link: '/privacy'
                 },
               ]
-            }
-          ]
-        },
-        {
-          text: 'Support Naomi',
-          link: '/support-naomi/#Sponsor-Naomi',
-          items: [
-            {
-              text: 'One-time Donations',
-              link: '/support-naomi/#Sponsor-Naomi'
             },
             {
-              text: 'Recurring Pledges',
-              link: '/support-naomi/#Recurring-Pledges'
+              text: 'Support Naomi',
+              link: '/support-naomi/#Sponsor-Naomi',
+              items: [
+                {
+                  text: 'One-time Donations',
+                  link: '/support-naomi/#Sponsor-Naomi'
+                },
+                {
+                  text: 'Recurring Pledges',
+                  link: '/support-naomi/#Recurring-Pledges'
+                },
+                //{
+                //    text: 'Foundation',
+                //    link: 'https://foundation.projectnaomi.com/'
+                //},
+              ]
             },
-//            {
-//                text: 'Foundation',
-//                link: 'https://foundation.projectnaomi.com/'
-//            },
           ]
         },
         {
@@ -200,13 +200,7 @@ module.exports = {
               ['installation/linux', 'Linux'],
               ['installation/windows', 'Windows'],
               ['installation/macos', 'macOS'],
-              'installation/rasppi',
-              'installation/naobian',
-              /*'installation/pine',
-              'installation/docker',
-              'installation/synology',
-              'installation/qnap',
-              ['installation/security', 'Security']*/
+              ['installation/rasppi', 'Raspberry Pi'],
             ]
           },
           {
@@ -255,18 +249,15 @@ module.exports = {
               ['installation/linux', 'Linux'],
               ['installation/windows', 'Windows'],
               ['installation/macos', 'macOS'],
-              'installation/rasppi',
-              'installation/naobian',
-              /*'installation/pine',
-              'installation/docker',
-              'installation/synology',
-              'installation/qnap',
-              ['installation/security', 'Security']*/
+              ['installation/rasppi', 'Raspberry Pi'],
+              ['installation/naobian', 'Naobian'],
+              ['installation/virtualbox', 'VirtualBox'],
+              ['installation/docker', 'Docker'],
             ]
           },
           {
-            title: 'Configuration Guide',
-            collapsable: false,
+            title: 'Manual Configuration Guide',
+            collapsable: true,
             children: [
               ['configuration/', 'Configuration Overview'],
               'configuration/audio',
@@ -275,20 +266,14 @@ module.exports = {
               'configuration/vad',
               'configuration/profile',
               'configuration/plugins',
-            ]
-          },
-          {
-            title: 'Plugins',
-            collapsable: false,
-            children: [
-              'plugins/marytts-server',
-              'plugins/pocketsphinx-install',
-              'plugins/deepspeech-setup'
+              'configuration/marytts-server',
+              'configuration/pocketsphinx-install',
+              'configuration/deepspeech-setup'
             ]
           },
           {
             title: 'Developer Guide',
-            collapsable: false,
+            collapsable: true,
             children: [
               ['developer/', 'Development Overview'],
               'developer/contributing/contributing',
@@ -298,7 +283,18 @@ module.exports = {
               'developer/plugins/tti_plugin',
               'developer/plugins/tts_plugin',
             ]
-          }
+          },
+          /*{
+            title: 'Plugins',
+            collapsable: true,
+            children: [
+              'plugins/',
+              'plugins/audioengine_plugin',
+              'plugins/speechhandler_plugin',
+              'plugins/tti_plugin',
+              'plugins/tts_plugin',
+            ]
+          }*/
         ]
       },
     }
