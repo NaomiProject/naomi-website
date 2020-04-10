@@ -284,17 +284,6 @@ module.exports = {
               'developer/plugins/tts_plugin',
             ]
           },
-          /*{
-            title: 'Plugins',
-            collapsable: true,
-            children: [
-              'plugins/',
-              'plugins/audioengine_plugin',
-              'plugins/speechhandler_plugin',
-              'plugins/tti_plugin',
-              'plugins/tts_plugin',
-            ]
-          }*/
         ]
       },
     }
