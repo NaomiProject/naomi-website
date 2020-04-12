@@ -1,7 +1,16 @@
+
+const PluginsAudioengines = require('./plugins-audioengines.js')
+const PluginsSpeechhandlers = require('./plugins-speechhandlers.js')
+const PluginsTTIs = require('./plugins-ttis.js')
+const PluginsTTSs = require('./plugins-ttss.js')
+const PluginsSTTs = require('./plugins-stts.js')
+const PluginsSTTTrainers = require('./plugins-stt_trainers.js')
+const PluginsVads = require('./plugins-vads.js')
+const PluginsVisualizations = require('./plugins-visualizations.js')
+
 const fs = require ('fs-extra')
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const moment = require('moment')
 const HighlightDsl = require('./highlight-dsl')
 const HighlightRules = require('./highlight-rules')
 
@@ -97,18 +106,6 @@ module.exports = {
         { from: '.vuepress/_headers', to: '.'},
       ]))
     },
-    plugins: [
-      [
-        '@vuepress/last-updated',
-        {
-          transformer: (timestamp, lang) => {
-            const moment = require('moment')
-            moment.locale(lang)
-            return moment(timestamp).fromNow()
-          }
-        }
-      ]
-    ],
     serviceWorker: false,
     themeConfig: {
       logo: '/naomi-logo.png',
@@ -128,6 +125,10 @@ module.exports = {
         {
           text: 'Documentation',
           link: '/dev/docs/',
+        },
+        {
+          text: 'NPE',
+          link: '/plugins/',
         },
         {
           text: 'Support',
@@ -285,8 +286,50 @@ module.exports = {
               'developer/plugins/tts_plugin',
             ]
           },
+        ],
+        '/plugins/': [
+          {
+            title: 'Audio Engines',
+            collapsible: false,
+            children: PluginsAudioengines.sort((a,b) => a[1].localeCompare(b[1]))
+          },
+          {
+            title: 'Speechhandlers',
+            collapsible: false,
+            children: PluginsSpeechhandlers.sort((a,b) => a[1].localeCompare(b[1]))
+          },
+          {
+            title: 'Text to Intents',
+            collapsible: false,
+            children: PluginsTTIs.sort((a,b) => a[1].localeCompare(b[1]))
+          },
+          {
+            title: 'Text to Speech',
+            collapsible: false,
+            children: PluginsTTSs.sort((a,b) => a[1].localeCompare(b[1]))
+          },
+          {
+            title: 'Speech to Text',
+            collapsible: false,
+            children: PluginsSTTs.sort((a,b) => a[1].localeCompare(b[1]))
+          },
+          {
+            title: 'Speech to Text Trainers',
+            collapsible: false,
+            children: PluginsSTTTrainers.sort((a,b) => a[1].localeCompare(b[1]))
+          },
+          {
+            title: 'Voice Activation Detection',
+            collapsible: false,
+            children: PluginsVads.sort((a,b) => a[1].localeCompare(b[1]))
+          },
+          {
+            title: 'Visualizations',
+            collapsible: false,
+            children: PluginsVisualizations.sort((a,b) => a[1].localeCompare(b[1]))
+          },
         ]
       },
     }
   }
-  
+

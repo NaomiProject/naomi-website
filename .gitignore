@@ -69,3 +69,12 @@ dev.1/
 
 # Naomi Build Directory
 Naomi-Website/
+
+# Naomi Plugin Directories
+plugins/*/
+
+# Naomi Plugin Sidebar Scripts
+.vuepress/plugins-*
+
+# Naomi Plugin Images
+.vuepress/public/plugins
