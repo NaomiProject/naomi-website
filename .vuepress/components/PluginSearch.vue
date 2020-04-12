@@ -66,8 +66,8 @@
   outline none
   
   &:focus, &:active
-    border-color #ff6600
-    outline-color #ff6600
+    border-color #1397d5
+    outline-color #1397d5
 h3.plugin-type
   font-family 'Open Sans', sans-serif
   font-weight normal
@@ -84,15 +84,15 @@ h3.plugin-type
   button
     width 7rem
     background #fff
-    border 1px solid #ff6600
-    color #ff6600
+    border 1px solid #1397d5
+    color #1397d5
     font-family 'Open Sans', sans-serif
     font-weight 300
     font-size 14px
     padding 4px
     cursor pointer
     &[disabled]
-      background #ff6600
+      background #1397d5
       color #fff
       cursor not-allowed
 
@@ -132,7 +132,7 @@ h3.plugin-type
     box-shadow 2px 2px 5px rgba(0,0,0,.1)
     &:hover
       transition all 0.6s
-      border 1px solid #ff6600
+      border 1px solid #1397d5
       box-shadow 2px 2px 5px rgba(0,0,0,.25)
     a
       width 190px
@@ -145,7 +145,7 @@ h3.plugin-type
       color black
       &:hover
         text-decoration none
-        color #ff6600
+        color #1397d5
         
       .version
         font-size 7pt
