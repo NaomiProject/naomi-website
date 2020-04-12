@@ -107,15 +107,21 @@ module.exports = {
       ]))
     },
     serviceWorker: false,
+    plugins: [
+      '@vuepress/last-updated',
+    ],
+    lastUpdated: 'Last Updated',
     themeConfig: {
       logo: '/naomi-logo.png',
-      // repo: 'projectnaomi',
       editLinks: false,
       activeHeaderLinks: false,
       sidebarDepth: 0,
       docsDir: 'dev/docs',
       search: true,
       searchMaxSuggestions: 10,
+      plugins: [
+        '@vuepress/last-updated',
+      ],
       lastUpdated: 'Last Updated',
       nav: [
         {
