@@ -1,7 +1,8 @@
 <template>
   <div class="jumbotron">
-    <div class="hero-image"></div>
-    <ClientOnly><img draggable="false" class="jumbotron-pattern" src="/pattern.png" alt=""></ClientOnly>
+    <!--<div class="hero-image"></div>-->
+    <!--<ClientOnly><img draggable="false" class="jumbotron-pattern" src="/pattern.png" alt=""></ClientOnly>-->
+    <ClientOnly><video autoplay muted loop id="myVideo" draggable="false" class="jumbotron-pattern"><source src="/Naomi-Visual.mp4" type="video/mp4"></video></ClientOnly>
     <div class="hero-content">
       <div class="white-logo"><ClientOnly><img src="/naomi-logo_white.png" class="white-logo" /></ClientOnly></div>
       </br>
@@ -9,7 +10,7 @@
       <vue-typed-js :strings="items" :backDelay="1000" :loop="true">
         <h2 class="lead stay"><span class="typing"></span></h2>
       </vue-typed-js>
-      <router-link to="docs/" class="action-button">Get Started ➜</router-link>
+      <router-link to="dev/docs/" class="action-button">Get Started ➜</router-link>
     </div>
   </div>
 </template>
@@ -23,15 +24,15 @@ h2.stay
   top 0
   left 0
   right 0
-  height 90vh
+  height 84vh
   min-height 600px
   display flex
   justify-content center
   align-items center
   .jumbotron-pattern
-    opacity 0.1
+    opacity 0.5
     width calc(100vw - 20px)
-    height 105vh
+    height 84vh
     min-height 600px
     position absolute
     object-fit cover
@@ -112,7 +113,6 @@ h2.stay
     position absolute
     top calc(100% - 700px)
     opacity 0.5
-
 </style>
 
 <script>

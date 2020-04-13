@@ -136,5 +136,5 @@ puts ">>> Writing plugin arrays to files for sidebar navigation"
     }
 }
 
-puts ">>> Deleting pre-migration docs"
-FileUtils.rm_rf("dev/docs/plugins")
+#puts ">>> Deleting pre-migration docs"
+#FileUtils.rm_rf("dev/docs/plugins")
