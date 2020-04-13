@@ -273,10 +273,6 @@ module.exports = {
               'configuration/stt',
               'configuration/vad',
               'configuration/profile',
-              'configuration/plugins',
-              'configuration/marytts-server',
-              'configuration/pocketsphinx-install',
-              'configuration/deepspeech-setup'
             ]
           },
           {

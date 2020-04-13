@@ -7,7 +7,7 @@
 
       <div class="placeholder"></div>
 
-      <alert-banner-section v-if="$page.frontmatter.alert" />
+      <!--<alert-banner-section v-if="$page.frontmatter.alert" />-->
 
       <why-section />
 
@@ -81,15 +81,15 @@
     opacity 1
 
 header.headroom--pinned
-  animation 0.5s ease-out 0s 1 headerSlideDown
-  transform translateY(0%)
+  //animation 0.5s ease-out 0s 1 headerSlideDown
+  //transform translateY(0%)
 header.headroom--unpinned
   // animation 0.5s ease-out 0s 1 headerSlideUp
-  transform translateY(-100%)
+  //transform translateY(-100%)
 header.headroom--top
   opacity 1
   transition all 0.5s
-  background transparent
+  //background transparent
   //color white
   border-bottom none
   box-shadow none
@@ -99,12 +99,12 @@ header.headroom--top
     color black
   .nav-links > .nav-item:last-child
     svg
-        color white
+        //color white
   .dropdown-title .arrow
-      border-top 6px solid #fff
+      //border-top 6px solid #fff
 
 .homepage header.headroom:not(.headroom--not-top)
-  animation 1s ease-out 0s 1 headerAppear
+  //animation 1s ease-out 0s 1 headerAppear
   opacity 1
 
 .after-jumbotron
@@ -118,7 +118,7 @@ header.headroom--top
 import Footer from './Footer.vue'
 
 import Jumbotron from'./home/Jumbotron.vue'
-import AlertBannerSection from './home/AlertBannerSection.vue'
+//import AlertBannerSection from './home/AlertBannerSection.vue'
 import WhySection from './home/WhySection.vue'
 import NaobianSection from './home/NaobianSection.vue'
 import OpenSourceSection from './home/OpenSourceSection.vue'
@@ -130,7 +130,7 @@ export default {
   name: 'HomePage',
   components: {
     Jumbotron,
-    AlertBannerSection,
+    //AlertBannerSection,
     WhySection,
     NaobianSection,
     OpenSourceSection,

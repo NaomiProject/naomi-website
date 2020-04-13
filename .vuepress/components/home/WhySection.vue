@@ -30,12 +30,12 @@
           <h3>Runs Everywhere</h3>
           <p>
             Run your Naomi server on
-            <router-link to="docs/installation/linux.html">Linux</router-link>,
-            <router-link to="docs/installation/macosx.html">macOS</router-link>,
-            <router-link to="docs/installation/windows.html">Windows</router-link>,
-            <router-link to="docs/installation/rasppi.html">Raspberry Pi</router-link>,
-            <router-link to="docs/installation/virtualbox.html">Virtual Box</router-link>,
-            <router-link to="docs/installation/docker.html">Docker</router-link>.
+            <router-link to="dev/docs/installation/linux.html">Linux</router-link>,
+            <router-link to="dev/docs/installation/macos.html">macOS</router-link>,
+            <router-link to="dev/docs/installation/windows.html">Windows</router-link>,
+            <router-link to="dev/docs/installation/rasppi.html">Raspberry Pi</router-link>,
+            <router-link to="dev/docs/installation/virtualbox.html">Virtual Box</router-link>,
+            <router-link to="dev/docs/installation/docker.html">Docker</router-link>.
           </p>
         </div>
     </div>
