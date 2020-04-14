@@ -1,0 +1,22 @@
+body {
+  padding: 20px;
+}
+  
+pre {
+  background: whitesmoke;
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  white-space: pre-wrap;
+}
+  
+.alert {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+}
+  
+button {
+  margin-bottom: 20px;
+}
