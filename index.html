@@ -3,16 +3,56 @@
     <head>
         <meta charset="utf-8">
         <title>NPE readme.md & plugin.info Generator</title>
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+
+        <link rel="apple-touch-icon" sizes="57x57" href="assets/images/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="assets/images/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="assets/images/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="assets/images/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="assets/images/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="assets/images/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+        <link rel="manifest" href="assets/images/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="assets/images/ms-icon-144x144.png">
+        <!--Facebook Open Graph-->
+        <meta property="og:locale" content="en_US">
+        <meta property="og:site_name" content="Project Naomi">
+        <meta property="og:title" content="Project Naomi">
+        <meta property="og:url" content="https://www.projectnaomi.com/">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="The Naomi Project is an open source, technology agnostic platform for developing always-on, voice-controlled applications! Naomi software integrates different home text-to-speech & speech-to-text systems, plugins and technologies into a single solution. It provides uniform user interfaces, and a common approach for developing always-on, voice-controlled applications, regardless of the number of devices and sub-systems involved.">
+        <meta property="og:image" content="https://www.projectnaomi.com/naomi-logo.png">
+        <meta property="og:image:url" content="https://www.projectnaomi.com/naomi-logo.png">
+        <meta property="og:image:secure_url" content="https://www.projectnaomi.com/naomi-logo.png">
+        <!--Google+ / Schema.org-->
+        <meta itemprop="name" content="Project Naomi">
+        <meta itemprop="headline" content="Project Naomi">
+        <meta itemprop="description" content="The Naomi Project is an open source, technology agnostic platform for developing always-on, voice-controlled applications! Naomi software integrates different home text-to-speech & speech-to-text systems, plugins and technologies into a single solution. It provides uniform user interfaces, and a common approach for developing always-on, voice-controlled applications, regardless of the number of devices and sub-systems involved.">
+        <meta itemprop="image" content="https://www.projectnaomi.com/naomi-logo.png">
+        <meta itemprop="author" content="Austin Casteel">
+        <!--Twitter Cards-->
+        <meta property="twitter:title" content="Project Naomi">
+        <meta property="twitter:url" content="https://www.projectnaomi.com/">
+        <meta property="twitter:description" content="The Naomi Project is an open source, technology agnostic platform for developing always-on, voice-controlled applications! Naomi software integrates different home text-to-speech & speech-to-text systems, plugins and technologies into a single solution. It provides uniform user interfaces, and a common approach for developing always-on, voice-controlled applications, regardless of the number of devices and sub-systems involved.">
+        <meta property="twitter:image" content="https://www.projectnaomi.com/hero.jpg">
+        <meta property="twitter:card" content="summary_large_image">
+        <!--SEO-->
         <meta name="description" content="NPE readme.md & plugin.info Generator">
         <meta name="author" content="Austin Casteel">
-        <link rel="stylesheet" href="main.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+        <meta name="publisher" content="Project Naomi">
     </head>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <!--Logo-->
-                <img class="navbar-brand" src="naomi-logo.png" width="175px" height="">
+                <img class="navbar-brand" src="assets/images/naomi-logo.png" width="175px" height="">
             </div>
         </div>
       </nav>
@@ -30,30 +70,30 @@
                 <form class="col">
                     <div class="form-group">
                         <p>Brief, speakable plugin name, capitalizing most words.  NOTE: Avoid the word "Plugin" in the name.</p>
-                        <input class="form-control" name="name" id="name" placeholder="ExampleName" maxlength="100" required>
+                        <input class="form-control" name="name" id="name" value="ExampleName" maxlength="100" required>
                     </div>
                     <div class="form-group">
                         <p>Please provide a version number for your plugin.</p>
-                        <input class="form-control" type="text" name="version" id="version" placeholder="0.0.0" required>
+                        <input class="form-control" type="text" name="version" id="version" value="0.0.0" required>
                     </div>
                     <div class="form-group">
                         <p>License your plugin is under.</p>
-                        <input class="form-control" name="license" id="license" placeholder="MIT" maxlength="100" required>
+                        <input class="form-control" name="license" id="license" value="MIT" maxlength="100" required>
                     </div>
                     <div class="form-group">
                         <p>URL to the repository where your plugin is located</p>
-                        <input class="form-control" type="url" name="repourl" id="repourl" placeholder="https://github.com/<UserName>/<Repo>/" required>
+                        <input class="form-control" type="url" name="repourl" id="repourl" value="https://github.com/UserName/Repo/" required>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" id="shortdescription" name="shortdescription" placeholder="Short Description" required></textarea>
+                        <textarea class="form-control" id="shortdescription" name="shortdescription" placeholder="Short Description" required>asdfg</textarea>
                     </div>
                     <div class="form-group">
                         <p>First and Last Name.</p>
-                        <input class="form-control" name="authorname" id="authorname" placeholder="First Last" maxlength="100" required>
+                        <input class="form-control" name="authorname" id="authorname" value="First Last" maxlength="100" required>
                     </div>
                     <div class="form-group">
                         <p>URL to reach you</p>
-                        <input class="form-control" type="url" name="authorlink" id="authorlink" placeholder="https://github.com/<UserName>/" required>
+                        <input class="form-control" type="url" name="authorlink" id="authorlink" value="https://github.com/UserName/" required>
                     </div>
                     <div class="form-group">
                         <p>File name for your plugin image. (Optional, .png or .jpg files only)</p>
@@ -61,7 +101,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">images/plugins/</span>
                             </div>
-                            <input class="form-control" name="image" id="image" placeholder="example.png">
+                            <input class="form-control" name="image" id="image" value="example.png">
                         </div>     
                     </div>
                     <div class="form-group">
@@ -78,34 +118,36 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" id="longdescription" name="longdescription" placeholder="Long Description (i.e. description, install instructions, profile.yml changes, etc.)" required></textarea>
+                        <textarea class="form-control" id="longdescription" name="longdescription" placeholder="Long Description (i.e. description, install instructions, profile.yml changes, etc.)" required>sedrfgh</textarea>
                     </div>
                     <div class="form-group">
-                        <button type="button" class="btn btn-success" id="submit">Generate Readme</button>
+                        <button type="button" class="btn btn-success" id="submit">Generate</button>
                     </div>
                 </form>
             </div>
-        
-        
             <div class="row">
                 <div class="col">
-                    <button type="button" class="btn btn-primary" onclick="copy('readme')">Copy readme.md</button>
+                    <a href="#" id="DownloadReadme" class="btn btn-primary">Download readme.md</a>
                     <div class="well well-sm">
+                        <p>Note: There will be a line that says "undefined" above & below the long description in the preview, but in the downloadable file it is formatted correctly.</p>
                         <pre>
-                  <code id="readme"></code>
-                </pre>
+                            <code id="readme"></code>
+                        </pre>
                     </div>
                 </div>
                 <div class="col">
-                    <button type="button" class="btn btn-primary" onclick="copy('plugininfo')">Copy plugin.info</button>
+                    <a href="#" id="DownloadPluginInfo" class="btn btn-primary">Download plugin.info</a>
                     <div class="well well-sm">
                         <pre>
-                  <code id="plugininfo"></code>
-                </pre>
+                            <code id="plugininfo"></code>
+                        </pre>
                     </div>
                 </div>
             </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.1/processing-api.min.js"></script>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+            <script type="text/javascript" src="assets/js/main.js"></script>
+            <script type="text/javascript" src="assets/js/download.js"></script>
         </div>
-        <script type="text/javascript" src="main.js"></script>
     </body>
-</html> 
+</html>

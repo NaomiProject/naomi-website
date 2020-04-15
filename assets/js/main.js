@@ -115,6 +115,7 @@ const editpagelink = "<EditPageLink/>";
     };*/
 
 const readme = document.getElementById('readme');
+//const plugininfo = document.getElementById('plugininfo');
 const success = document.getElementById('success');
 
 button.addEventListener('click', e => {
