@@ -58,10 +58,10 @@
           <li>Download and install <a target="_blank" href="https://www.balena.io/etcher/">Etcher</a></li>
           <li>Download the Naobian image (<code>.img</code> file) for your system from the repo:</li>
           <div class="download-button-container">
-            <a class="download-button big" target="_blank" href="https://naobian.projectnaomi.com/Naobian-1.0.zip">Latest Naobian System Image</a>
+            <a class="download-button big" target="_blank" href="https://naobian.projectnaomi.com/Naobian-2.0.zip">Latest Naobian System Image</a>
           </div>
-          <p>Note: sha256 checksum if you want to check the download <code>f308875fba9ffad8868aa256e50df095eaa2cf159adebd490c4a555ae147ee1c  Naobian-1.0.zip</code></p>
-          <li>Follow the Naobian <router-link to="/docs/installation/naobian.html">Documentation</router-link></li>
+          <p>Note: sha256 checksum if you want to check the download <code>806bff7152c18e9cfc851a81198d9a7e1027f24eda70121553184d98181aba5b  Naobian-2.0.zip</code></p>
+          <li>Follow the Naobian <router-link to="/dev/docs/installation/naobian.html">Documentation</router-link></li>
         </ol>
       </div>
     </div>
@@ -273,7 +273,7 @@ export default {
       selectedSystem: 'raspberry-pi',
       selectedDistro: 'deb',
       selectedVersion: 'dev',
-      naobianImage: 'false'
+      naobianImage: 'true'
     }
   },
   methods: {
