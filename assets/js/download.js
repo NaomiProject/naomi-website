@@ -50,10 +50,11 @@ function update() {
         'shortdescription': $('#shortdescription').val(),
         'authorname': $('#authorname').val(),
         'authorlink': $('#authorlink').val(),
-        'type1': $('#plugintype1').val(),
-        'image': $('#image').val(),
+        'type1': $('#plugintype1').val(),    
         'longdescription': $('#longdescription').val(),
+        'image': $('#image').val(),
     };
+
 
     var newPluginInfo = plugininfotemplate.replace(/<\?(\w+)\?>/g,
         function(match, names) {
@@ -66,13 +67,16 @@ function update() {
         }
     );
 
-    $('#DownloadPluginInfo')
-        .attr('href', 'data:text/plain;base64,' + btoa(newPluginInfo))
-        .attr('download', 'plugin.info.txt');
-    $('#DownloadReadme')
-        .attr('href', 'data:text/markdown;base64,' + btoa(newReadme))
-        .attr('download', 'readme.md');
-    //$('#generated').show();
+    var zip = new JSZip();
+    zip.file("plugin.info", newPluginInfo);
+    zip.file("readme.md", newReadme);
+    var img = zip.folder("images");
+    //img.file("smile.gif", imgData, {base64: true});
+    zip.generateAsync({type:"blob"})
+    .then(function(content) {
+    // see FileSaver.js
+    saveAs(content, "plugin.zip");
+});
 }
 
 if (!window.btoa) {
