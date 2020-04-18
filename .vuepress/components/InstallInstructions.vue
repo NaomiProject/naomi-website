@@ -83,7 +83,7 @@
         <li>Run the install</li>
           <div class="language-shell"><pre class="language-shell"><code>./naomi-setup.sh</code></pre></div>
         <li>Run the app</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">python Naomi.py</code><code v-else-if="selectedVersion === 'dev' || 'nightly'">python3 Naomi.py</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">python Naomi.py</code><code v-else-if="selectedVersion === 'dev' || 'nightly'">./Naomi</code></pre></div>
       </ol>
     </div>
     <!--<div v-if="selectedSystem === 'tux' && selectedDistro === 'rpm'">
