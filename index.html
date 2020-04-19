@@ -70,30 +70,30 @@
                 <form class="col">
                     <div class="form-group">
                         <p>Brief, speakable plugin name, capitalizing most words.  NOTE: Avoid the word "Plugin" in the name.</p>
-                        <input class="form-control" name="name" id="name" placeholder="ExampleName" maxlength="100" required>
+                        <input class="form-control" name="name" id="name" value="ExampleName" maxlength="100" required>
                     </div>
                     <div class="form-group">
                         <p>Please provide a version number for your plugin.</p>
-                        <input class="form-control" type="text" name="version" id="version" placeholder="0.0.0" required>
+                        <input class="form-control" type="text" name="version" id="version" value="0.0.0" required>
                     </div>
                     <div class="form-group">
                         <p>License your plugin is under.</p>
-                        <input class="form-control" name="license" id="license" placeholder="MIT" maxlength="100" required>
+                        <input class="form-control" name="license" id="license" value="MIT" maxlength="100" required>
                     </div>
                     <div class="form-group">
                         <p>URL to the repository where your plugin is located</p>
-                        <input class="form-control" type="url" name="repourl" id="repourl" placeholder="https://github.com/UserName/Repo/" required>
+                        <input class="form-control" type="url" name="repourl" id="repourl" value="https://github.com/UserName/Repo/" required>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" id="shortdescription" name="shortdescription" placeholder="Short Description" required></textarea>
+                        <textarea class="form-control" id="shortdescription" name="shortdescription" placeholder="Short Description" required>Short Description</textarea>
                     </div>
                     <div class="form-group">
                         <p>First and Last Name.</p>
-                        <input class="form-control" name="authorname" id="authorname" placeholder="First Last" maxlength="100" required>
+                        <input class="form-control" name="authorname" id="authorname" value="First Last" maxlength="100" required>
                     </div>
                     <div class="form-group">
                         <p>URL to reach you</p>
-                        <input class="form-control" type="url" name="authorlink" id="authorlink" placeholder="https://github.com/UserName/" required>
+                        <input class="form-control" type="url" name="authorlink" id="authorlink" value="https://github.com/UserName/" required>
                     </div>
                     <div class="form-group">
                         <p>File name for your plugin image. (Optional, .png or .jpg files only)</p>
@@ -101,24 +101,24 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">images/plugins/</span>
                             </div>
-                            <input class="form-control" name="image" id="image" placeholder="example.png">
+                            <input class="form-control" name="image" id="image" value="example.png">
                         </div>     
                     </div>
                     <div class="form-group">
                         <p>Select your plugin type:</p>
-                        <select id="plugintype1" name="plugintype1">
-                            <option value="audioengines">Audioengine</option>
-                            <option value="speechhandlers">Speechhandler</option>
-                            <option value="ttis">Text to Intent</option>
-                            <option value="ttss">Text to Speech</option>
-                            <option value="stts">Speech to Text</option>
-                            <option value="stt_trainers">Speech to Text Trainer</option>
-                            <option value="vads">Voice Activity Detection</option>
-                            <option value="visualizations">Visualization</option>
+                        <select id="plugintype1">
+                            <option name="Audioengine" value="audioengines">Audioengine</option>
+                            <option name="Speechhandler" value="speechhandlers">Speechhandler</option>
+                            <option name="Text to Intent" value="ttis">Text to Intent</option>
+                            <option name="Text to Speech" value="ttss">Text to Speech</option>
+                            <option name="Speech to Text" value="stts">Speech to Text</option>
+                            <option name="Speech to Text Trainer" value="stt_trainers">Speech to Text Trainer</option>
+                            <option name="Voice Activity Detection" value="vads">Voice Activity Detection</option>
+                            <option name="Visualization" value="visualizations">Visualization</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" id="longdescription" name="longdescription" placeholder="Long Description (i.e. description, install instructions, profile.yml changes, etc.)" required></textarea>
+                        <textarea class="form-control" id="longdescription" name="longdescription" placeholder="Long Description (i.e. description, install instructions, profile.yml changes, etc.)" required>Long Description</textarea>
                     </div>
                     <div class="form-group">
                         <button type="button" class="btn btn-success" id="submit">Generate</button>
