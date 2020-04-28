@@ -260,6 +260,7 @@ module.exports = {
               ['installation/naobian', 'Naobian'],
               ['installation/virtualbox', 'VirtualBox'],
               ['installation/docker', 'Docker'],
+              ['installation/NaomiPluginExchange', 'NPE'],
             ]
           },
           {
