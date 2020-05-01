@@ -35,9 +35,9 @@ That being said, website configuration files do not have the _"Edit this page on
 
 The website is made with [VuePress](https://vuepress.vuejs.org/), therefore you must install it globally first and we are using version 0.14.11 (with `npm i -g vuepress@^0.14.11`). The building process for the website also requires Ruby version 2.4.3. Here are the various ways to install Ruby based on your system:
 
-On Linux/UNIX, you can use the package management system of your distribution or third-party tools ([rbenv](https://github.com/rbenv/rbenv) and [RVM](http://rvm.io/)).
-On macOS machines, you can use third-party tools ([rbenv](https://github.com/rbenv/rbenv) and [RVM](http://rvm.io/)).
-On Windows machines, you can use [RubyInstaller](https://rubyinstaller.org/).
+- On Linux/UNIX, you can use the package management system of your distribution or third-party tools ([rbenv](https://github.com/rbenv/rbenv) and [RVM](http://rvm.io/)).
+- On macOS machines, you can use third-party tools ([rbenv](https://github.com/rbenv/rbenv) and [RVM](http://rvm.io/)).
+- On Windows machines, you can use [RubyInstaller](https://rubyinstaller.org/).
 
 Of course, you can also install [Ruby version 2.4.3](https://www.ruby-lang.org/en/news/2017/12/14/ruby-2-4-3-released/) from source on all major platforms.
 
