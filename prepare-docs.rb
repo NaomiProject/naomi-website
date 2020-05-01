@@ -39,6 +39,11 @@ else
     `git clone --branch dev https://github.com/naomiproject/naomi-docs dev/docs`
 end
 
+puts ">>> Migrating the introduction article"
+#FileUtils.mv("docs/introduction.md", "docs/readme.md")
+FileUtils.mv("dev/docs/introduction.md", "dev/docs/readme.md")
+FileUtils.mv("introduction.md", "README.md")
+
 puts ">>> Migrating logos"
 FileUtils.cp_r("dev/docs/images/plugins", ".vuepress/public/")
 
