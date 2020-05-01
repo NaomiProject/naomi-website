@@ -3,7 +3,7 @@
     <div class="naobian-container">
       <ClientOnly>
         <parallax :speed-factor="0.15">
-          <img src="./images/rpi.jpg" alt="raspberry pi">
+          <img src="./images/rpi.jpg" alt="raspberry pi" style="filter: brightness(75%);">
         </parallax>
       </ClientOnly>
       <div class="naobian-text">
@@ -12,7 +12,7 @@
           Try the provided hassle-free Naobian image for the Raspberry Pi, a widely used and recommended hardware choice.
           Flash an SD card, boot, and enjoy your up-to-date Naomi setup with conveniently pre-configured system settings and software.
         </p>
-        <router-link to="docs/installation/naobian.html" class="learn-how-button slide-seq">Learn How ➜</router-link>
+        <router-link to="dev/docs/installation/naobian.html" class="learn-how-button slide-seq">Learn How ➜</router-link>
       </div>
     </div>
   </div>
@@ -67,7 +67,7 @@
   @media (max-width: 768px)
     &
       height 550px
-    .karabian-container
+    .naobian-container
       height 550px
     .Masthead
       height 550px !important

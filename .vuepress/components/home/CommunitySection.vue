@@ -18,7 +18,7 @@
     <br />
     Ready to join the community?</h2>
   <p class="slide">The Naomi community contributes examples and tutorials on a daily basis and is happy to help you!</p>
-  <div class="community-stats">
+  <!--<div class="community-stats">
     <div class="community-stat slide-seq2">
       <div class="community-stat-icon">
         <svg style="width:36px;height:36px" viewBox="0 0 24 24">
@@ -46,7 +46,7 @@
       <div class="count">{{communityMembers}}</div>
       <div class="subtext">members</div>
     </div>
-  </div>
+  </div>-->
   <div class="join">
     <!--<router-link to="about/showcase.html" class="join-us-button slide-slow">Showcase ➜</router-link>-->
     <a target="_blank" href="https://support.projectnaomi.com" class="join-us-button slide-slow">Join Us ➜</a>
