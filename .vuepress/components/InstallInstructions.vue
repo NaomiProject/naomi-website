@@ -122,7 +122,14 @@
     <div v-if="selectedSystem === 'virtualbox' && (selectedVersion === 'stable' || selectedVersion === 'dev' || selectedVersion === 'nightly')">
       <hr>
       <h3>Oracle VM VirtualBox Installation</h3>
-      <p>Coming Soon!</p>
+      <ol>
+          <li>Download the NaobianX86 Open Virtualization Appliance (<code>.ova</code> file) for VirtualBox from the repo:</li>
+          <div class="download-button-container">
+            <a class="download-button big" target="_blank" href="https://naobian.projectnaomi.com/NaobianX86-1.0.ova">Latest NaobianX86 VM</a>
+          </div>
+          <p>Note: sha256 checksum if you want to check the download <code>6D3C64BF6DE8697D235D055B7DC0AAA32E487F2B8F096A5375430F862BF76CAA  NaobianX86-1.0.ova</code></p>
+          <li>Follow the VirtualBox <router-link to="/dev/docs/installation/virtualbox.html">Documentation</router-link></li>
+        </ol>
     </div>
 
     <div v-if="selectedSystem === 'docker' && (selectedVersion === 'stable' || selectedVersion === 'dev' || selectedVersion === 'nightly')">
@@ -267,7 +274,7 @@ export default {
         //['win10', 'Windows'],
         //['apple', 'macOS'],
         ['raspberry-pi', 'Raspberry Pi'],
-        //['virtualbox', 'Virtual Box'],
+        ['virtualbox', 'Virtual Box'],
         //['docker', 'Docker'],
       ],
       selectedSystem: 'raspberry-pi',
