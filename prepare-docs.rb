@@ -26,7 +26,7 @@ else
     FileUtils.rm_rf("docs")
 
     puts ">>> Cloning naomi-docs"
-    `git clone https://github.com/naomiproject/naomi-docs docs`
+    `git clone --branch master https://github.com/naomiproject/naomi-docs docs`
 end
 
 if (ARGV[0] && ARGV[0] == "--no-clone" && Dir.exists?("dev")) then
@@ -136,5 +136,5 @@ puts ">>> Writing plugin arrays to files for sidebar navigation"
     }
 }
 
-puts ">>> Deleting pre-migration docs"
-FileUtils.rm_rf("dev/docs/plugins")
+#puts ">>> Deleting pre-migration docs"
+#FileUtils.rm_rf("dev/docs/plugins")

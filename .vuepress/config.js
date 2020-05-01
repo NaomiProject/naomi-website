@@ -254,13 +254,12 @@ module.exports = {
             children: [
               'installation/',
               ['installation/linux', 'Linux'],
-              ['installation/windows', 'Windows'],
-              ['installation/macos', 'macOS'],
+              /*['installation/windows', 'Windows'],
+              ['installation/macos', 'macOS'],*/
               ['installation/rasppi', 'Raspberry Pi'],
               ['installation/naobian', 'Naobian'],
               ['installation/virtualbox', 'VirtualBox'],
-              ['installation/docker', 'Docker'],
-              ['installation/NaomiPluginExchange', 'NPE'],
+              /*['installation/docker', 'Docker'],*/
             ]
           },
           {
