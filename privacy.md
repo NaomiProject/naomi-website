@@ -82,7 +82,7 @@ is not possible.
 The party responsible for processing data on this website is:
 
 <address>
-<p>Austin Casteel<br />Asheville Nc<br />28801 United States</p>
+<p>Austin Casteel<br />Cullman AL<br />35055 United States</p>
 </address>
 
 <!-- SVGs below from materialdesignicons.com

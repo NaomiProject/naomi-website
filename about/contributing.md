@@ -45,9 +45,9 @@ Naomi can be intimidating to new users, and even experienced ones might encounte
 
 ## Contribute Code
 
-You might want to fix a bug, add a feature, or write a new add-on. That's awesome!
+You might want to fix a bug, add a feature, or write a new plugin. That's awesome!
 
-The [Developer Guide](/docs/developer) has everything to get you started.
+The [Developer Guide](/dev/docs/developer/) has everything to get you started.
 
 ### Report Issues
 
@@ -58,9 +58,8 @@ When no solution was found, use the table below to determine where your issue sh
 
 Issue | Where to report
 ------|----------------
-Problems and feature requests for Naomi plugins | [Naomi-Plugins](https://github.com/projectnaomi/naomi-plugins/issues)
-Issues related to the runtime environment, IDE and packaging | [Naomi-Distro](https://github.com/projectnaomi/naomi-distro/issues)
-Issues related to the core Naomi instance | [Naomi](https://github.com/projectnaomi/naomi/issues)
+Problems and feature requests for Naomi plugins | [Naomi-Plugins](https://github.com/naomiproject/naomi-plugins/issues)
+Issues related to the core Naomi instance | [Naomi](https://github.com/naomiproject/naomi/issues)
 
 But do not worry - if you are not clear, which category your issue belongs to - we will redirect you, if necessary.
 
@@ -73,7 +72,7 @@ Naomi has several projects you can help translate. If you are native or fluent i
 
 ### Write Documentation
 
-Our docs are always getting better, but we use all the help we can. Whether it's fixing a typo or writing new articles, our [documentation repository](https://github.com/projectnaomi/naomi-docs) is ready to welcome your contributions!
+Our docs are always getting better, but we use all the help we can. Whether it's fixing a typo or writing new articles, our [documentation repository](https://github.com/naomiproject/naomi-docs) is ready to welcome your contributions!
 
 <!--### Sponsor Development
 
