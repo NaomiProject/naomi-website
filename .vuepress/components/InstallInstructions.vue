@@ -68,7 +68,7 @@
 
     <div v-if="(selectedSystem === 'tux' && selectedDistro === 'deb') || selectedSystem === 'raspberry-pi'">
       <hr>
-      <h1>Manual Installation <span v-if="selectedSystem === 'tux'">(Recommended)</span></h1>
+      <h1>Manual Source Installation <span v-if="selectedSystem === 'tux'">(Recommended)</span></h1>
       <ol>
         <li>Fetch the repository</li>
           <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/stable/Naomi-{{this.$page.frontmatter.currentVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/dev/Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code><code v-else-if="selectedVersion === 'nightly'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/nightly/{{this.$page.frontmatter.currentNightlyVersion}}.zip" -o {{this.$page.frontmatter.currentNightlyVersion}}.zip</code></code></pre></div>
@@ -119,9 +119,9 @@
       <p>Coming Soon!</p>
     </div>
 
-    <div v-if="selectedSystem === 'virtualbox' && (selectedVersion === 'stable' || selectedVersion === 'dev' || selectedVersion === 'nightly')">
+    <div v-if="selectedSystem === 'virtualbox'">
       <hr>
-      <h3>Oracle VM VirtualBox Installation</h3>
+      <h1>Install NaobianX86 (Recommended)</h1>
       <ol>
           <li>Download the NaobianX86 Open Virtualization Appliance (<code>.ova</code> file) for VirtualBox from the repo:</li>
           <div class="download-button-container">
@@ -130,6 +130,28 @@
           <p>Note: sha256 checksum if you want to check the download <code>6D3C64BF6DE8697D235D055B7DC0AAA32E487F2B8F096A5375430F862BF76CAA  NaobianX86-1.0.ova</code></p>
           <li>Follow the VirtualBox <router-link to="/dev/docs/installation/virtualbox.html">Documentation</router-link></li>
         </ol>
+    </div>
+
+    <div v-if="selectedSystem === 'virtualbox'">
+      <hr>
+      <h1>Manual Source Installation</h1>
+      <ol>
+        <li>Setup a Debian based VirtualBox VM of your choosing</li>
+        <li>Fetch the repository</li>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/stable/Naomi-{{this.$page.frontmatter.currentVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/dev/Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code><code v-else-if="selectedVersion === 'nightly'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/nightly/{{this.$page.frontmatter.currentNightlyVersion}}.zip" -o {{this.$page.frontmatter.currentNightlyVersion}}.zip</code></code></pre></div>
+        <li>Explode directory</li>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">unzip Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">unzip Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code><code v-else-if="selectedVersion === 'nightly'">unzip {{this.$page.frontmatter.currentNightlyVersion}}.zip</code></code></pre></div>
+        <li>Rename directory</li>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">mv Naomi-{{this.$page.frontmatter.currentVersion}} Naomi</code><code v-else-if="selectedVersion === 'dev'">mv Naomi-{{this.$page.frontmatter.currentMilestoneVersion}} Naomi</code><code v-else-if="selectedVersion === 'nightly'">mv {{this.$page.frontmatter.currentNightlyVersion}} Naomi</code></pre></div>
+        <li>Go into the directory</li>
+          <div class="language-shell"><pre class="language-shell"><code>cd Naomi</code></pre></div>
+        <li>Setup the install</li>
+          <div class="language-shell"><pre class="language-shell"><code>chmod +x naomi-setup.sh</br>chmod +x compile_translations.sh</code></pre></div>
+        <li>Run the install</li>
+          <div class="language-shell"><pre class="language-shell"><code>./naomi-setup.sh</code></pre></div>
+        <li>Run the app</li>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">python Naomi.py</code><code v-else-if="selectedVersion === 'dev' || 'nightly'">./Naomi</code></pre></div>
+      </ol>
     </div>
 
     <div v-if="selectedSystem === 'docker' && (selectedVersion === 'stable' || selectedVersion === 'dev' || selectedVersion === 'nightly')">
