@@ -68,6 +68,8 @@ The complete build will take between 2 and 5 minutes.
 
 ## Ready to submit changes
 
+> Note: Running the prepare-docs script replaces the `readme.md` file with the contents of `introduction.md`. When making a PR, make sure that you revert the `introduction.md` and `readme.md` to its original state.
+
 Once you have developed changes, added new sections or fixed bugs and the local build does not return any errors you are ready to create your Pull Request. When you create your PR a couple things will happen, the CLAassistant will ask for you to sign you work if it is your first time contributing to the Repo, and our CI service Netlify will take your changes and build the site on their end to make sure everything works properly.
 
 If the CLA is signed and Netlify comes back clear then your PR will be merged in by Naomi Website Maintainer. If there is an issue with the Netlify build then you need to review your code for any issues. If you are having build errors but not sure what the problem is, don't worry if you don't understand, we will help you to get it right.

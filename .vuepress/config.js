@@ -273,6 +273,7 @@ module.exports = {
               'configuration/stt',
               'configuration/vad',
               'configuration/profile',
+              ['plugins/', 'NPE'],
             ]
           },
           {
