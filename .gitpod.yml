@@ -1,0 +1,5 @@
+tasks:
+  - init: npm i -g vuepress@^0.14.11 && npm install && npm run build
+    command: vuepress dev
+image:
+  file: .gitpod.Dockerfile

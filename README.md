@@ -1,5 +1,8 @@
 # Naomi Website
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ac423f5e-bd34-4ca4-adb9-a6f764ea0e73/deploy-status)](https://app.netlify.com/sites/projectnaomi/deploys)
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/NaomiProject/naomi-website) 
+
 ## Introduction
 
 This repository contains the artifacts that make up the website for Naomi.
@@ -33,6 +36,12 @@ That being said, website configuration files do not have the _"Edit this page on
 
 ## How to contribute to the Naomi website
 
+There are two ways you can contribute to the website, either manually setup a local workspace or you can use our one click dev environment solution, GitPod.
+
+### One click
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/NaomiProject/naomi-website)
+
+### Local
 The website is made with [VuePress](https://vuepress.vuejs.org/), therefore you must install it globally first and we are using version 0.14.11 (with `npm i -g vuepress@^0.14.11`). The building process for the website also requires Ruby version 2.4.3. Here are the various ways to install Ruby based on your system:
 
 - On Linux/UNIX, you can use the package management system of your distribution or third-party tools ([rbenv](https://github.com/rbenv/rbenv) and [RVM](http://rvm.io/)).
@@ -41,7 +50,7 @@ The website is made with [VuePress](https://vuepress.vuejs.org/), therefore you 
 
 Of course, you can also install [Ruby version 2.4.3](https://www.ruby-lang.org/en/news/2017/12/14/ruby-2-4-3-released/) from source on all major platforms.
 
-## Running in development mode
+#### Running in development mode
 
 After you have installed VuePress and Ruby above, follow these steps to run the website on your local machine on a development server with live reload:
 
@@ -54,7 +63,7 @@ The compilation can take a few minutes due to the size of the docs, wait for the
 
 You can alter layouts and components in `.vuepress/components`, or the navigation in `.vuepress/config.js` - check the VuePress docs for more details. Note: if you add a new component and reference it in a (Markdown) page with its custom tag, it might not work until you restart the dev server.
 
-## Building the final website
+#### Building the final website
 
 This step is normally done by our CI service of choice, Netlify.
 You can however build it manually with the command: `npm run build`.
@@ -66,7 +75,7 @@ This will:
 
 The complete build will take between 2 and 5 minutes.
 
-## Ready to submit changes
+#### Ready to submit changes
 
 > Note: Running the prepare-docs script replaces the `readme.md` file with the contents of `introduction.md`. When making a PR, make sure that you revert the `introduction.md` and `readme.md` to its original state.
 
