@@ -1,5 +1,8 @@
 # Naomi Website
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ac423f5e-bd34-4ca4-adb9-a6f764ea0e73/deploy-status)](https://app.netlify.com/sites/projectnaomi/deploys)
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/NaomiProject/naomi-website) 
+
 ## Introduction
 
 This repository contains the artifacts that make up the website for Naomi.
