@@ -21,7 +21,7 @@ This is fairly easy:
 on most of the pages pages on https://projectnaomi.com/, 
 you will find the following link at the bottom, which will point you directly to the file you want to improve.
 
-![Contribution link to a specific page](./images/contribution_link.png)
+![Contribution link to a specific page](https://raw.githubusercontent.com/NaomiProject/naomi-docs/dev/images/contribution_link.png)
 
 When your improvement has been made and merged, we will get the updated documentation automatically through our build mechanism.
 This happens mostly once a day. Afterwards your change is included in the next build of the Naomi website.
