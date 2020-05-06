@@ -3,7 +3,7 @@
   publish = "dist"
 
 [context.deploy-preview]
-  command = "npm run build-preview"
+  command = "npm run build"
 
 [template.environment]
   STATUSKIT_PAGE_TITLE = "Status | Project Naomi"
