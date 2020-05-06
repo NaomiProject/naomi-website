@@ -1,39 +1,19 @@
 # Introduction
 
-Netlify StatusKit is a template to deploy your own Status pages on Netlify.
+Naomi Netlify StatusKit is a project to build Status pages for the Naomi web infrastructure.
 
-[![Netlify StatusKit Demo](http://statuskit.netlify.com/statuskit.png)](https://statuskit.netlify.com/)
+[![Naomi Netlify StatusKit Demo](http://statuskit.netlify.com/statuskit.png)](https://statuskit.netlify.com/)
 
-Netlify StatusKit is released under the [MIT License](LICENSE).
+Naomi Netlify StatusKit is released under the [MIT License](LICENSE).
 Please make sure you understand its [implications and guarantees](https://writing.kemitchell.com/2016/09/21/MIT-License-Line-by-Line.html).
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/netlify-statuskit)
 
 ## Project Status
 
-This project is no longer being maintained by netlify staff. This is a community led project and if you are looking to support this project, please get in touch via an issue.
-
-### Netlify's Statement
-
-> [Netlify] doesn't currently have the staff to process such contributions.
-
-## Initial configuration
-
-Click in the Deploy to Netlify button above to create your own site directly and push this repository to your own account.
-Before creating the site, Netlify will ask you to fill required environment variables listed here:
-
-- `STATUSKIT_PAGE_TITLE` - Title to show in the browser for your status site.
-- `STATUSKIT_COMPANY_LOGO` - URL to your company's logo.
-- `STATUSKIT_SUPPORT_CONTACT_LINK` - URL to a support page for your users to talk with you.
-- `STATUSKIT_RESOURCES_LINK` - URL to documentation for your users.
-
-## Extra configuration
-
-After the site is created, you can modify the code as much as you want and push it to your GitHub repository. Netlify will pick up changes from there.
+This project is no longer being maintained by netlify staff. This is a naomi community led project and if you are looking to support this project, please get in touch via an issue.
 
 ### Reporting systems
 
-You can add systems you want to report about to your Status page. For instance, you might want to tell your users about a status change in your CDN infrastructure but not in your API.
+You can add systems we want to report about to the Status page. For instance, we might want to tell our users about a status change in our CDN infrastructure but not in our API.
 
 Go to `site/config.toml` and change the global `systems` variables. Once that's done, you'll be able to change the status of each one of those systems individually when you open or modify an incident.
 
@@ -51,13 +31,13 @@ Incidents are plain markdown files inside the `site/content/incidents` directory
 Adding incidents to your status page is as simple as adding a new document to the incidents collection.
 Create a new incident using npm:
 
-```
+```terminal
 npm run new-incident
 ```
 
 You'll be asked a series of questions about the incident, then Hugo will generate a new file pre-filled with your responses.
 
-After explaining the current situation in the incident, you can just push the file to GitHub. Netlify will deploy the indicent announcement for you in a matter of seconds.
+After explaining the current situation in the incident, you can just push the file to GitHub. Netlify will deploy the incident announcement in a matter of seconds.
 
 ### Resolving incidents
 
@@ -71,7 +51,6 @@ resolved = true
 +++
 ```
 
-
 ### Tracking activity
 
 When there is an update in your incident you can track activity by inserting a timestamp with the update. For example:
@@ -80,10 +59,9 @@ When there is an update in your incident you can track activity by inserting a t
 **Update**: We've identified the issue. {{< track "2016-11-22T14:34:00.000Z" >}}
 ```
 
+## Development
 
-# Development
-
-Netlify StatusKit uses NPM to manage dependencies. It also bundles a version of Hugo to work out of the box.
+Naomi Netlify StatusKit uses NPM to manage dependencies. It also bundles a version of Hugo to work out of the box.
 
 1. Use `npm install` to download dependencies.
 2. Use `npm start` to start the development server.
