@@ -1,12 +1,6 @@
 [build]
-  command = "npm run build"
+  command = "npm run generate"
   publish = "dist"
 
-[context.deploy-preview]
-  command = "npm run build"
-
-[template.environment]
-  STATUSKIT_PAGE_TITLE = "Status | Project Naomi"
-  STATUSKIT_COMPANY_LOGO = "https://projectnaomi.com/naomi-logo.png"
-  STATUSKIT_SUPPORT_CONTACT_LINK = "support@projectnaomi.com"
-  STATUSKIT_RESOURCES_LINK = "https://projectnaomi.com/dev/docs/"
+[build.environment]
+  CI = "true"
