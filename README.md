@@ -25,7 +25,7 @@ Adding incidents to the status page is very easy. There are two ways you can acc
 
 Follow these steps to run the status page environment on your local machine including a development server with live reload:
 
-1. Fork the status repo & git clone it into your directory of choice. `git clone -b status https://github.com/naomiproject/naomi-website/
+1. Fork the status repo & git clone it into your directory of choice. `git clone -b status https://github.com/naomiproject/naomi-website/`
 2. Navigate to said directory
 3. Run `npm install`
 
