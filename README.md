@@ -1,89 +1,53 @@
-# Introduction
+# Naomi Status Page
 
-Netlify StatusKit is a template to deploy your own Status pages on Netlify.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ac423f5e-bd34-4ca4-adb9-a6f764ea0e73/deploy-status)](https://app.netlify.com/sites/projectnaomi/deploys)
 
-[![Netlify StatusKit Demo](http://statuskit.netlify.com/statuskit.png)](https://statuskit.netlify.com/)
+## Introduction
 
-Netlify StatusKit is released under the [MIT License](LICENSE).
-Please make sure you understand its [implications and guarantees](https://writing.kemitchell.com/2016/09/21/MIT-License-Line-by-Line.html).
+This repository contains the artifacts that make up the status page for Naomi.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/netlify-statuskit)
+The result is available at [https://status.projectnaomi.com/](https://status.projectnaomi.com/).
 
-## Project Status
+## How it works
 
-This project is no longer being maintained by netlify staff. This is a community led project and if you are looking to support this project, please get in touch via an issue.
+In this repo you can find and submit incidents with Naomi infrastructure.
 
-### Netlify's Statement
+## Contributing to the Status Page
 
-> [Netlify] doesn't currently have the staff to process such contributions.
+The status page is primarily a maintainer effort for incidents, but everyone is welcome to suggest changes, add new systems and fix bugs.
+This is done exactly the same way as any other code repositories, simply through pull requests against this repo.
 
-## Initial configuration
+## How to contribute to the Naomi website
 
-Click in the Deploy to Netlify button above to create your own site directly and push this repository to your own account.
-Before creating the site, Netlify will ask you to fill required environment variables listed here:
+Adding incidents to the status page is very easy. There are two ways you can accomplish this, locally & through the once click solution (coming soon TM).
 
-- `STATUSKIT_PAGE_TITLE` - Title to show in the browser for your status site.
-- `STATUSKIT_COMPANY_LOGO` - URL to your company's logo.
-- `STATUSKIT_SUPPORT_CONTACT_LINK` - URL to a support page for your users to talk with you.
-- `STATUSKIT_RESOURCES_LINK` - URL to documentation for your users.
+## Local
 
-## Extra configuration
+Follow these steps to run the status page environment on your local machine including a development server with live reload:
 
-After the site is created, you can modify the code as much as you want and push it to your GitHub repository. Netlify will pick up changes from there.
+1. Fork the status repo & git clone it into your directory of choice. `git clone -b status https://github.com/naomiproject/naomi-website/`
+2. Navigate to said directory
+3. Run `npm install`
 
-### Reporting systems
+Depending on if you want to work on the site or create an incident determine what you do next...
 
-You can add systems you want to report about to your Status page. For instance, you might want to tell your users about a status change in your CDN infrastructure but not in your API.
+### Working on the Status Page
 
-Go to `site/config.toml` and change the global `systems` variables. Once that's done, you'll be able to change the status of each one of those systems individually when you open or modify an incident.
+To start the dev server you run `npm run dev`. From there you can follow the documentation on the [Statusfy Website](https://docs.statusfy.co/guide/) to help you make any changes or additions.
 
-### Full customization
+### Adding an incident
 
-This template is based in [Netlify's Victor-Hugo](https://github.com/netlify/victor-hugo) boilerplate.
-To work on it you'll need NPM installed. To download dependencies type `npm run dependencies`, that will check if you have Hugo installed and will download it for you if you don't. It will also run `npm install` for the first time to download extra dependencies. After that, you can run `npm install` every time you want to install packages.
+To add an incident to the status page you run `npm run new-incident` which will carry you through the process of creating an incident report. If you need further help you can follow the incident documentation on the [Statusfy Website](https://docs.statusfy.co/guide/incidents/).
 
-## Managing incidents
+## Building the final website
 
-Incidents are plain markdown files inside the `site/content/incidents` directory.
+This step is normally done by our CI service of choice, Netlify.
+You can however build it manually which we recommend to test any changes you have made either working on the status page or adding an incident with the command: `npm run generate`.
 
-### Creating new incidents
+This will build the site and the built files will be in `./dist` directory.
 
-Adding incidents to your status page is as simple as adding a new document to the incidents collection.
-Create a new incident using npm:
+## Ready to submit changes
 
-```
-npm run new-incident
-```
+Once you have developed changes, added new systems, fixed bugs, or added an incident and the local build does not return any errors you are ready to create your Pull Request. When you create your PR a couple things will happen, the CLAassistant will ask for you to sign you work if it is your first time contributing to the Repo, and our CI service Netlify will take your changes and build the site on their end to make sure everything works properly.
 
-You'll be asked a series of questions about the incident, then Hugo will generate a new file pre-filled with your responses.
-
-After explaining the current situation in the incident, you can just push the file to GitHub. Netlify will deploy the indicent announcement for you in a matter of seconds.
-
-### Resolving incidents
-
-Everything will be operational again when all incidents are marked with `resolved = true` in the incident frontMatter:
-
-```toml
-+++
-...
-affectedsystems = ["API"]
-resolved = true
-+++
-```
-
-
-### Tracking activity
-
-When there is an update in your incident you can track activity by inserting a timestamp with the update. For example:
-
-```md
-**Update**: We've identified the issue. {{< track "2016-11-22T14:34:00.000Z" >}}
-```
-
-
-# Development
-
-Netlify StatusKit uses NPM to manage dependencies. It also bundles a version of Hugo to work out of the box.
-
-1. Use `npm install` to download dependencies.
-2. Use `npm start` to start the development server.
+If the CLA is signed and Netlify comes back clear then your PR will be merged in by a Naomi Website Maintainer. If there is an issue with the Netlify build then you need to review your code for any issues. If you are having build errors but not sure what the problem is, don't worry if you don't understand, we will help you to get it right.
