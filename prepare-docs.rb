@@ -38,37 +38,37 @@ puts ">>> Reading plugins.csv"
 file_path = "naomi-plugins/plugins.csv"
 csv = CSV.read(file_path, :headers=>true)
 
-puts " -> Deleting naomi-plugin-downloads if existing..."
-FileUtils.rm_rf("naomi-plugin-downloads")
-FileUtils.mkdir_p("naomi-plugin-downloads")
+puts " -> Deleting temp if existing..."
+FileUtils.rm_rf("temp")
+FileUtils.mkdir_p("temp")
 csv['Repository'].each do |a|
     puts " -> Cloning #{a}"
-    `git -C ./naomi-plugin-downloads clone -q #{a}`
+    `git -C ./temp clone -q #{a}`
 end
 
-Dir.glob("naomi-plugin-downloads/**") { |path|
+Dir.glob("temp/**") { |path|
     plugin = File.basename(path)
     puts " --> #{plugin}"
-    File.open ('naomi-plugin-downloads/' + plugin + '/readme.md') do |file|
+    File.open ('temp/' + plugin + '/readme.md') do |file|
         file.find do |line|
             if line =~ /type:/
                 line_clean = line.split("type: ").join('').strip
                 puts " ---> #{line_clean}"
                 FileUtils.mkdir_p("dev/docs/NPE-Files/_plugins_#{line_clean}/#{plugin}")
-                FileUtils.cp("naomi-plugin-downloads/" + plugin + "/readme.md", "dev/docs/NPE-Files/_plugins_#{line_clean}/#{plugin}")
+                FileUtils.cp("temp/" + plugin + "/readme.md", "dev/docs/NPE-Files/_plugins_#{line_clean}/#{plugin}")
             end
             if line =~ /logo:/
                 logo_clean = line.split("logo: ").join('').strip
                 logo_clean2 = logo_clean.split("images/plugins/").join('')
                 puts " ---> #{logo_clean2}"
-                FileUtils.cp("naomi-plugin-downloads/#{plugin}/#{logo_clean}", "dev/docs/images/plugins")
+                FileUtils.cp("temp/#{plugin}/#{logo_clean}", "dev/docs/images/plugins")
             end
         end
     end
 }
 
 puts ">>> Deleting pre-migration plugins"
-FileUtils.rm_rf("naomi-plugin-downloads")
+FileUtils.rm_rf("temp")
 
 puts ">>> Migrating the introduction article"
 #FileUtils.mv("docs/introduction.md", "docs/readme.md")
