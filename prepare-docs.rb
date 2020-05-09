@@ -2,7 +2,7 @@ require "fileutils"
 require "csv"
 
 puts ">>> Reading docs repo"
-if (Dir.exists?("docs")) then
+if (ARGV[0] && ARGV[0] == "--no-clone" && Dir.exists?("docs")) then
     puts " -> Re-using existing clone"
 else
     puts " -> Deleting docs if existing..."
@@ -13,7 +13,7 @@ else
 end
 
 puts ">>> Reading dev docs repo"
-if (Dir.exists?("dev")) then
+if (ARGV[0] && ARGV[0] == "--no-clone" && Dir.exists?("dev")) then
     puts " -> Re-using existing clone"
 else
     puts " -> Deleting dev if existing..."
@@ -24,7 +24,7 @@ else
 end
 
 puts ">>> Reading plugins repo"
-if (Dir.exists?("naomi-plugins")) then
+if (ARGV[0] && ARGV[0] == "--no-clone" && Dir.exists?("naomi-plugins")) then
     puts " -> Re-using existing clone"
 else
     puts " -> Deleting docs if existing..."
@@ -72,8 +72,10 @@ FileUtils.rm_rf("temp")
 
 puts ">>> Migrating the introduction article"
 #FileUtils.mv("docs/introduction.md", "docs/readme.md")
+FileUtils.mkdir_p("dev/docs/developer/website")
 FileUtils.mv("dev/docs/readme.md", "dev/docs/developer/website/index.md")
 FileUtils.mv("dev/docs/introduction.md", "dev/docs/readme.md")
+FileUtils.mkdir_p("dev/docs/developer/docs")
 FileUtils.mv("README.md", "dev/docs/developer/docs/index.md")
 FileUtils.mv("introduction.md", "README.md")
 
