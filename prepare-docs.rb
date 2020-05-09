@@ -40,16 +40,10 @@ csv = CSV.read(file_path, :headers=>true)
 
 puts " -> Deleting temp if existing..."
 FileUtils.rm_rf("temp")
-#
-#
-#
-#
-puts " -> Making temp..."
 FileUtils.mkdir_p("temp")
 csv['Repository'].each do |a|
     puts " -> Cloning #{a}"
-    `git -C ./temp clone #{a}`
-    #`git -C ./temp clone -q #{a}`
+    `git -C temp clone -q #{a}`
 end
 
 Dir.glob("temp/**") { |path|

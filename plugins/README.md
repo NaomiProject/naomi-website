@@ -23,11 +23,6 @@ initial_gallery:
     title: "Speech to Text"
     description: "Converts your voice into text"
     featured: ["deepspeech", "pocketsphinx", "googlestt", "kaldi", "witai"]
-  stt_trainers:
-    title: "Speech to Text Trainers"
-    description: "Used to train your Speech to Text engine to recognize your voice"
-    featured: ["naomitrainer"]
-    all: true
   vads:
     title: "Voice Activity Detection"
     description: "Tells Naomi when you start and stop talking"
