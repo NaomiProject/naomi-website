@@ -67,6 +67,9 @@ Dir.glob("naomi-plugin-downloads/**") { |path|
     end
 }
 
+puts ">>> Deleting pre-migration plugins"
+FileUtils.rm_rf("naomi-plugin-downloads")
+
 puts ">>> Migrating the introduction article"
 #FileUtils.mv("docs/introduction.md", "docs/readme.md")
 FileUtils.mv("dev/docs/readme.md", "dev/docs/developer/website/index.md")
