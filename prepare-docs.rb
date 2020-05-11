@@ -1,4 +1,7 @@
 require "fileutils"
+require "net/http"
+require "uri"
+require "rexml/document"
 require "csv"
 
 puts ">>> Reading docs repo"
@@ -67,17 +70,18 @@ Dir.glob("plugin-temp/**") { |path|
     end
 }
 
-#puts ">>> Deleting pre-migration plugins"
-#FileUtils.rm_rf("plugin-temp")
+puts ">>> Deleting pre-migration plugins"
+FileUtils.rm_rf("naomi-plugins")
+FileUtils.rm_rf("plugin-temp")
 
 puts ">>> Migrating the introduction article"
 #FileUtils.mv("docs/introduction.md", "docs/readme.md")
-FileUtils.mkdir_p("dev/docs/developer/website")
-FileUtils.mv("dev/docs/readme.md", "dev/docs/developer/website/index.md")
+FileUtils.mkdir_p("dev/docs/developer/documentation")
+FileUtils.mv("dev/docs/readme.md", "dev/docs/developer/documentation/index.md")
 FileUtils.mv("dev/docs/introduction.md", "dev/docs/readme.md")
-FileUtils.mkdir_p("dev/docs/developer/docs")
-#FileUtils.mv("README.md", "dev/docs/developer/docs/index.md")
-#FileUtils.mv("introduction.md", "README.md")
+FileUtils.mkdir_p("dev/docs/developer/website")
+FileUtils.mv("README.md", "dev/docs/developer/website/index.md")
+FileUtils.mv("introduction.md", "README.md")
 
 puts ">>> Migrating logos"
 FileUtils.cp_r("dev/docs/images/plugins", ".vuepress/public/")

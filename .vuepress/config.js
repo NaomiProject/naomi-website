@@ -274,8 +274,8 @@ module.exports = {
             children: [
               ['developer/', 'Development Overview'],
               'developer/contributing/contributing',
-              'developer/website/',
-              'developer/docs/',
+              ['developer/website/', 'Website Development'],
+              ['developer/documentation/', 'Documentation Development'],
               'developer/plugins/',
               'developer/plugins/audioengine_plugin',
               'developer/plugins/speechhandler_plugin',
