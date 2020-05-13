@@ -4,7 +4,6 @@ const PluginsSpeechhandlers = require('./plugins-speechhandlers.js')
 const PluginsTTIs = require('./plugins-ttis.js')
 const PluginsTTSs = require('./plugins-ttss.js')
 const PluginsSTTs = require('./plugins-stts.js')
-const PluginsSTTTrainers = require('./plugins-stt_trainers.js')
 const PluginsVads = require('./plugins-vads.js')
 const PluginsVisualizations = require('./plugins-visualizations.js')
 
@@ -107,9 +106,6 @@ module.exports = {
       ]))
     },
     serviceWorker: false,
-    plugins: [
-      '@vuepress/last-updated',
-    ],
     lastUpdated: 'Last Updated',
     themeConfig: {
       logo: '/naomi-logo.png',
@@ -119,10 +115,6 @@ module.exports = {
       docsDir: 'dev/docs',
       search: true,
       searchMaxSuggestions: 10,
-      plugins: [
-        '@vuepress/last-updated',
-      ],
-      lastUpdated: 'Last Updated',
       nav: [
         {
           text: 'Download',
@@ -271,9 +263,10 @@ module.exports = {
               'configuration/tti',
               'configuration/tts',
               'configuration/stt',
+              'configuration/sttt',
               'configuration/vad',
               'configuration/profile',
-              ['plugins/', 'NPE'],
+              'configuration/npe',
             ]
           },
           {
@@ -282,6 +275,8 @@ module.exports = {
             children: [
               ['developer/', 'Development Overview'],
               'developer/contributing/contributing',
+              ['developer/website/', 'Website Development'],
+              ['developer/documentation/', 'Documentation Development'],
               'developer/plugins/',
               'developer/plugins/audioengine_plugin',
               'developer/plugins/speechhandler_plugin',
@@ -315,11 +310,6 @@ module.exports = {
             title: 'Speech to Text',
             collapsible: false,
             children: PluginsSTTs.sort((a,b) => a[1].localeCompare(b[1]))
-          },
-          {
-            title: 'Speech to Text Trainers',
-            collapsible: false,
-            children: PluginsSTTTrainers.sort((a,b) => a[1].localeCompare(b[1]))
           },
           {
             title: 'Voice Activation Detection',

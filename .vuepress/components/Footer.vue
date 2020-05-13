@@ -8,7 +8,9 @@
     <div class="legal">
       <span class="copyright">Copyright © {{year}} by the Naomi Community and Project Naomi</span>
       <br />
-      <span class="legal-links"><router-link to="/privacy.html">Privacy policy</router-link> |
+      <span class="copyright">This site is powered by <a href="https://netlify.com" target="_blank">Netlify</a></span>
+      <br />
+      <span class="legal-links"><router-link to="/privacy.html">Privacy policy</router-link>
       <router-link to="/imprint.html">Imprint</router-link></span>
       <script type='application/ld+json'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://projectnaomi.com/#organization","name":"Project Naomi","url":"https://projectnaomi.com/","sameAs":["https://www.facebook.com/projectnaomi","https://twitter.com/projectnaomi"],"logo":{"@type":"ImageObject","@id":"https://projectnaomi.com/#logo","inLanguage":"en-US","url":"https://www.projectnaomi.com/naomi-logo.png","width":520,"height":131,"caption":"Project Naomi"},"image":{"@id":"https://projectnaomi.com/#logo"}},{"@type":"WebSite","@id":"https://projectnaomi.com/#website","url":"https://projectnaomi.com/","name":"Project Naomi","inLanguage":"en-US","description":"Open Source Vocal Assistant","publisher":{"@id":"https://projectnaomi.com/#organization"}},{"@type":"WebPage","@id":"https://projectnaomi.com/#webpage","url":"https://projectnaomi.com/","name":"Project Naomi","isPartOf":{"@id":"https://projectnaomi.com/#website"},"inLanguage":"en-US","about":{"@id":"https://projectnaomi.com/#organization"},"datePublished":"2019-04-10T22:49:18+00:00","dateModified":"2019-09-23T15:18:02+00:00","description":"The Naomi Project is an open source, technology agnostic platform for developing always-on, voice-controlled applications! Naomi software integrates different home text-to-speech & speech-to-text systems, plugins and technologies into a single solution. It provides uniform user interfaces, and a common approach for developing always-on, voice-controlled applications, regardless of the number of devices and sub-systems involved."}]}</script>
     </div>
