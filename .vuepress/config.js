@@ -263,6 +263,7 @@ module.exports = {
               'configuration/tti',
               'configuration/tts',
               'configuration/stt',
+              'configuration/sttt',
               'configuration/vad',
               'configuration/profile',
               'configuration/npe',
