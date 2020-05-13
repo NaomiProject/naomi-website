@@ -31,7 +31,7 @@ initial_gallery:
   visualizations:
     title: "Visualizations"
     description: "Visualize different aspects of Naomi"
-    featured: ["respeakermicvisualization"]
+    featured: ["respeakermicvisualization", "google-aiy-voice-v1-visualizations"]
     all: true
 meta:
   - name: og:title
