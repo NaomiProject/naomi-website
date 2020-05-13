@@ -52,13 +52,13 @@ end
 Dir.glob("plugin-temp/**") { |path|
     plugin = File.basename(path)
     puts " --> #{plugin}"
-    File.open ('plugin-temp/' + plugin + '/README.md') do |file|
+    File.open ('plugin-temp/' + plugin + '/readme.md') do |file|
         file.find do |line|
             if line =~ /type:/
                 line_clean = line.split("type: ").join('').strip
                 puts " ---> #{line_clean}"
                 FileUtils.mkdir_p("dev/docs/NPE-Files/_plugins_#{line_clean}/#{plugin}")
-                FileUtils.cp("plugin-temp/" + plugin + "/README.md", "dev/docs/NPE-Files/_plugins_#{line_clean}/#{plugin}")
+                FileUtils.cp("plugin-temp/" + plugin + "/readme.md", "dev/docs/NPE-Files/_plugins_#{line_clean}/#{plugin}")
             end
             if line =~ /logo:/
                 logo_clean = line.split("logo: ").join('').strip
