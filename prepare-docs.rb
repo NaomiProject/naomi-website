@@ -68,7 +68,7 @@ Dir.glob("plugin-temp/**") { |path|
             end
         end
     end
-}
+} 
 
 puts ">>> Deleting pre-migration plugins"
 FileUtils.rm_rf("naomi-plugins")
