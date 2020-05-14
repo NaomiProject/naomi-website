@@ -129,8 +129,8 @@ module.exports = {
           link: '/plugins/',
         },
         {
-          text: 'Support',
-          link: '/support/',
+          text: 'Blog',
+          link: '/blog/',
         },
         {
           text: 'About',
