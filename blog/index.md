@@ -1,6 +1,6 @@
 ---
 layout: RedirectLayout
-redirect_to: https://support.projectnaomi.com/
+redirect_to: https://medium.com/projectnaomi
 ---
 
 Please Wait...
