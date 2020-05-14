@@ -1,0 +1,24 @@
+name: 'Nightly Build'
+
+on:
+  schedule:
+    - cron:  '0 4 * * *'
+
+jobs:
+  jobs:
+  build:
+    name: Request Netlify Webhook
+    runs-on: ubuntu-latest
+    steps:
+      - name: Master curl request
+        env:
+          NETLIFY_MASTER_HOOK: ${{ secrets.NETLIFY_MASTER_HOOK }}
+        run: curl -X POST -d {} ${{ secrets.NETLIFY_MASTER_HOOK }}
+      - name: Status curl request
+        env:
+          NETLIFY_NPEEDITOR_HOOK: ${{ secrets.NETLIFY_NPEEDITOR_HOOK }}
+        run: curl -X POST -d {} ${{ secrets.NETLIFY_NPEEDITOR_HOOK }}
+      - name: NPEeditor curl request
+        env:
+          NETLIFY_STATUS_HOOK: ${{ secrets.NETLIFY_STATUS_HOOK }}
+        run: curl -X POST -d {} ${{ secrets.NETLIFY_STATUS_HOOK }}

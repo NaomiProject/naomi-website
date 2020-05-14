@@ -4,11 +4,3 @@
 
 [build.environment]
   CI = "true"
-
-[context.status]
-  command = "echo 'status'"
-  base = "status"
-
-[context.npeeditor]
-  command = "echo 'npeeditor'"
-  base = "npeeditor"
