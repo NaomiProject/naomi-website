@@ -6,9 +6,9 @@
   CI = "true"
 
 [context.status]
-  command = "npm run generate"
-  publish = "dist"
+  command = "echo 'status'"
+  base = "status"
 
 [context.npeeditor]
-  command = ""
-  publish = ""
+  command = "echo 'npeeditor'"
+  base = "npeeditor"
