@@ -4,3 +4,11 @@
 
 [build.environment]
   CI = "true"
+
+[context.status]
+  command = "npm run generate"
+  publish = "dist"
+
+[context.npeeditor]
+  command = ""
+  publish = ""
