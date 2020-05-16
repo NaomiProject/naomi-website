@@ -14,6 +14,7 @@ jobs:
           NETLIFY_MASTER_HOOK: ${{ secrets.NETLIFY_MASTER_HOOK }}
           NETLIFY_NPEEDITOR_HOOK: ${{ secrets.NETLIFY_NPEEDITOR_HOOK }}
           NETLIFY_STATUS_HOOK: ${{ secrets.NETLIFY_STATUS_HOOK }}
-        run: curl -X POST -d {} ${{ secrets.NETLIFY_MASTER_HOOK }}
-        run: curl -X POST -d {} ${{ secrets.NETLIFY_NPEEDITOR_HOOK }}
-        run: curl -X POST -d {} ${{ secrets.NETLIFY_STATUS_HOOK }}
+        run: |
+          curl -X POST -d {} ${{ secrets.NETLIFY_MASTER_HOOK }}
+          curl -X POST -d {} ${{ secrets.NETLIFY_NPEEDITOR_HOOK }}
+          curl -X POST -d {} ${{ secrets.NETLIFY_STATUS_HOOK }}
