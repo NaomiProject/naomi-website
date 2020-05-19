@@ -49,7 +49,7 @@
   </div>-->
   <div class="join">
     <!--<router-link to="about/showcase.html" class="join-us-button slide-slow">Showcase ➜</router-link>-->
-    <a target="_blank" href="https://support.projectnaomi.com" class="join-us-button slide-slow">Join Us ➜</a>
+    <a target="_blank" href="https://discord.gg/EVNQya3" class="join-us-button slide-slow">Join Us ➜</a>
   </div>
 </div>
 </template>

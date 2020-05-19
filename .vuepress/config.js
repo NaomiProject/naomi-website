@@ -129,6 +129,10 @@ module.exports = {
           link: '/plugins/',
         },
         {
+          text: 'Discord Community',
+          link: '/community/',
+        },
+        {
           text: 'Blog',
           link: '/blog/',
         },
