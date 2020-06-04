@@ -32,7 +32,7 @@
         <div class="distro-label">RPM (.rpm packages)</div>
       </div>-->
     </div>
-    <div class="instructions" v-if="selectedSystem">Choose your version</div>
+    <!--<div class="instructions" v-if="selectedSystem">Choose your version</div>
     <div class="version-tabs" v-if="selectedSystem">
       <div class="version-tab"
         v-for="version in versions"
@@ -48,7 +48,7 @@
       <p v-if="selectedVersion === 'stable'"><strong>Stable</strong> versions are thoroughly tested semi-annual official releases of Naomi. Use the stable version for your production environment if you don't need the latest enhancements and prefer a robust system.</p>
       <p v-if="selectedVersion === 'dev'"><strong>Milestone</strong> versions are intermediary releases of the next Naomi version, released about once a month, and they include the new recently added features and bugfixes. They are a good compromise between the current stable version and the bleeding-edge and potentially unstable nightly version.</p>
       <p v-if="selectedVersion === 'nightly'"><strong>Nightly</strong> versions are at most 1 or 2 days old and include the latest code. Use nightly for testing out very recent changes, but be aware some nightly versions might be unstable. Use in production at your own risk!</p>
-    </div>
+    </div>-->
 
     <div v-if="naobianImage === 'true'">
       <div v-if="selectedSystem === 'raspberry-pi'">
@@ -70,20 +70,8 @@
       <hr>
       <h1>Manual Source Installation <span v-if="selectedSystem === 'tux'">(Recommended)</span></h1>
       <ol>
-        <li>Fetch the repository</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/stable/Naomi-{{this.$page.frontmatter.currentVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/dev/Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code><code v-else-if="selectedVersion === 'nightly'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/nightly/{{this.$page.frontmatter.currentNightlyVersion}}.zip" -o {{this.$page.frontmatter.currentNightlyVersion}}.zip</code></code></pre></div>
-        <li>Explode directory</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">unzip Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">unzip Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code><code v-else-if="selectedVersion === 'nightly'">unzip {{this.$page.frontmatter.currentNightlyVersion}}.zip</code></code></pre></div>
-        <li>Rename directory</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">mv Naomi-{{this.$page.frontmatter.currentVersion}} Naomi</code><code v-else-if="selectedVersion === 'dev'">mv Naomi-{{this.$page.frontmatter.currentMilestoneVersion}} Naomi</code><code v-else-if="selectedVersion === 'nightly'">mv {{this.$page.frontmatter.currentNightlyVersion}} Naomi</code></pre></div>
-        <li>Go into the directory</li>
-          <div class="language-shell"><pre class="language-shell"><code>cd Naomi</code></pre></div>
-        <li>Setup the install</li>
-          <div class="language-shell"><pre class="language-shell"><code>chmod +x naomi-setup.sh</br>chmod +x compile_translations.sh</code></pre></div>
-        <li>Run the install</li>
-          <div class="language-shell"><pre class="language-shell"><code>./naomi-setup.sh</code></pre></div>
-        <li>Run the app</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">python Naomi.py</code><code v-else-if="selectedVersion === 'dev' || 'nightly'">./Naomi</code></pre></div>
+        <li>Open a terminal, Paste the line below, Press the return key</li>
+          <div class="language-shell"><pre class="language-shell"><code>. <( wget -O - https://installers.projectnaomi.com/naomi-setup.sh )</code></pre></div>
       </ol>
     </div>
     <!--<div v-if="selectedSystem === 'tux' && selectedDistro === 'rpm'">
@@ -136,21 +124,8 @@
       <hr>
       <h1>Manual Source Installation</h1>
       <ol>
-        <li>Setup a Debian based VirtualBox VM of your choosing</li>
-        <li>Fetch the repository</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/stable/Naomi-{{this.$page.frontmatter.currentVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/dev/Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip" -o Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code><code v-else-if="selectedVersion === 'nightly'">curl -L "https://dl.bintray.com/naomiproject/rpi-repo2/nightly/{{this.$page.frontmatter.currentNightlyVersion}}.zip" -o {{this.$page.frontmatter.currentNightlyVersion}}.zip</code></code></pre></div>
-        <li>Explode directory</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">unzip Naomi-{{this.$page.frontmatter.currentVersion}}.zip</code><code v-else-if="selectedVersion === 'dev'">unzip Naomi-{{this.$page.frontmatter.currentMilestoneVersion}}.zip</code><code v-else-if="selectedVersion === 'nightly'">unzip {{this.$page.frontmatter.currentNightlyVersion}}.zip</code></code></pre></div>
-        <li>Rename directory</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">mv Naomi-{{this.$page.frontmatter.currentVersion}} Naomi</code><code v-else-if="selectedVersion === 'dev'">mv Naomi-{{this.$page.frontmatter.currentMilestoneVersion}} Naomi</code><code v-else-if="selectedVersion === 'nightly'">mv {{this.$page.frontmatter.currentNightlyVersion}} Naomi</code></pre></div>
-        <li>Go into the directory</li>
-          <div class="language-shell"><pre class="language-shell"><code>cd Naomi</code></pre></div>
-        <li>Setup the install</li>
-          <div class="language-shell"><pre class="language-shell"><code>chmod +x naomi-setup.sh</br>chmod +x compile_translations.sh</code></pre></div>
-        <li>Run the install</li>
-          <div class="language-shell"><pre class="language-shell"><code>./naomi-setup.sh</code></pre></div>
-        <li>Run the app</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">python Naomi.py</code><code v-else-if="selectedVersion === 'dev' || 'nightly'">./Naomi</code></pre></div>
+        <li>Open a terminal, Paste the line below, Press the return key</li>
+          <div class="language-shell"><pre class="language-shell"><code>. <( wget -O - https://installers.projectnaomi.com/naomi-setup.sh )</code></pre></div>
       </ol>
     </div>
 
