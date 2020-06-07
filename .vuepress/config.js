@@ -282,6 +282,7 @@ module.exports = {
               ['developer/website/', 'Website Development'],
               ['developer/documentation/', 'Documentation Development'],
               'developer/plugins/',
+              'developer/plugins/npeeditor',
               'developer/plugins/audioengine_plugin',
               'developer/plugins/speechhandler_plugin',
               'developer/plugins/tti_plugin',
