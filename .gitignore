@@ -78,3 +78,12 @@ plugins/*/
 
 # Naomi Plugin Images
 .vuepress/public/plugins
+
+# Naomi OpenCollective Sponsor Scripts
+.vuepress/sponsor-*
+
+# Local Ruby Testing File
+ruby-testing.rb
+
+# Current Vue Testing File
+.vuepress/components/RecurringSponsor2.vue

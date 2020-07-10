@@ -12,7 +12,7 @@ meta:
 <h2 class="big-title" id="Sponsor-Naomi">Sponsor Naomi Development</h2>
 
 Project Naomi is an MIT licensed open source project and completely free to use.
-However, the amount of effort needed to maintain and develop new features for the project and the infinstructure behind it is not sustainable without proper financial backing.
+However, the amount of effort needed to maintain and develop new features for the project and the infrastructure behind it is not sustainable without proper financial backing.
 
 You can support Naomi development via the following methods:
 
@@ -20,11 +20,13 @@ You can support Naomi development via the following methods:
 
 We accept donations through these channels:
 
-<Sponsor/>
+<OneTimeSponsor/>
 
 <h2 id="Recurring-Pledges">Recurring Pledges</h2>
 
-Coming Soon!
+Recurring pledges come with exclusive perks, e.g. having your name listed in the Naomi GitHub repository, or have your company logo placed on this website.
+
+<RecurringSponsor/>
 
 If you run a business and are using Naomi in a revenue-generating product, it makes business sense to sponsor Naomi development:
 <b>it ensures the project that your product relies on stays healthy and actively maintained.</b> It can also help your exposure in the Naomi community.
