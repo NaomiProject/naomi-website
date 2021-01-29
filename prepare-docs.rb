@@ -77,10 +77,15 @@ FileUtils.rm_rf("plugin-temp")
 puts ">>> Migrating the introduction article"
 #FileUtils.mv("docs/introduction.md", "docs/readme.md")
 FileUtils.mkdir_p("dev/docs/developer/documentation")
+FileUtils.mkdir_p("docs/developer/documentation")
 FileUtils.mv("dev/docs/readme.md", "dev/docs/developer/documentation/index.md")
+FileUtils.mv("docs/readme.md", "docs/developer/documentation/index.md")
 FileUtils.mv("dev/docs/introduction.md", "dev/docs/readme.md")
+FileUtils.mv("docs/introduction.md", "docs/readme.md")
 FileUtils.mkdir_p("dev/docs/developer/website")
-FileUtils.mv("README.md", "dev/docs/developer/website/index.md")
+FileUtils.mkdir_p("docs/developer/website")
+FileUtils.cp("README.md", "dev/docs/developer/website/index.md")
+FileUtils.cp("README.md", "docs/developer/website/index.md")
 FileUtils.mv("introduction.md", "README.md")
 
 puts ">>> Migrating logos"
