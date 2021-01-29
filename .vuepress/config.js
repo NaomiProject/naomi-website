@@ -201,40 +201,45 @@ module.exports = {
             children: [
               'installation/',
               ['installation/linux', 'Linux'],
-              ['installation/windows', 'Windows'],
-              ['installation/macos', 'macOS'],
+              /*['installation/windows', 'Windows'],
+              ['installation/macos', 'macOS'],*/
               ['installation/rasppi', 'Raspberry Pi'],
+              ['installation/naobian', 'Naobian'],
+              ['installation/virtualbox', 'VirtualBox'],
+              /*['installation/docker', 'Docker'],*/
             ]
           },
           {
-            title: 'Configuration Guide',
-            collapsable: false,
+            title: 'Manual Configuration Guide',
+            collapsable: true,
             children: [
               ['configuration/', 'Configuration Overview'],
               'configuration/audio',
+              'configuration/tti',
               'configuration/tts',
               'configuration/stt',
+              'configuration/sttt',
+              'configuration/vad',
               'configuration/profile',
-              'configuration/plugins',
-            ]
-          },
-          {
-            title: 'Plugins',
-            collapsable: false,
-            children: [
-              'plugins/marytts-server',
-              'plugins/pocketsphinx-install',
-              'plugins/deepspeech-setup'
+              'configuration/npe',
             ]
           },
           {
             title: 'Developer Guide',
-            collapsable: false,
+            collapsable: true,
             children: [
               ['developer/', 'Development Overview'],
-              'developer/contributing/contributing'
+              'developer/contributing/contributing',
+              ['developer/website/', 'Website Development'],
+              ['developer/documentation/', 'Documentation Development'],
+              'developer/plugins/',
+              'developer/plugins/npeeditor',
+              'developer/plugins/audioengine_plugin',
+              'developer/plugins/speechhandler_plugin',
+              'developer/plugins/tti_plugin',
+              'developer/plugins/tts_plugin',
             ]
-          }
+          },
         ],
         '/dev/docs/': [
           {
