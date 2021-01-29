@@ -84,8 +84,8 @@ FileUtils.mv("dev/docs/introduction.md", "dev/docs/readme.md")
 FileUtils.mv("docs/introduction.md", "docs/readme.md")
 FileUtils.mkdir_p("dev/docs/developer/website")
 FileUtils.mkdir_p("docs/developer/website")
-FileUtils.mv("README.md", "dev/docs/developer/website/index.md")
-FileUtils.mv("README.md", "docs/developer/website/index.md")
+FileUtils.cp("README.md", "dev/docs/developer/website/index.md")
+FileUtils.cp("README.md", "docs/developer/website/index.md")
 FileUtils.mv("introduction.md", "README.md")
 
 puts ">>> Migrating logos"
