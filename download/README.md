@@ -61,12 +61,10 @@ Only download links and steps to setup Naomi are provided below, all platforms a
 
 <h2 class="big-title">Acknowledgements</h2>
 
-<div class="acknowledgements-logos">
-  <a target="_blank" href="https://www.bintray.com"><img style="padding: 1em" height="60" src="./images/acknowledgements/bintray.png" /></a>
+<div clas"acknowledgements-logos">
   <a target="_blank" href="https://www.netlify.com"><img style="padding: 1em" height="75" src="./images/acknowledgements/netlify.svg" /></a>
 </div>
 
 <ul>
-<li><a href="https://www.jfrog.com">JFrog</a> is distributing our <a href="https://bintray.com/projectnaomi">releases through Bintray</a>.</li>
 <li><a href="https://www.netlify.com/">Netlify</a> provides continuous deployment and hosting for this website.</li>
 </ul>
