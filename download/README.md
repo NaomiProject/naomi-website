@@ -61,7 +61,7 @@ Only download links and steps to setup Naomi are provided below, all platforms a
 
 <h2 class="big-title">Acknowledgements</h2>
 
-<div clas"acknowledgements-logos">
+<div class="acknowledgements-logos">
   <a target="_blank" href="https://www.netlify.com"><img style="padding: 1em" height="75" src="./images/acknowledgements/netlify.svg" /></a>
 </div>
 
