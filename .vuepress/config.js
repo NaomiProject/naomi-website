@@ -264,26 +264,17 @@ module.exports = {
             ]
           },
           {
-            title: 'Setup and Usage',
-            collapsable: true,
-            children: [
-              ['setup/', 'Overview'],
-              ['setup/audio', 'Audio - setup audio'],
-              ['setup/profile', 'Profile - setup profile'],
-              ['setup/options', 'Options - runtime options'],
-              ['setup/usage', 'Usage - basic plugins'],
-            ]
-          },
-          {
             title: 'Manual Configuration Guide',
             collapsable: true,
             children: [
               ['configuration/', 'Configuration Overview'],
+              'configuration/audio',
               'configuration/tti',
               'configuration/tts',
               'configuration/stt',
               'configuration/sttt',
               'configuration/vad',
+              'configuration/profile',
               'configuration/npe',
             ]
           },
