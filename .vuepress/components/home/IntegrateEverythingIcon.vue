@@ -1,16 +1,16 @@
 <template>
   <div class="home-icon-container">
-    <img class="home-icon" :class="{ current: current === 0 }" src="./images/icons/light.png" />
-    <img class="home-icon" :class="{ current: current === 1 }" src="./images/icons/temperature.png" />
-    <img class="home-icon" :class="{ current: current === 2 }" src="./images/icons/shutters.png" />
-    <img class="home-icon" :class="{ current: current === 3 }" src="./images/icons/camera.png" />
-    <img class="home-icon" :class="{ current: current === 4 }" src="./images/icons/lock.png" />
-    <img class="home-icon" :class="{ current: current === 5 }" src="./images/icons/key.png" />
-    <img class="home-icon" :class="{ current: current === 6 }" src="./images/icons/homecinema.png" />
-    <img class="home-icon" :class="{ current: current === 7 }" src="./images/icons/wifi.png" />
-    <img class="home-icon" :class="{ current: current === 8 }" src="./images/icons/tv.png" />
-    <img class="home-icon" :class="{ current: current === 9 }" src="./images/icons/washingmachine.png" />
-    <img class="home-icon" :class="{ current: current === 10 }" src="./images/icons/car.png" />
+    <img class="home-icon integrate-everything" :class="{ current: current === 0 }" src="./images/icons/light.png" />
+    <img class="home-icon integrate-everything" :class="{ current: current === 1 }" src="./images/icons/temperature.png" />
+    <img class="home-icon integrate-everything" :class="{ current: current === 2 }" src="./images/icons/shutters.png" />
+    <img class="home-icon integrate-everything" :class="{ current: current === 3 }" src="./images/icons/camera.png" />
+    <img class="home-icon integrate-everything" :class="{ current: current === 4 }" src="./images/icons/lock.png" />
+    <img class="home-icon integrate-everything" :class="{ current: current === 5 }" src="./images/icons/key.png" />
+    <img class="home-icon integrate-everything" :class="{ current: current === 6 }" src="./images/icons/homecinema.png" />
+    <img class="home-icon integrate-everything" :class="{ current: current === 7 }" src="./images/icons/wifi.png" />
+    <img class="home-icon integrate-everything" :class="{ current: current === 8 }" src="./images/icons/tv.png" />
+    <img class="home-icon integrate-everything" :class="{ current: current === 9 }" src="./images/icons/washingmachine.png" />
+    <img class="home-icon integrate-everything" :class="{ current: current === 10 }" src="./images/icons/car.png" />
     <img class="home-icon frame" src="./images/icons/empty.png" />
   </div>
 </template>
@@ -22,6 +22,16 @@
   margin auto
   transform translateX(-50%)
 .home-icon
+  position absolute
+  width 150px
+  height 150px
+  opacity 0
+  &.frame
+    opacity 1
+  &.current
+    opacity 1
+    transition all 1s
+.home-icon.integrate-everything
   position absolute
   width 150px
   height 150px
