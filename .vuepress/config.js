@@ -272,6 +272,7 @@ module.exports = {
               ['setup/profile', 'Profile - setup profile'],
               ['setup/options', 'Options - runtime options'],
               ['setup/usage', 'Usage - basic plugins'],
+              ['setup/tutorial', 'Tutorial - speechhandler'],
             ]
           },
           {
