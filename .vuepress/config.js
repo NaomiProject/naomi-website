@@ -6,6 +6,7 @@ const PluginsTTSs = require('./plugins-ttss.js')
 const PluginsSTTs = require('./plugins-stts.js')
 const PluginsVads = require('./plugins-vads.js')
 const PluginsVisualizations = require('./plugins-visualizations.js')
+const PluginsSTTTrainers = require('./plugins-stt_trainers.js')
 
 const fs = require ('fs-extra')
 const path = require('path')
@@ -340,6 +341,11 @@ module.exports = {
             title: 'Visualizations',
             collapsible: false,
             children: PluginsVisualizations.sort((a,b) => a[1].localeCompare(b[1]))
+          },
+          {
+            title: 'Speech to Text Trainers',
+            collapsible: false,
+            children: PluginsSTTTrainers.sort((a,b) => a[1].localeCompare(b[1]))
           },
         ]
       },

@@ -154,8 +154,17 @@ Dir.glob("dev/docs/NPE-Files/_plugins_visualizations/**") { |path|
     FileUtils.cp("dev/docs/NPE-Files/_plugins_visualizations/" + plugin + "/readme.md", "plugins/visualizations/" + plugin)
 }
 
+puts ">>> Migrating plugins: Speech to Texts Trainers"
+
+Dir.glob("dev/docs/NPE-Files/_plugins_stt_trainers/**") { |path|
+    plugin = File.basename(path)
+    puts " -> #{plugin}"
+    FileUtils.mkdir_p("plugins/stt_trainers/" + plugin)
+    FileUtils.cp("dev/docs/NPE-Files/_plugins_stt_trainer/" + plugin + "/readme.md", "plugins/stt_trainer/" + plugin)
+}
+
 puts ">>> Writing plugin arrays to files for sidebar navigation"
-["audioengines", "speechhandlers", "ttis", "ttss", "stts", "vads", "visualizations"].each { |type|
+["audioengines", "speechhandlers", "ttis", "ttss", "stts", "vads", "visualizations", "stt_trainers"].each { |type|
     File.open(".vuepress/plugins-#{type}.js", "w+") { |file|
         file.puts "module.exports = ["
 
