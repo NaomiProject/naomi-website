@@ -8,7 +8,6 @@ const PluginsVads = require('./plugins-vads.js')
 const PluginsVisualizations = require('./plugins-visualizations.js')
 const PluginsSTTTrainers = require('./plugins-stt_trainers.js')
 
-
 const fs = require ('fs-extra')
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
