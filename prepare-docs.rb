@@ -160,7 +160,7 @@ Dir.glob("dev/docs/NPE-Files/_plugins_stt_trainers/**") { |path|
     plugin = File.basename(path)
     puts " -> #{plugin}"
     FileUtils.mkdir_p("plugins/stt_trainers/" + plugin)
-    FileUtils.cp("dev/docs/NPE-Files/_plugins_stt_trainer/" + plugin + "/readme.md", "plugins/stt_trainer/" + plugin)
+    FileUtils.cp("dev/docs/NPE-Files/_plugins_stt_trainers/" + plugin + "/readme.md", "plugins/stt_trainers/" + plugin)
 }
 
 puts ">>> Writing plugin arrays to files for sidebar navigation"
