@@ -184,7 +184,4 @@ puts ">>> Writing plugin arrays to files for sidebar navigation"
         file.puts "]"
     }
 }
-puts " "
-puts " "
-puts " "
 puts "--> Ruby prep is complete, handing off to Vue <---"
