@@ -33,7 +33,7 @@ initial_gallery:
     description: "Visualize different aspects of Naomi"
     featured: ["respeakermicvisualization", "google-aiy-voice-v1-visualizations"]
     all: true
-  stts:
+  trainers:
     title: "Speech to Text Trainers"
     description: "Train Naomi to better recognize your voice"
     featured: ["import-audiolog"]
