@@ -174,7 +174,7 @@ puts ">>> Writing plugin arrays to files for sidebar navigation"
 
                 File.readlines('plugins/' + type + '/' + dir + '/readme.md').each { |line|
                     if line =~ /^label:/ then
-                        title = line.gsub("label: ", "").gsub("\n", "")
+                        title = line.gsub("label: ", "").strip
                         file.puts "\t['#{type}/#{dir}/', '#{title}']," if !(title =~ /1\.x/)
                     end
                 }
